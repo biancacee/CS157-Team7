@@ -1,0 +1,1833 @@
+19-Sep-2023 16:31:44.872 INFO [localhost-startStop-1] org.apache.catalina.core.ApplicationContext.log ContextListener: contextInitialized()
+19-Sep-2023 16:31:44.872 INFO [localhost-startStop-1] org.apache.catalina.core.ApplicationContext.log SessionListener: contextInitialized()
+19-Sep-2023 16:31:44.872 INFO [localhost-startStop-1] org.apache.catalina.core.ApplicationContext.log ContextListener: attributeAdded('StockTicker', 'async.Stockticker@1da3e4a')
+19-Sep-2023 16:31:50.655 SEVERE [http-nio-8080-exec-1] org.apache.catalina.core.StandardWrapperValve.invoke Servlet.service() for servlet [jsp] in context with path [] threw exception [Unable to compile class for JSP: 
+
+An error occurred at line: [18] in the jsp file: [/index.jsp]
+Syntax error, insert "Finally" to complete TryStatement
+15:             Class.forName("com.mysql.jdbc.Driver");
+16:             con = DriverManager.getConnection("jdbc:mysql://localhost:3306/clubspartan?autoReconnect=true&useSSL=false", user, password);
+17:             out.println(db + " database successfully opened.<br/><br/>");
+18:         }
+19:             rs.close();
+20:             stmt.close();
+21:             con.close();
+
+
+An error occurred at line: [19] in the jsp file: [/index.jsp]
+rs cannot be resolved
+16:             con = DriverManager.getConnection("jdbc:mysql://localhost:3306/clubspartan?autoReconnect=true&useSSL=false", user, password);
+17:             out.println(db + " database successfully opened.<br/><br/>");
+18:         }
+19:             rs.close();
+20:             stmt.close();
+21:             con.close();
+22:         } 
+
+
+An error occurred at line: [20] in the jsp file: [/index.jsp]
+stmt cannot be resolved
+17:             out.println(db + " database successfully opened.<br/><br/>");
+18:         }
+19:             rs.close();
+20:             stmt.close();
+21:             con.close();
+22:         } 
+23:         catch(SQLException e) 
+
+
+An error occurred at line: [21] in the jsp file: [/index.jsp]
+con cannot be resolved
+18:         }
+19:             rs.close();
+20:             stmt.close();
+21:             con.close();
+22:         } 
+23:         catch(SQLException e) 
+24:         {
+
+
+An error occurred at line: [142] in the generated java file: [C:\tomcat\work\Catalina\localhost\ROOT\org\apache\jsp\index_jsp.java]
+Syntax error on token "catch", Identifier expected
+
+An error occurred at line: [144] in the generated java file: [C:\tomcat\work\Catalina\localhost\ROOT\org\apache\jsp\index_jsp.java]
+out cannot be resolved to a variable
+
+An error occurred at line: [144] in the generated java file: [C:\tomcat\work\Catalina\localhost\ROOT\org\apache\jsp\index_jsp.java]
+_jspx_out cannot be resolved to a variable
+
+An error occurred at line: [145] in the generated java file: [C:\tomcat\work\Catalina\localhost\ROOT\org\apache\jsp\index_jsp.java]
+out cannot be resolved to a variable
+
+An error occurred at line: [145] in the generated java file: [C:\tomcat\work\Catalina\localhost\ROOT\org\apache\jsp\index_jsp.java]
+out cannot be resolved
+
+An error occurred at line: [147] in the generated java file: [C:\tomcat\work\Catalina\localhost\ROOT\org\apache\jsp\index_jsp.java]
+response cannot be resolved
+
+An error occurred at line: [148] in the generated java file: [C:\tomcat\work\Catalina\localhost\ROOT\org\apache\jsp\index_jsp.java]
+out cannot be resolved
+
+An error occurred at line: [150] in the generated java file: [C:\tomcat\work\Catalina\localhost\ROOT\org\apache\jsp\index_jsp.java]
+out cannot be resolved
+
+An error occurred at line: [153] in the generated java file: [C:\tomcat\work\Catalina\localhost\ROOT\org\apache\jsp\index_jsp.java]
+_jspx_page_context cannot be resolved to a variable
+
+An error occurred at line: [153] in the generated java file: [C:\tomcat\work\Catalina\localhost\ROOT\org\apache\jsp\index_jsp.java]
+_jspx_page_context cannot be resolved
+
+An error occurred at line: [156] in the generated java file: [C:\tomcat\work\Catalina\localhost\ROOT\org\apache\jsp\index_jsp.java]
+Syntax error on token "finally", { expected
+
+An error occurred at line: [157] in the generated java file: [C:\tomcat\work\Catalina\localhost\ROOT\org\apache\jsp\index_jsp.java]
+_jspx_page_context cannot be resolved to a variable
+
+Stacktrace:] with root cause
+	org.apache.jasper.JasperException: Unable to compile class for JSP: 
+
+An error occurred at line: [18] in the jsp file: [/index.jsp]
+Syntax error, insert "Finally" to complete TryStatement
+15:             Class.forName("com.mysql.jdbc.Driver");
+16:             con = DriverManager.getConnection("jdbc:mysql://localhost:3306/clubspartan?autoReconnect=true&useSSL=false", user, password);
+17:             out.println(db + " database successfully opened.<br/><br/>");
+18:         }
+19:             rs.close();
+20:             stmt.close();
+21:             con.close();
+
+
+An error occurred at line: [19] in the jsp file: [/index.jsp]
+rs cannot be resolved
+16:             con = DriverManager.getConnection("jdbc:mysql://localhost:3306/clubspartan?autoReconnect=true&useSSL=false", user, password);
+17:             out.println(db + " database successfully opened.<br/><br/>");
+18:         }
+19:             rs.close();
+20:             stmt.close();
+21:             con.close();
+22:         } 
+
+
+An error occurred at line: [20] in the jsp file: [/index.jsp]
+stmt cannot be resolved
+17:             out.println(db + " database successfully opened.<br/><br/>");
+18:         }
+19:             rs.close();
+20:             stmt.close();
+21:             con.close();
+22:         } 
+23:         catch(SQLException e) 
+
+
+An error occurred at line: [21] in the jsp file: [/index.jsp]
+con cannot be resolved
+18:         }
+19:             rs.close();
+20:             stmt.close();
+21:             con.close();
+22:         } 
+23:         catch(SQLException e) 
+24:         {
+
+
+An error occurred at line: [142] in the generated java file: [C:\tomcat\work\Catalina\localhost\ROOT\org\apache\jsp\index_jsp.java]
+Syntax error on token "catch", Identifier expected
+
+An error occurred at line: [144] in the generated java file: [C:\tomcat\work\Catalina\localhost\ROOT\org\apache\jsp\index_jsp.java]
+out cannot be resolved to a variable
+
+An error occurred at line: [144] in the generated java file: [C:\tomcat\work\Catalina\localhost\ROOT\org\apache\jsp\index_jsp.java]
+_jspx_out cannot be resolved to a variable
+
+An error occurred at line: [145] in the generated java file: [C:\tomcat\work\Catalina\localhost\ROOT\org\apache\jsp\index_jsp.java]
+out cannot be resolved to a variable
+
+An error occurred at line: [145] in the generated java file: [C:\tomcat\work\Catalina\localhost\ROOT\org\apache\jsp\index_jsp.java]
+out cannot be resolved
+
+An error occurred at line: [147] in the generated java file: [C:\tomcat\work\Catalina\localhost\ROOT\org\apache\jsp\index_jsp.java]
+response cannot be resolved
+
+An error occurred at line: [148] in the generated java file: [C:\tomcat\work\Catalina\localhost\ROOT\org\apache\jsp\index_jsp.java]
+out cannot be resolved
+
+An error occurred at line: [150] in the generated java file: [C:\tomcat\work\Catalina\localhost\ROOT\org\apache\jsp\index_jsp.java]
+out cannot be resolved
+
+An error occurred at line: [153] in the generated java file: [C:\tomcat\work\Catalina\localhost\ROOT\org\apache\jsp\index_jsp.java]
+_jspx_page_context cannot be resolved to a variable
+
+An error occurred at line: [153] in the generated java file: [C:\tomcat\work\Catalina\localhost\ROOT\org\apache\jsp\index_jsp.java]
+_jspx_page_context cannot be resolved
+
+An error occurred at line: [156] in the generated java file: [C:\tomcat\work\Catalina\localhost\ROOT\org\apache\jsp\index_jsp.java]
+Syntax error on token "finally", { expected
+
+An error occurred at line: [157] in the generated java file: [C:\tomcat\work\Catalina\localhost\ROOT\org\apache\jsp\index_jsp.java]
+_jspx_page_context cannot be resolved to a variable
+
+Stacktrace:
+		at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:102)
+		at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:213)
+		at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:600)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:381)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:351)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:335)
+		at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:597)
+		at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:398)
+		at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:383)
+		at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:331)
+		at javax.servlet.http.HttpServlet.service(HttpServlet.java:583)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:212)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:156)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:181)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:156)
+		at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:168)
+		at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+		at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:130)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:679)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:617)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:932)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1694)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+		at java.lang.Thread.run(Unknown Source)
+19-Sep-2023 16:31:51.931 SEVERE [http-nio-8080-exec-2] org.apache.catalina.core.StandardWrapperValve.invoke Servlet.service() for servlet [jsp] in context with path [] threw exception [java.lang.ClassNotFoundException: org.apache.jsp.index_jsp] with root cause
+	java.lang.ClassNotFoundException: org.apache.jsp.index_jsp
+		at java.net.URLClassLoader.findClass(Unknown Source)
+		at org.apache.jasper.servlet.JasperLoader.loadClass(JasperLoader.java:129)
+		at org.apache.jasper.servlet.JasperLoader.loadClass(JasperLoader.java:58)
+		at org.apache.catalina.core.DefaultInstanceManager.newInstance(DefaultInstanceManager.java:150)
+		at org.apache.jasper.servlet.JspServletWrapper.getServlet(JspServletWrapper.java:191)
+		at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:412)
+		at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:383)
+		at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:331)
+		at javax.servlet.http.HttpServlet.service(HttpServlet.java:583)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:212)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:156)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:181)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:156)
+		at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:168)
+		at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+		at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:130)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:679)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:617)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:932)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1694)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+		at java.lang.Thread.run(Unknown Source)
+19-Sep-2023 16:32:05.065 INFO [localhost-startStop-2] org.apache.catalina.core.ApplicationContext.log SessionListener: contextDestroyed()
+19-Sep-2023 16:32:05.065 INFO [localhost-startStop-2] org.apache.catalina.core.ApplicationContext.log ContextListener: contextDestroyed()
+19-Sep-2023 16:32:38.097 INFO [localhost-startStop-1] org.apache.catalina.core.ApplicationContext.log ContextListener: contextInitialized()
+19-Sep-2023 16:32:38.097 INFO [localhost-startStop-1] org.apache.catalina.core.ApplicationContext.log SessionListener: contextInitialized()
+19-Sep-2023 16:32:38.097 INFO [localhost-startStop-1] org.apache.catalina.core.ApplicationContext.log ContextListener: attributeAdded('StockTicker', 'async.Stockticker@21b3a5')
+19-Sep-2023 16:34:16.649 SEVERE [http-nio-8080-exec-1] org.apache.catalina.core.StandardWrapperValve.invoke Servlet.service() for servlet [jsp] in context with path [] threw exception [Unable to compile class for JSP: 
+
+An error occurred at line: [18] in the jsp file: [/index.jsp]
+Syntax error, insert "Finally" to complete TryStatement
+15:             Class.forName("com.mysql.jdbc.Driver");
+16:             con = DriverManager.getConnection("jdbc:mysql://localhost:3306/clubspartan?autoReconnect=true&useSSL=false", user, password);
+17:             out.println(db + " database successfully opened.<br/><br/>");
+18:         }
+19:             rs.close();
+20:             stmt.close();
+21:             con.close();
+
+
+An error occurred at line: [19] in the jsp file: [/index.jsp]
+rs cannot be resolved
+16:             con = DriverManager.getConnection("jdbc:mysql://localhost:3306/clubspartan?autoReconnect=true&useSSL=false", user, password);
+17:             out.println(db + " database successfully opened.<br/><br/>");
+18:         }
+19:             rs.close();
+20:             stmt.close();
+21:             con.close();
+22:         } 
+
+
+An error occurred at line: [20] in the jsp file: [/index.jsp]
+stmt cannot be resolved
+17:             out.println(db + " database successfully opened.<br/><br/>");
+18:         }
+19:             rs.close();
+20:             stmt.close();
+21:             con.close();
+22:         } 
+23:         catch(SQLException e) 
+
+
+An error occurred at line: [21] in the jsp file: [/index.jsp]
+con cannot be resolved
+18:         }
+19:             rs.close();
+20:             stmt.close();
+21:             con.close();
+22:         } 
+23:         catch(SQLException e) 
+24:         {
+
+
+An error occurred at line: [142] in the generated java file: [C:\tomcat\work\Catalina\localhost\ROOT\org\apache\jsp\index_jsp.java]
+Syntax error on token "catch", Identifier expected
+
+An error occurred at line: [144] in the generated java file: [C:\tomcat\work\Catalina\localhost\ROOT\org\apache\jsp\index_jsp.java]
+out cannot be resolved to a variable
+
+An error occurred at line: [144] in the generated java file: [C:\tomcat\work\Catalina\localhost\ROOT\org\apache\jsp\index_jsp.java]
+_jspx_out cannot be resolved to a variable
+
+An error occurred at line: [145] in the generated java file: [C:\tomcat\work\Catalina\localhost\ROOT\org\apache\jsp\index_jsp.java]
+out cannot be resolved to a variable
+
+An error occurred at line: [145] in the generated java file: [C:\tomcat\work\Catalina\localhost\ROOT\org\apache\jsp\index_jsp.java]
+out cannot be resolved
+
+An error occurred at line: [147] in the generated java file: [C:\tomcat\work\Catalina\localhost\ROOT\org\apache\jsp\index_jsp.java]
+response cannot be resolved
+
+An error occurred at line: [148] in the generated java file: [C:\tomcat\work\Catalina\localhost\ROOT\org\apache\jsp\index_jsp.java]
+out cannot be resolved
+
+An error occurred at line: [150] in the generated java file: [C:\tomcat\work\Catalina\localhost\ROOT\org\apache\jsp\index_jsp.java]
+out cannot be resolved
+
+An error occurred at line: [153] in the generated java file: [C:\tomcat\work\Catalina\localhost\ROOT\org\apache\jsp\index_jsp.java]
+_jspx_page_context cannot be resolved to a variable
+
+An error occurred at line: [153] in the generated java file: [C:\tomcat\work\Catalina\localhost\ROOT\org\apache\jsp\index_jsp.java]
+_jspx_page_context cannot be resolved
+
+An error occurred at line: [156] in the generated java file: [C:\tomcat\work\Catalina\localhost\ROOT\org\apache\jsp\index_jsp.java]
+Syntax error on token "finally", { expected
+
+An error occurred at line: [157] in the generated java file: [C:\tomcat\work\Catalina\localhost\ROOT\org\apache\jsp\index_jsp.java]
+_jspx_page_context cannot be resolved to a variable
+
+Stacktrace:] with root cause
+	org.apache.jasper.JasperException: Unable to compile class for JSP: 
+
+An error occurred at line: [18] in the jsp file: [/index.jsp]
+Syntax error, insert "Finally" to complete TryStatement
+15:             Class.forName("com.mysql.jdbc.Driver");
+16:             con = DriverManager.getConnection("jdbc:mysql://localhost:3306/clubspartan?autoReconnect=true&useSSL=false", user, password);
+17:             out.println(db + " database successfully opened.<br/><br/>");
+18:         }
+19:             rs.close();
+20:             stmt.close();
+21:             con.close();
+
+
+An error occurred at line: [19] in the jsp file: [/index.jsp]
+rs cannot be resolved
+16:             con = DriverManager.getConnection("jdbc:mysql://localhost:3306/clubspartan?autoReconnect=true&useSSL=false", user, password);
+17:             out.println(db + " database successfully opened.<br/><br/>");
+18:         }
+19:             rs.close();
+20:             stmt.close();
+21:             con.close();
+22:         } 
+
+
+An error occurred at line: [20] in the jsp file: [/index.jsp]
+stmt cannot be resolved
+17:             out.println(db + " database successfully opened.<br/><br/>");
+18:         }
+19:             rs.close();
+20:             stmt.close();
+21:             con.close();
+22:         } 
+23:         catch(SQLException e) 
+
+
+An error occurred at line: [21] in the jsp file: [/index.jsp]
+con cannot be resolved
+18:         }
+19:             rs.close();
+20:             stmt.close();
+21:             con.close();
+22:         } 
+23:         catch(SQLException e) 
+24:         {
+
+
+An error occurred at line: [142] in the generated java file: [C:\tomcat\work\Catalina\localhost\ROOT\org\apache\jsp\index_jsp.java]
+Syntax error on token "catch", Identifier expected
+
+An error occurred at line: [144] in the generated java file: [C:\tomcat\work\Catalina\localhost\ROOT\org\apache\jsp\index_jsp.java]
+out cannot be resolved to a variable
+
+An error occurred at line: [144] in the generated java file: [C:\tomcat\work\Catalina\localhost\ROOT\org\apache\jsp\index_jsp.java]
+_jspx_out cannot be resolved to a variable
+
+An error occurred at line: [145] in the generated java file: [C:\tomcat\work\Catalina\localhost\ROOT\org\apache\jsp\index_jsp.java]
+out cannot be resolved to a variable
+
+An error occurred at line: [145] in the generated java file: [C:\tomcat\work\Catalina\localhost\ROOT\org\apache\jsp\index_jsp.java]
+out cannot be resolved
+
+An error occurred at line: [147] in the generated java file: [C:\tomcat\work\Catalina\localhost\ROOT\org\apache\jsp\index_jsp.java]
+response cannot be resolved
+
+An error occurred at line: [148] in the generated java file: [C:\tomcat\work\Catalina\localhost\ROOT\org\apache\jsp\index_jsp.java]
+out cannot be resolved
+
+An error occurred at line: [150] in the generated java file: [C:\tomcat\work\Catalina\localhost\ROOT\org\apache\jsp\index_jsp.java]
+out cannot be resolved
+
+An error occurred at line: [153] in the generated java file: [C:\tomcat\work\Catalina\localhost\ROOT\org\apache\jsp\index_jsp.java]
+_jspx_page_context cannot be resolved to a variable
+
+An error occurred at line: [153] in the generated java file: [C:\tomcat\work\Catalina\localhost\ROOT\org\apache\jsp\index_jsp.java]
+_jspx_page_context cannot be resolved
+
+An error occurred at line: [156] in the generated java file: [C:\tomcat\work\Catalina\localhost\ROOT\org\apache\jsp\index_jsp.java]
+Syntax error on token "finally", { expected
+
+An error occurred at line: [157] in the generated java file: [C:\tomcat\work\Catalina\localhost\ROOT\org\apache\jsp\index_jsp.java]
+_jspx_page_context cannot be resolved to a variable
+
+Stacktrace:
+		at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:102)
+		at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:213)
+		at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:600)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:381)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:351)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:335)
+		at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:597)
+		at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:398)
+		at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:383)
+		at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:331)
+		at javax.servlet.http.HttpServlet.service(HttpServlet.java:583)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:212)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:156)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:181)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:156)
+		at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:168)
+		at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+		at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:130)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:679)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:617)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:932)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1694)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+		at java.lang.Thread.run(Unknown Source)
+19-Sep-2023 16:34:18.360 SEVERE [http-nio-8080-exec-2] org.apache.catalina.core.StandardWrapperValve.invoke Servlet.service() for servlet [jsp] in context with path [] threw exception [java.lang.ClassNotFoundException: org.apache.jsp.index_jsp] with root cause
+	java.lang.ClassNotFoundException: org.apache.jsp.index_jsp
+		at java.net.URLClassLoader.findClass(Unknown Source)
+		at org.apache.jasper.servlet.JasperLoader.loadClass(JasperLoader.java:129)
+		at org.apache.jasper.servlet.JasperLoader.loadClass(JasperLoader.java:58)
+		at org.apache.catalina.core.DefaultInstanceManager.newInstance(DefaultInstanceManager.java:150)
+		at org.apache.jasper.servlet.JspServletWrapper.getServlet(JspServletWrapper.java:191)
+		at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:412)
+		at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:383)
+		at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:331)
+		at javax.servlet.http.HttpServlet.service(HttpServlet.java:583)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:212)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:156)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:181)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:156)
+		at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:168)
+		at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+		at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:130)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:679)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:617)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:932)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1694)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+		at java.lang.Thread.run(Unknown Source)
+19-Sep-2023 16:34:19.001 SEVERE [http-nio-8080-exec-3] org.apache.catalina.core.StandardWrapperValve.invoke Servlet.service() for servlet [jsp] in context with path [] threw exception [java.lang.ClassNotFoundException: org.apache.jsp.index_jsp] with root cause
+	java.lang.ClassNotFoundException: org.apache.jsp.index_jsp
+		at java.net.URLClassLoader.findClass(Unknown Source)
+		at org.apache.jasper.servlet.JasperLoader.loadClass(JasperLoader.java:129)
+		at org.apache.jasper.servlet.JasperLoader.loadClass(JasperLoader.java:58)
+		at org.apache.catalina.core.DefaultInstanceManager.newInstance(DefaultInstanceManager.java:150)
+		at org.apache.jasper.servlet.JspServletWrapper.getServlet(JspServletWrapper.java:191)
+		at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:412)
+		at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:383)
+		at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:331)
+		at javax.servlet.http.HttpServlet.service(HttpServlet.java:583)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:212)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:156)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:181)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:156)
+		at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:168)
+		at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+		at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:130)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:679)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:617)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:932)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1694)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+		at java.lang.Thread.run(Unknown Source)
+19-Sep-2023 16:35:22.448 SEVERE [http-nio-8080-exec-6] org.apache.catalina.core.StandardWrapperValve.invoke Servlet.service() for servlet [jsp] in context with path [] threw exception [Unable to compile class for JSP: 
+
+An error occurred at line: [18] in the jsp file: [/index.jsp]
+Syntax error, insert "Finally" to complete TryStatement
+15:             Class.forName("com.mysql.jdbc.Driver");
+16:             con = DriverManager.getConnection("jdbc:mysql://localhost:3306/gevorgyan?autoReconnect=true&useSSL=false", user, password);
+17:             out.println(db + " database successfully opened.<br/><br/>");
+18:         }
+19:             rs.close();
+20:             stmt.close();
+21:             con.close();
+
+
+An error occurred at line: [19] in the jsp file: [/index.jsp]
+rs cannot be resolved
+16:             con = DriverManager.getConnection("jdbc:mysql://localhost:3306/gevorgyan?autoReconnect=true&useSSL=false", user, password);
+17:             out.println(db + " database successfully opened.<br/><br/>");
+18:         }
+19:             rs.close();
+20:             stmt.close();
+21:             con.close();
+22:         } 
+
+
+An error occurred at line: [20] in the jsp file: [/index.jsp]
+stmt cannot be resolved
+17:             out.println(db + " database successfully opened.<br/><br/>");
+18:         }
+19:             rs.close();
+20:             stmt.close();
+21:             con.close();
+22:         } 
+23:         catch(SQLException e) 
+
+
+An error occurred at line: [21] in the jsp file: [/index.jsp]
+con cannot be resolved
+18:         }
+19:             rs.close();
+20:             stmt.close();
+21:             con.close();
+22:         } 
+23:         catch(SQLException e) 
+24:         {
+
+
+An error occurred at line: [142] in the generated java file: [C:\tomcat\work\Catalina\localhost\ROOT\org\apache\jsp\index_jsp.java]
+Syntax error on token "catch", Identifier expected
+
+An error occurred at line: [144] in the generated java file: [C:\tomcat\work\Catalina\localhost\ROOT\org\apache\jsp\index_jsp.java]
+out cannot be resolved to a variable
+
+An error occurred at line: [144] in the generated java file: [C:\tomcat\work\Catalina\localhost\ROOT\org\apache\jsp\index_jsp.java]
+_jspx_out cannot be resolved to a variable
+
+An error occurred at line: [145] in the generated java file: [C:\tomcat\work\Catalina\localhost\ROOT\org\apache\jsp\index_jsp.java]
+out cannot be resolved to a variable
+
+An error occurred at line: [145] in the generated java file: [C:\tomcat\work\Catalina\localhost\ROOT\org\apache\jsp\index_jsp.java]
+out cannot be resolved
+
+An error occurred at line: [147] in the generated java file: [C:\tomcat\work\Catalina\localhost\ROOT\org\apache\jsp\index_jsp.java]
+response cannot be resolved
+
+An error occurred at line: [148] in the generated java file: [C:\tomcat\work\Catalina\localhost\ROOT\org\apache\jsp\index_jsp.java]
+out cannot be resolved
+
+An error occurred at line: [150] in the generated java file: [C:\tomcat\work\Catalina\localhost\ROOT\org\apache\jsp\index_jsp.java]
+out cannot be resolved
+
+An error occurred at line: [153] in the generated java file: [C:\tomcat\work\Catalina\localhost\ROOT\org\apache\jsp\index_jsp.java]
+_jspx_page_context cannot be resolved to a variable
+
+An error occurred at line: [153] in the generated java file: [C:\tomcat\work\Catalina\localhost\ROOT\org\apache\jsp\index_jsp.java]
+_jspx_page_context cannot be resolved
+
+An error occurred at line: [156] in the generated java file: [C:\tomcat\work\Catalina\localhost\ROOT\org\apache\jsp\index_jsp.java]
+Syntax error on token "finally", { expected
+
+An error occurred at line: [157] in the generated java file: [C:\tomcat\work\Catalina\localhost\ROOT\org\apache\jsp\index_jsp.java]
+_jspx_page_context cannot be resolved to a variable
+
+Stacktrace:] with root cause
+	org.apache.jasper.JasperException: Unable to compile class for JSP: 
+
+An error occurred at line: [18] in the jsp file: [/index.jsp]
+Syntax error, insert "Finally" to complete TryStatement
+15:             Class.forName("com.mysql.jdbc.Driver");
+16:             con = DriverManager.getConnection("jdbc:mysql://localhost:3306/gevorgyan?autoReconnect=true&useSSL=false", user, password);
+17:             out.println(db + " database successfully opened.<br/><br/>");
+18:         }
+19:             rs.close();
+20:             stmt.close();
+21:             con.close();
+
+
+An error occurred at line: [19] in the jsp file: [/index.jsp]
+rs cannot be resolved
+16:             con = DriverManager.getConnection("jdbc:mysql://localhost:3306/gevorgyan?autoReconnect=true&useSSL=false", user, password);
+17:             out.println(db + " database successfully opened.<br/><br/>");
+18:         }
+19:             rs.close();
+20:             stmt.close();
+21:             con.close();
+22:         } 
+
+
+An error occurred at line: [20] in the jsp file: [/index.jsp]
+stmt cannot be resolved
+17:             out.println(db + " database successfully opened.<br/><br/>");
+18:         }
+19:             rs.close();
+20:             stmt.close();
+21:             con.close();
+22:         } 
+23:         catch(SQLException e) 
+
+
+An error occurred at line: [21] in the jsp file: [/index.jsp]
+con cannot be resolved
+18:         }
+19:             rs.close();
+20:             stmt.close();
+21:             con.close();
+22:         } 
+23:         catch(SQLException e) 
+24:         {
+
+
+An error occurred at line: [142] in the generated java file: [C:\tomcat\work\Catalina\localhost\ROOT\org\apache\jsp\index_jsp.java]
+Syntax error on token "catch", Identifier expected
+
+An error occurred at line: [144] in the generated java file: [C:\tomcat\work\Catalina\localhost\ROOT\org\apache\jsp\index_jsp.java]
+out cannot be resolved to a variable
+
+An error occurred at line: [144] in the generated java file: [C:\tomcat\work\Catalina\localhost\ROOT\org\apache\jsp\index_jsp.java]
+_jspx_out cannot be resolved to a variable
+
+An error occurred at line: [145] in the generated java file: [C:\tomcat\work\Catalina\localhost\ROOT\org\apache\jsp\index_jsp.java]
+out cannot be resolved to a variable
+
+An error occurred at line: [145] in the generated java file: [C:\tomcat\work\Catalina\localhost\ROOT\org\apache\jsp\index_jsp.java]
+out cannot be resolved
+
+An error occurred at line: [147] in the generated java file: [C:\tomcat\work\Catalina\localhost\ROOT\org\apache\jsp\index_jsp.java]
+response cannot be resolved
+
+An error occurred at line: [148] in the generated java file: [C:\tomcat\work\Catalina\localhost\ROOT\org\apache\jsp\index_jsp.java]
+out cannot be resolved
+
+An error occurred at line: [150] in the generated java file: [C:\tomcat\work\Catalina\localhost\ROOT\org\apache\jsp\index_jsp.java]
+out cannot be resolved
+
+An error occurred at line: [153] in the generated java file: [C:\tomcat\work\Catalina\localhost\ROOT\org\apache\jsp\index_jsp.java]
+_jspx_page_context cannot be resolved to a variable
+
+An error occurred at line: [153] in the generated java file: [C:\tomcat\work\Catalina\localhost\ROOT\org\apache\jsp\index_jsp.java]
+_jspx_page_context cannot be resolved
+
+An error occurred at line: [156] in the generated java file: [C:\tomcat\work\Catalina\localhost\ROOT\org\apache\jsp\index_jsp.java]
+Syntax error on token "finally", { expected
+
+An error occurred at line: [157] in the generated java file: [C:\tomcat\work\Catalina\localhost\ROOT\org\apache\jsp\index_jsp.java]
+_jspx_page_context cannot be resolved to a variable
+
+Stacktrace:
+		at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:102)
+		at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:213)
+		at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:600)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:381)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:351)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:335)
+		at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:597)
+		at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:398)
+		at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:383)
+		at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:331)
+		at javax.servlet.http.HttpServlet.service(HttpServlet.java:583)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:212)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:156)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:181)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:156)
+		at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:168)
+		at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+		at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:130)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:679)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:617)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:932)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1694)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+		at java.lang.Thread.run(Unknown Source)
+19-Sep-2023 16:35:23.692 SEVERE [http-nio-8080-exec-5] org.apache.catalina.core.StandardWrapperValve.invoke Servlet.service() for servlet [jsp] in context with path [] threw exception [java.lang.ClassNotFoundException: org.apache.jsp.index_jsp] with root cause
+	java.lang.ClassNotFoundException: org.apache.jsp.index_jsp
+		at java.net.URLClassLoader.findClass(Unknown Source)
+		at org.apache.jasper.servlet.JasperLoader.loadClass(JasperLoader.java:129)
+		at org.apache.jasper.servlet.JasperLoader.loadClass(JasperLoader.java:58)
+		at org.apache.catalina.core.DefaultInstanceManager.newInstance(DefaultInstanceManager.java:150)
+		at org.apache.jasper.servlet.JspServletWrapper.getServlet(JspServletWrapper.java:191)
+		at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:412)
+		at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:383)
+		at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:331)
+		at javax.servlet.http.HttpServlet.service(HttpServlet.java:583)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:212)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:156)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:181)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:156)
+		at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:168)
+		at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+		at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:130)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:679)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:617)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:932)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1694)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+		at java.lang.Thread.run(Unknown Source)
+19-Sep-2023 16:35:24.267 SEVERE [http-nio-8080-exec-7] org.apache.catalina.core.StandardWrapperValve.invoke Servlet.service() for servlet [jsp] in context with path [] threw exception [java.lang.ClassNotFoundException: org.apache.jsp.index_jsp] with root cause
+	java.lang.ClassNotFoundException: org.apache.jsp.index_jsp
+		at java.net.URLClassLoader.findClass(Unknown Source)
+		at org.apache.jasper.servlet.JasperLoader.loadClass(JasperLoader.java:129)
+		at org.apache.jasper.servlet.JasperLoader.loadClass(JasperLoader.java:58)
+		at org.apache.catalina.core.DefaultInstanceManager.newInstance(DefaultInstanceManager.java:150)
+		at org.apache.jasper.servlet.JspServletWrapper.getServlet(JspServletWrapper.java:191)
+		at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:412)
+		at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:383)
+		at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:331)
+		at javax.servlet.http.HttpServlet.service(HttpServlet.java:583)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:212)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:156)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:181)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:156)
+		at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:168)
+		at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+		at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:130)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:679)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:617)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:932)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1694)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+		at java.lang.Thread.run(Unknown Source)
+19-Sep-2023 16:35:24.719 SEVERE [http-nio-8080-exec-8] org.apache.catalina.core.StandardWrapperValve.invoke Servlet.service() for servlet [jsp] in context with path [] threw exception [java.lang.ClassNotFoundException: org.apache.jsp.index_jsp] with root cause
+	java.lang.ClassNotFoundException: org.apache.jsp.index_jsp
+		at java.net.URLClassLoader.findClass(Unknown Source)
+		at org.apache.jasper.servlet.JasperLoader.loadClass(JasperLoader.java:129)
+		at org.apache.jasper.servlet.JasperLoader.loadClass(JasperLoader.java:58)
+		at org.apache.catalina.core.DefaultInstanceManager.newInstance(DefaultInstanceManager.java:150)
+		at org.apache.jasper.servlet.JspServletWrapper.getServlet(JspServletWrapper.java:191)
+		at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:412)
+		at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:383)
+		at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:331)
+		at javax.servlet.http.HttpServlet.service(HttpServlet.java:583)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:212)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:156)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:181)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:156)
+		at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:168)
+		at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+		at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:130)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:679)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:617)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:932)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1694)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+		at java.lang.Thread.run(Unknown Source)
+19-Sep-2023 16:35:25.264 SEVERE [http-nio-8080-exec-9] org.apache.catalina.core.StandardWrapperValve.invoke Servlet.service() for servlet [jsp] in context with path [] threw exception [java.lang.ClassNotFoundException: org.apache.jsp.index_jsp] with root cause
+	java.lang.ClassNotFoundException: org.apache.jsp.index_jsp
+		at java.net.URLClassLoader.findClass(Unknown Source)
+		at org.apache.jasper.servlet.JasperLoader.loadClass(JasperLoader.java:129)
+		at org.apache.jasper.servlet.JasperLoader.loadClass(JasperLoader.java:58)
+		at org.apache.catalina.core.DefaultInstanceManager.newInstance(DefaultInstanceManager.java:150)
+		at org.apache.jasper.servlet.JspServletWrapper.getServlet(JspServletWrapper.java:191)
+		at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:412)
+		at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:383)
+		at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:331)
+		at javax.servlet.http.HttpServlet.service(HttpServlet.java:583)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:212)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:156)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:181)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:156)
+		at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:168)
+		at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+		at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:130)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:679)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:617)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:932)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1694)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+		at java.lang.Thread.run(Unknown Source)
+19-Sep-2023 16:36:21.729 SEVERE [http-nio-8080-exec-1] org.apache.catalina.core.StandardWrapperValve.invoke Servlet.service() for servlet [jsp] in context with path [] threw exception [Unable to compile class for JSP: 
+
+An error occurred at line: [18] in the jsp file: [/index.jsp]
+Syntax error, insert "Finally" to complete TryStatement
+15:             Class.forName("com.mysql.jdbc.Driver");
+16:             con = DriverManager.getConnection("jdbc:mysql://localhost:3306/gevorgyan?autoReconnect=true&useSSL=false", user, password);
+17:             out.println(db + " database successfully opened.<br/><br/>");
+18:         }
+19:             rs.close();
+20:             stmt.close();
+21:             con.close();
+
+
+An error occurred at line: [19] in the jsp file: [/index.jsp]
+rs cannot be resolved
+16:             con = DriverManager.getConnection("jdbc:mysql://localhost:3306/gevorgyan?autoReconnect=true&useSSL=false", user, password);
+17:             out.println(db + " database successfully opened.<br/><br/>");
+18:         }
+19:             rs.close();
+20:             stmt.close();
+21:             con.close();
+22:         } 
+
+
+An error occurred at line: [20] in the jsp file: [/index.jsp]
+stmt cannot be resolved
+17:             out.println(db + " database successfully opened.<br/><br/>");
+18:         }
+19:             rs.close();
+20:             stmt.close();
+21:             con.close();
+22:         } 
+23:         catch(SQLException e) 
+
+
+An error occurred at line: [21] in the jsp file: [/index.jsp]
+con cannot be resolved
+18:         }
+19:             rs.close();
+20:             stmt.close();
+21:             con.close();
+22:         } 
+23:         catch(SQLException e) 
+24:         {
+
+
+An error occurred at line: [142] in the generated java file: [C:\tomcat\work\Catalina\localhost\ROOT\org\apache\jsp\index_jsp.java]
+Syntax error on token "catch", Identifier expected
+
+An error occurred at line: [144] in the generated java file: [C:\tomcat\work\Catalina\localhost\ROOT\org\apache\jsp\index_jsp.java]
+out cannot be resolved to a variable
+
+An error occurred at line: [144] in the generated java file: [C:\tomcat\work\Catalina\localhost\ROOT\org\apache\jsp\index_jsp.java]
+_jspx_out cannot be resolved to a variable
+
+An error occurred at line: [145] in the generated java file: [C:\tomcat\work\Catalina\localhost\ROOT\org\apache\jsp\index_jsp.java]
+out cannot be resolved to a variable
+
+An error occurred at line: [145] in the generated java file: [C:\tomcat\work\Catalina\localhost\ROOT\org\apache\jsp\index_jsp.java]
+out cannot be resolved
+
+An error occurred at line: [147] in the generated java file: [C:\tomcat\work\Catalina\localhost\ROOT\org\apache\jsp\index_jsp.java]
+response cannot be resolved
+
+An error occurred at line: [148] in the generated java file: [C:\tomcat\work\Catalina\localhost\ROOT\org\apache\jsp\index_jsp.java]
+out cannot be resolved
+
+An error occurred at line: [150] in the generated java file: [C:\tomcat\work\Catalina\localhost\ROOT\org\apache\jsp\index_jsp.java]
+out cannot be resolved
+
+An error occurred at line: [153] in the generated java file: [C:\tomcat\work\Catalina\localhost\ROOT\org\apache\jsp\index_jsp.java]
+_jspx_page_context cannot be resolved to a variable
+
+An error occurred at line: [153] in the generated java file: [C:\tomcat\work\Catalina\localhost\ROOT\org\apache\jsp\index_jsp.java]
+_jspx_page_context cannot be resolved
+
+An error occurred at line: [156] in the generated java file: [C:\tomcat\work\Catalina\localhost\ROOT\org\apache\jsp\index_jsp.java]
+Syntax error on token "finally", { expected
+
+An error occurred at line: [157] in the generated java file: [C:\tomcat\work\Catalina\localhost\ROOT\org\apache\jsp\index_jsp.java]
+_jspx_page_context cannot be resolved to a variable
+
+Stacktrace:] with root cause
+	org.apache.jasper.JasperException: Unable to compile class for JSP: 
+
+An error occurred at line: [18] in the jsp file: [/index.jsp]
+Syntax error, insert "Finally" to complete TryStatement
+15:             Class.forName("com.mysql.jdbc.Driver");
+16:             con = DriverManager.getConnection("jdbc:mysql://localhost:3306/gevorgyan?autoReconnect=true&useSSL=false", user, password);
+17:             out.println(db + " database successfully opened.<br/><br/>");
+18:         }
+19:             rs.close();
+20:             stmt.close();
+21:             con.close();
+
+
+An error occurred at line: [19] in the jsp file: [/index.jsp]
+rs cannot be resolved
+16:             con = DriverManager.getConnection("jdbc:mysql://localhost:3306/gevorgyan?autoReconnect=true&useSSL=false", user, password);
+17:             out.println(db + " database successfully opened.<br/><br/>");
+18:         }
+19:             rs.close();
+20:             stmt.close();
+21:             con.close();
+22:         } 
+
+
+An error occurred at line: [20] in the jsp file: [/index.jsp]
+stmt cannot be resolved
+17:             out.println(db + " database successfully opened.<br/><br/>");
+18:         }
+19:             rs.close();
+20:             stmt.close();
+21:             con.close();
+22:         } 
+23:         catch(SQLException e) 
+
+
+An error occurred at line: [21] in the jsp file: [/index.jsp]
+con cannot be resolved
+18:         }
+19:             rs.close();
+20:             stmt.close();
+21:             con.close();
+22:         } 
+23:         catch(SQLException e) 
+24:         {
+
+
+An error occurred at line: [142] in the generated java file: [C:\tomcat\work\Catalina\localhost\ROOT\org\apache\jsp\index_jsp.java]
+Syntax error on token "catch", Identifier expected
+
+An error occurred at line: [144] in the generated java file: [C:\tomcat\work\Catalina\localhost\ROOT\org\apache\jsp\index_jsp.java]
+out cannot be resolved to a variable
+
+An error occurred at line: [144] in the generated java file: [C:\tomcat\work\Catalina\localhost\ROOT\org\apache\jsp\index_jsp.java]
+_jspx_out cannot be resolved to a variable
+
+An error occurred at line: [145] in the generated java file: [C:\tomcat\work\Catalina\localhost\ROOT\org\apache\jsp\index_jsp.java]
+out cannot be resolved to a variable
+
+An error occurred at line: [145] in the generated java file: [C:\tomcat\work\Catalina\localhost\ROOT\org\apache\jsp\index_jsp.java]
+out cannot be resolved
+
+An error occurred at line: [147] in the generated java file: [C:\tomcat\work\Catalina\localhost\ROOT\org\apache\jsp\index_jsp.java]
+response cannot be resolved
+
+An error occurred at line: [148] in the generated java file: [C:\tomcat\work\Catalina\localhost\ROOT\org\apache\jsp\index_jsp.java]
+out cannot be resolved
+
+An error occurred at line: [150] in the generated java file: [C:\tomcat\work\Catalina\localhost\ROOT\org\apache\jsp\index_jsp.java]
+out cannot be resolved
+
+An error occurred at line: [153] in the generated java file: [C:\tomcat\work\Catalina\localhost\ROOT\org\apache\jsp\index_jsp.java]
+_jspx_page_context cannot be resolved to a variable
+
+An error occurred at line: [153] in the generated java file: [C:\tomcat\work\Catalina\localhost\ROOT\org\apache\jsp\index_jsp.java]
+_jspx_page_context cannot be resolved
+
+An error occurred at line: [156] in the generated java file: [C:\tomcat\work\Catalina\localhost\ROOT\org\apache\jsp\index_jsp.java]
+Syntax error on token "finally", { expected
+
+An error occurred at line: [157] in the generated java file: [C:\tomcat\work\Catalina\localhost\ROOT\org\apache\jsp\index_jsp.java]
+_jspx_page_context cannot be resolved to a variable
+
+Stacktrace:
+		at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:102)
+		at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:213)
+		at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:600)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:381)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:351)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:335)
+		at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:597)
+		at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:398)
+		at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:383)
+		at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:331)
+		at javax.servlet.http.HttpServlet.service(HttpServlet.java:583)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:212)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:156)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:181)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:156)
+		at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:168)
+		at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+		at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:130)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:679)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:617)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:932)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1694)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+		at java.lang.Thread.run(Unknown Source)
+19-Sep-2023 16:36:22.622 SEVERE [http-nio-8080-exec-2] org.apache.catalina.core.StandardWrapperValve.invoke Servlet.service() for servlet [jsp] in context with path [] threw exception [java.lang.ClassNotFoundException: org.apache.jsp.index_jsp] with root cause
+	java.lang.ClassNotFoundException: org.apache.jsp.index_jsp
+		at java.net.URLClassLoader.findClass(Unknown Source)
+		at org.apache.jasper.servlet.JasperLoader.loadClass(JasperLoader.java:129)
+		at org.apache.jasper.servlet.JasperLoader.loadClass(JasperLoader.java:58)
+		at org.apache.catalina.core.DefaultInstanceManager.newInstance(DefaultInstanceManager.java:150)
+		at org.apache.jasper.servlet.JspServletWrapper.getServlet(JspServletWrapper.java:191)
+		at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:412)
+		at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:383)
+		at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:331)
+		at javax.servlet.http.HttpServlet.service(HttpServlet.java:583)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:212)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:156)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:181)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:156)
+		at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:168)
+		at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+		at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:130)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:679)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:617)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:932)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1694)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+		at java.lang.Thread.run(Unknown Source)
+19-Sep-2023 16:36:23.015 SEVERE [http-nio-8080-exec-3] org.apache.catalina.core.StandardWrapperValve.invoke Servlet.service() for servlet [jsp] in context with path [] threw exception [java.lang.ClassNotFoundException: org.apache.jsp.index_jsp] with root cause
+	java.lang.ClassNotFoundException: org.apache.jsp.index_jsp
+		at java.net.URLClassLoader.findClass(Unknown Source)
+		at org.apache.jasper.servlet.JasperLoader.loadClass(JasperLoader.java:129)
+		at org.apache.jasper.servlet.JasperLoader.loadClass(JasperLoader.java:58)
+		at org.apache.catalina.core.DefaultInstanceManager.newInstance(DefaultInstanceManager.java:150)
+		at org.apache.jasper.servlet.JspServletWrapper.getServlet(JspServletWrapper.java:191)
+		at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:412)
+		at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:383)
+		at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:331)
+		at javax.servlet.http.HttpServlet.service(HttpServlet.java:583)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:212)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:156)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:181)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:156)
+		at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:168)
+		at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+		at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:130)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:679)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:617)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:932)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1694)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+		at java.lang.Thread.run(Unknown Source)
+19-Sep-2023 16:36:23.217 SEVERE [http-nio-8080-exec-4] org.apache.catalina.core.StandardWrapperValve.invoke Servlet.service() for servlet [jsp] in context with path [] threw exception [java.lang.ClassNotFoundException: org.apache.jsp.index_jsp] with root cause
+	java.lang.ClassNotFoundException: org.apache.jsp.index_jsp
+		at java.net.URLClassLoader.findClass(Unknown Source)
+		at org.apache.jasper.servlet.JasperLoader.loadClass(JasperLoader.java:129)
+		at org.apache.jasper.servlet.JasperLoader.loadClass(JasperLoader.java:58)
+		at org.apache.catalina.core.DefaultInstanceManager.newInstance(DefaultInstanceManager.java:150)
+		at org.apache.jasper.servlet.JspServletWrapper.getServlet(JspServletWrapper.java:191)
+		at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:412)
+		at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:383)
+		at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:331)
+		at javax.servlet.http.HttpServlet.service(HttpServlet.java:583)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:212)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:156)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:181)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:156)
+		at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:168)
+		at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+		at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:130)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:679)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:617)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:932)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1694)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+		at java.lang.Thread.run(Unknown Source)
+19-Sep-2023 16:36:23.988 SEVERE [http-nio-8080-exec-6] org.apache.catalina.core.StandardWrapperValve.invoke Servlet.service() for servlet [jsp] in context with path [] threw exception [java.lang.ClassNotFoundException: org.apache.jsp.index_jsp] with root cause
+	java.lang.ClassNotFoundException: org.apache.jsp.index_jsp
+		at java.net.URLClassLoader.findClass(Unknown Source)
+		at org.apache.jasper.servlet.JasperLoader.loadClass(JasperLoader.java:129)
+		at org.apache.jasper.servlet.JasperLoader.loadClass(JasperLoader.java:58)
+		at org.apache.catalina.core.DefaultInstanceManager.newInstance(DefaultInstanceManager.java:150)
+		at org.apache.jasper.servlet.JspServletWrapper.getServlet(JspServletWrapper.java:191)
+		at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:412)
+		at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:383)
+		at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:331)
+		at javax.servlet.http.HttpServlet.service(HttpServlet.java:583)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:212)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:156)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:181)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:156)
+		at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:168)
+		at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+		at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:130)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:679)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:617)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:932)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1694)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+		at java.lang.Thread.run(Unknown Source)
+19-Sep-2023 16:36:35.944 INFO [localhost-startStop-1] org.apache.catalina.core.ApplicationContext.log ContextListener: contextInitialized()
+19-Sep-2023 16:36:35.944 INFO [localhost-startStop-1] org.apache.catalina.core.ApplicationContext.log SessionListener: contextInitialized()
+19-Sep-2023 16:36:35.946 INFO [localhost-startStop-1] org.apache.catalina.core.ApplicationContext.log ContextListener: attributeAdded('StockTicker', 'async.Stockticker@1f74963')
+19-Sep-2023 16:36:41.809 SEVERE [http-nio-8080-exec-1] org.apache.catalina.core.StandardWrapperValve.invoke Servlet.service() for servlet [jsp] in context with path [] threw exception [Unable to compile class for JSP: 
+
+An error occurred at line: [18] in the jsp file: [/index.jsp]
+Syntax error, insert "Finally" to complete TryStatement
+15:             Class.forName("com.mysql.jdbc.Driver");
+16:             con = DriverManager.getConnection("jdbc:mysql://localhost:3306/gevorgyan?autoReconnect=true&useSSL=false", user, password);
+17:             out.println(db + " database successfully opened.<br/><br/>");
+18:         }
+19:             rs.close();
+20:             stmt.close();
+21:             con.close();
+
+
+An error occurred at line: [19] in the jsp file: [/index.jsp]
+rs cannot be resolved
+16:             con = DriverManager.getConnection("jdbc:mysql://localhost:3306/gevorgyan?autoReconnect=true&useSSL=false", user, password);
+17:             out.println(db + " database successfully opened.<br/><br/>");
+18:         }
+19:             rs.close();
+20:             stmt.close();
+21:             con.close();
+22:         } 
+
+
+An error occurred at line: [20] in the jsp file: [/index.jsp]
+stmt cannot be resolved
+17:             out.println(db + " database successfully opened.<br/><br/>");
+18:         }
+19:             rs.close();
+20:             stmt.close();
+21:             con.close();
+22:         } 
+23:         catch(SQLException e) 
+
+
+An error occurred at line: [21] in the jsp file: [/index.jsp]
+con cannot be resolved
+18:         }
+19:             rs.close();
+20:             stmt.close();
+21:             con.close();
+22:         } 
+23:         catch(SQLException e) 
+24:         {
+
+
+An error occurred at line: [142] in the generated java file: [C:\tomcat\work\Catalina\localhost\ROOT\org\apache\jsp\index_jsp.java]
+Syntax error on token "catch", Identifier expected
+
+An error occurred at line: [144] in the generated java file: [C:\tomcat\work\Catalina\localhost\ROOT\org\apache\jsp\index_jsp.java]
+out cannot be resolved to a variable
+
+An error occurred at line: [144] in the generated java file: [C:\tomcat\work\Catalina\localhost\ROOT\org\apache\jsp\index_jsp.java]
+_jspx_out cannot be resolved to a variable
+
+An error occurred at line: [145] in the generated java file: [C:\tomcat\work\Catalina\localhost\ROOT\org\apache\jsp\index_jsp.java]
+out cannot be resolved to a variable
+
+An error occurred at line: [145] in the generated java file: [C:\tomcat\work\Catalina\localhost\ROOT\org\apache\jsp\index_jsp.java]
+out cannot be resolved
+
+An error occurred at line: [147] in the generated java file: [C:\tomcat\work\Catalina\localhost\ROOT\org\apache\jsp\index_jsp.java]
+response cannot be resolved
+
+An error occurred at line: [148] in the generated java file: [C:\tomcat\work\Catalina\localhost\ROOT\org\apache\jsp\index_jsp.java]
+out cannot be resolved
+
+An error occurred at line: [150] in the generated java file: [C:\tomcat\work\Catalina\localhost\ROOT\org\apache\jsp\index_jsp.java]
+out cannot be resolved
+
+An error occurred at line: [153] in the generated java file: [C:\tomcat\work\Catalina\localhost\ROOT\org\apache\jsp\index_jsp.java]
+_jspx_page_context cannot be resolved to a variable
+
+An error occurred at line: [153] in the generated java file: [C:\tomcat\work\Catalina\localhost\ROOT\org\apache\jsp\index_jsp.java]
+_jspx_page_context cannot be resolved
+
+An error occurred at line: [156] in the generated java file: [C:\tomcat\work\Catalina\localhost\ROOT\org\apache\jsp\index_jsp.java]
+Syntax error on token "finally", { expected
+
+An error occurred at line: [157] in the generated java file: [C:\tomcat\work\Catalina\localhost\ROOT\org\apache\jsp\index_jsp.java]
+_jspx_page_context cannot be resolved to a variable
+
+Stacktrace:] with root cause
+	org.apache.jasper.JasperException: Unable to compile class for JSP: 
+
+An error occurred at line: [18] in the jsp file: [/index.jsp]
+Syntax error, insert "Finally" to complete TryStatement
+15:             Class.forName("com.mysql.jdbc.Driver");
+16:             con = DriverManager.getConnection("jdbc:mysql://localhost:3306/gevorgyan?autoReconnect=true&useSSL=false", user, password);
+17:             out.println(db + " database successfully opened.<br/><br/>");
+18:         }
+19:             rs.close();
+20:             stmt.close();
+21:             con.close();
+
+
+An error occurred at line: [19] in the jsp file: [/index.jsp]
+rs cannot be resolved
+16:             con = DriverManager.getConnection("jdbc:mysql://localhost:3306/gevorgyan?autoReconnect=true&useSSL=false", user, password);
+17:             out.println(db + " database successfully opened.<br/><br/>");
+18:         }
+19:             rs.close();
+20:             stmt.close();
+21:             con.close();
+22:         } 
+
+
+An error occurred at line: [20] in the jsp file: [/index.jsp]
+stmt cannot be resolved
+17:             out.println(db + " database successfully opened.<br/><br/>");
+18:         }
+19:             rs.close();
+20:             stmt.close();
+21:             con.close();
+22:         } 
+23:         catch(SQLException e) 
+
+
+An error occurred at line: [21] in the jsp file: [/index.jsp]
+con cannot be resolved
+18:         }
+19:             rs.close();
+20:             stmt.close();
+21:             con.close();
+22:         } 
+23:         catch(SQLException e) 
+24:         {
+
+
+An error occurred at line: [142] in the generated java file: [C:\tomcat\work\Catalina\localhost\ROOT\org\apache\jsp\index_jsp.java]
+Syntax error on token "catch", Identifier expected
+
+An error occurred at line: [144] in the generated java file: [C:\tomcat\work\Catalina\localhost\ROOT\org\apache\jsp\index_jsp.java]
+out cannot be resolved to a variable
+
+An error occurred at line: [144] in the generated java file: [C:\tomcat\work\Catalina\localhost\ROOT\org\apache\jsp\index_jsp.java]
+_jspx_out cannot be resolved to a variable
+
+An error occurred at line: [145] in the generated java file: [C:\tomcat\work\Catalina\localhost\ROOT\org\apache\jsp\index_jsp.java]
+out cannot be resolved to a variable
+
+An error occurred at line: [145] in the generated java file: [C:\tomcat\work\Catalina\localhost\ROOT\org\apache\jsp\index_jsp.java]
+out cannot be resolved
+
+An error occurred at line: [147] in the generated java file: [C:\tomcat\work\Catalina\localhost\ROOT\org\apache\jsp\index_jsp.java]
+response cannot be resolved
+
+An error occurred at line: [148] in the generated java file: [C:\tomcat\work\Catalina\localhost\ROOT\org\apache\jsp\index_jsp.java]
+out cannot be resolved
+
+An error occurred at line: [150] in the generated java file: [C:\tomcat\work\Catalina\localhost\ROOT\org\apache\jsp\index_jsp.java]
+out cannot be resolved
+
+An error occurred at line: [153] in the generated java file: [C:\tomcat\work\Catalina\localhost\ROOT\org\apache\jsp\index_jsp.java]
+_jspx_page_context cannot be resolved to a variable
+
+An error occurred at line: [153] in the generated java file: [C:\tomcat\work\Catalina\localhost\ROOT\org\apache\jsp\index_jsp.java]
+_jspx_page_context cannot be resolved
+
+An error occurred at line: [156] in the generated java file: [C:\tomcat\work\Catalina\localhost\ROOT\org\apache\jsp\index_jsp.java]
+Syntax error on token "finally", { expected
+
+An error occurred at line: [157] in the generated java file: [C:\tomcat\work\Catalina\localhost\ROOT\org\apache\jsp\index_jsp.java]
+_jspx_page_context cannot be resolved to a variable
+
+Stacktrace:
+		at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:102)
+		at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:213)
+		at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:600)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:381)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:351)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:335)
+		at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:597)
+		at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:398)
+		at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:383)
+		at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:331)
+		at javax.servlet.http.HttpServlet.service(HttpServlet.java:583)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:212)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:156)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:181)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:156)
+		at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:168)
+		at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+		at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:130)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:679)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:617)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:932)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1694)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+		at java.lang.Thread.run(Unknown Source)
+19-Sep-2023 16:37:01.681 SEVERE [http-nio-8080-exec-2] org.apache.catalina.core.StandardWrapperValve.invoke Servlet.service() for servlet [jsp] in context with path [] threw exception [Unable to compile class for JSP: 
+
+An error occurred at line: [18] in the jsp file: [/index.jsp]
+Syntax error, insert "Finally" to complete TryStatement
+15:             Class.forName("com.mysql.jdbc.Driver");
+16:             con = DriverManager.getConnection("jdbc:mysql://localhost:3306/gevorgyan?autoReconnect=true&useSSL=false", user, password);
+17:             out.println(db + " database successfully opened.<br/><br/>");
+18:         }
+19:             rs.close();
+20:             con.close();
+21:         } 
+
+
+An error occurred at line: [19] in the jsp file: [/index.jsp]
+rs cannot be resolved
+16:             con = DriverManager.getConnection("jdbc:mysql://localhost:3306/gevorgyan?autoReconnect=true&useSSL=false", user, password);
+17:             out.println(db + " database successfully opened.<br/><br/>");
+18:         }
+19:             rs.close();
+20:             con.close();
+21:         } 
+22:         catch(SQLException e) 
+
+
+An error occurred at line: [20] in the jsp file: [/index.jsp]
+con cannot be resolved
+17:             out.println(db + " database successfully opened.<br/><br/>");
+18:         }
+19:             rs.close();
+20:             con.close();
+21:         } 
+22:         catch(SQLException e) 
+23:         {
+
+
+An error occurred at line: [141] in the generated java file: [C:\tomcat\work\Catalina\localhost\ROOT\org\apache\jsp\index_jsp.java]
+Syntax error on token "catch", Identifier expected
+
+An error occurred at line: [143] in the generated java file: [C:\tomcat\work\Catalina\localhost\ROOT\org\apache\jsp\index_jsp.java]
+out cannot be resolved to a variable
+
+An error occurred at line: [143] in the generated java file: [C:\tomcat\work\Catalina\localhost\ROOT\org\apache\jsp\index_jsp.java]
+_jspx_out cannot be resolved to a variable
+
+An error occurred at line: [144] in the generated java file: [C:\tomcat\work\Catalina\localhost\ROOT\org\apache\jsp\index_jsp.java]
+out cannot be resolved to a variable
+
+An error occurred at line: [144] in the generated java file: [C:\tomcat\work\Catalina\localhost\ROOT\org\apache\jsp\index_jsp.java]
+out cannot be resolved
+
+An error occurred at line: [146] in the generated java file: [C:\tomcat\work\Catalina\localhost\ROOT\org\apache\jsp\index_jsp.java]
+response cannot be resolved
+
+An error occurred at line: [147] in the generated java file: [C:\tomcat\work\Catalina\localhost\ROOT\org\apache\jsp\index_jsp.java]
+out cannot be resolved
+
+An error occurred at line: [149] in the generated java file: [C:\tomcat\work\Catalina\localhost\ROOT\org\apache\jsp\index_jsp.java]
+out cannot be resolved
+
+An error occurred at line: [152] in the generated java file: [C:\tomcat\work\Catalina\localhost\ROOT\org\apache\jsp\index_jsp.java]
+_jspx_page_context cannot be resolved to a variable
+
+An error occurred at line: [152] in the generated java file: [C:\tomcat\work\Catalina\localhost\ROOT\org\apache\jsp\index_jsp.java]
+_jspx_page_context cannot be resolved
+
+An error occurred at line: [155] in the generated java file: [C:\tomcat\work\Catalina\localhost\ROOT\org\apache\jsp\index_jsp.java]
+Syntax error on token "finally", { expected
+
+An error occurred at line: [156] in the generated java file: [C:\tomcat\work\Catalina\localhost\ROOT\org\apache\jsp\index_jsp.java]
+_jspx_page_context cannot be resolved to a variable
+
+Stacktrace:] with root cause
+	org.apache.jasper.JasperException: Unable to compile class for JSP: 
+
+An error occurred at line: [18] in the jsp file: [/index.jsp]
+Syntax error, insert "Finally" to complete TryStatement
+15:             Class.forName("com.mysql.jdbc.Driver");
+16:             con = DriverManager.getConnection("jdbc:mysql://localhost:3306/gevorgyan?autoReconnect=true&useSSL=false", user, password);
+17:             out.println(db + " database successfully opened.<br/><br/>");
+18:         }
+19:             rs.close();
+20:             con.close();
+21:         } 
+
+
+An error occurred at line: [19] in the jsp file: [/index.jsp]
+rs cannot be resolved
+16:             con = DriverManager.getConnection("jdbc:mysql://localhost:3306/gevorgyan?autoReconnect=true&useSSL=false", user, password);
+17:             out.println(db + " database successfully opened.<br/><br/>");
+18:         }
+19:             rs.close();
+20:             con.close();
+21:         } 
+22:         catch(SQLException e) 
+
+
+An error occurred at line: [20] in the jsp file: [/index.jsp]
+con cannot be resolved
+17:             out.println(db + " database successfully opened.<br/><br/>");
+18:         }
+19:             rs.close();
+20:             con.close();
+21:         } 
+22:         catch(SQLException e) 
+23:         {
+
+
+An error occurred at line: [141] in the generated java file: [C:\tomcat\work\Catalina\localhost\ROOT\org\apache\jsp\index_jsp.java]
+Syntax error on token "catch", Identifier expected
+
+An error occurred at line: [143] in the generated java file: [C:\tomcat\work\Catalina\localhost\ROOT\org\apache\jsp\index_jsp.java]
+out cannot be resolved to a variable
+
+An error occurred at line: [143] in the generated java file: [C:\tomcat\work\Catalina\localhost\ROOT\org\apache\jsp\index_jsp.java]
+_jspx_out cannot be resolved to a variable
+
+An error occurred at line: [144] in the generated java file: [C:\tomcat\work\Catalina\localhost\ROOT\org\apache\jsp\index_jsp.java]
+out cannot be resolved to a variable
+
+An error occurred at line: [144] in the generated java file: [C:\tomcat\work\Catalina\localhost\ROOT\org\apache\jsp\index_jsp.java]
+out cannot be resolved
+
+An error occurred at line: [146] in the generated java file: [C:\tomcat\work\Catalina\localhost\ROOT\org\apache\jsp\index_jsp.java]
+response cannot be resolved
+
+An error occurred at line: [147] in the generated java file: [C:\tomcat\work\Catalina\localhost\ROOT\org\apache\jsp\index_jsp.java]
+out cannot be resolved
+
+An error occurred at line: [149] in the generated java file: [C:\tomcat\work\Catalina\localhost\ROOT\org\apache\jsp\index_jsp.java]
+out cannot be resolved
+
+An error occurred at line: [152] in the generated java file: [C:\tomcat\work\Catalina\localhost\ROOT\org\apache\jsp\index_jsp.java]
+_jspx_page_context cannot be resolved to a variable
+
+An error occurred at line: [152] in the generated java file: [C:\tomcat\work\Catalina\localhost\ROOT\org\apache\jsp\index_jsp.java]
+_jspx_page_context cannot be resolved
+
+An error occurred at line: [155] in the generated java file: [C:\tomcat\work\Catalina\localhost\ROOT\org\apache\jsp\index_jsp.java]
+Syntax error on token "finally", { expected
+
+An error occurred at line: [156] in the generated java file: [C:\tomcat\work\Catalina\localhost\ROOT\org\apache\jsp\index_jsp.java]
+_jspx_page_context cannot be resolved to a variable
+
+Stacktrace:
+		at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:102)
+		at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:213)
+		at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:600)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:381)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:351)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:335)
+		at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:597)
+		at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:398)
+		at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:383)
+		at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:331)
+		at javax.servlet.http.HttpServlet.service(HttpServlet.java:583)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:212)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:156)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:181)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:156)
+		at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:168)
+		at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+		at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:130)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:679)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:617)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:932)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1694)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+		at java.lang.Thread.run(Unknown Source)
+19-Sep-2023 16:37:02.307 SEVERE [http-nio-8080-exec-4] org.apache.catalina.core.StandardWrapperValve.invoke Servlet.service() for servlet [jsp] in context with path [] threw exception [java.lang.ClassNotFoundException: org.apache.jsp.index_jsp] with root cause
+	java.lang.ClassNotFoundException: org.apache.jsp.index_jsp
+		at java.net.URLClassLoader.findClass(Unknown Source)
+		at org.apache.jasper.servlet.JasperLoader.loadClass(JasperLoader.java:129)
+		at org.apache.jasper.servlet.JasperLoader.loadClass(JasperLoader.java:58)
+		at org.apache.catalina.core.DefaultInstanceManager.newInstance(DefaultInstanceManager.java:150)
+		at org.apache.jasper.servlet.JspServletWrapper.getServlet(JspServletWrapper.java:191)
+		at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:412)
+		at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:383)
+		at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:331)
+		at javax.servlet.http.HttpServlet.service(HttpServlet.java:583)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:212)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:156)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:181)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:156)
+		at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:168)
+		at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+		at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:130)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:679)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:617)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:932)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1694)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+		at java.lang.Thread.run(Unknown Source)
+19-Sep-2023 16:37:03.734 SEVERE [http-nio-8080-exec-5] org.apache.catalina.core.StandardWrapperValve.invoke Servlet.service() for servlet [jsp] in context with path [] threw exception [java.lang.ClassNotFoundException: org.apache.jsp.index_jsp] with root cause
+	java.lang.ClassNotFoundException: org.apache.jsp.index_jsp
+		at java.net.URLClassLoader.findClass(Unknown Source)
+		at org.apache.jasper.servlet.JasperLoader.loadClass(JasperLoader.java:129)
+		at org.apache.jasper.servlet.JasperLoader.loadClass(JasperLoader.java:58)
+		at org.apache.catalina.core.DefaultInstanceManager.newInstance(DefaultInstanceManager.java:150)
+		at org.apache.jasper.servlet.JspServletWrapper.getServlet(JspServletWrapper.java:191)
+		at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:412)
+		at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:383)
+		at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:331)
+		at javax.servlet.http.HttpServlet.service(HttpServlet.java:583)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:212)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:156)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:181)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:156)
+		at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:168)
+		at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+		at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:130)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:679)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:617)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:932)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1694)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+		at java.lang.Thread.run(Unknown Source)
+19-Sep-2023 16:37:20.215 SEVERE [http-nio-8080-exec-6] org.apache.catalina.core.StandardWrapperValve.invoke Servlet.service() for servlet [jsp] in context with path [] threw exception [Unable to compile class for JSP: 
+
+An error occurred at line: [18] in the jsp file: [/index.jsp]
+Syntax error, insert "Finally" to complete TryStatement
+15:             Class.forName("com.mysql.jdbc.Driver");
+16:             con = DriverManager.getConnection("jdbc:mysql://localhost:3306/gevorgyan?autoReconnect=true&useSSL=false", user, password);
+17:             out.println(db + " database successfully opened.<br/><br/>");
+18:         }
+19:             con.close();
+20:         } 
+21:         catch(SQLException e) 
+
+
+An error occurred at line: [19] in the jsp file: [/index.jsp]
+con cannot be resolved
+16:             con = DriverManager.getConnection("jdbc:mysql://localhost:3306/gevorgyan?autoReconnect=true&useSSL=false", user, password);
+17:             out.println(db + " database successfully opened.<br/><br/>");
+18:         }
+19:             con.close();
+20:         } 
+21:         catch(SQLException e) 
+22:         {
+
+
+An error occurred at line: [140] in the generated java file: [C:\tomcat\work\Catalina\localhost\ROOT\org\apache\jsp\index_jsp.java]
+Syntax error on token "catch", Identifier expected
+
+An error occurred at line: [142] in the generated java file: [C:\tomcat\work\Catalina\localhost\ROOT\org\apache\jsp\index_jsp.java]
+out cannot be resolved to a variable
+
+An error occurred at line: [142] in the generated java file: [C:\tomcat\work\Catalina\localhost\ROOT\org\apache\jsp\index_jsp.java]
+_jspx_out cannot be resolved to a variable
+
+An error occurred at line: [143] in the generated java file: [C:\tomcat\work\Catalina\localhost\ROOT\org\apache\jsp\index_jsp.java]
+out cannot be resolved to a variable
+
+An error occurred at line: [143] in the generated java file: [C:\tomcat\work\Catalina\localhost\ROOT\org\apache\jsp\index_jsp.java]
+out cannot be resolved
+
+An error occurred at line: [145] in the generated java file: [C:\tomcat\work\Catalina\localhost\ROOT\org\apache\jsp\index_jsp.java]
+response cannot be resolved
+
+An error occurred at line: [146] in the generated java file: [C:\tomcat\work\Catalina\localhost\ROOT\org\apache\jsp\index_jsp.java]
+out cannot be resolved
+
+An error occurred at line: [148] in the generated java file: [C:\tomcat\work\Catalina\localhost\ROOT\org\apache\jsp\index_jsp.java]
+out cannot be resolved
+
+An error occurred at line: [151] in the generated java file: [C:\tomcat\work\Catalina\localhost\ROOT\org\apache\jsp\index_jsp.java]
+_jspx_page_context cannot be resolved to a variable
+
+An error occurred at line: [151] in the generated java file: [C:\tomcat\work\Catalina\localhost\ROOT\org\apache\jsp\index_jsp.java]
+_jspx_page_context cannot be resolved
+
+An error occurred at line: [154] in the generated java file: [C:\tomcat\work\Catalina\localhost\ROOT\org\apache\jsp\index_jsp.java]
+Syntax error on token "finally", { expected
+
+An error occurred at line: [155] in the generated java file: [C:\tomcat\work\Catalina\localhost\ROOT\org\apache\jsp\index_jsp.java]
+_jspx_page_context cannot be resolved to a variable
+
+Stacktrace:] with root cause
+	org.apache.jasper.JasperException: Unable to compile class for JSP: 
+
+An error occurred at line: [18] in the jsp file: [/index.jsp]
+Syntax error, insert "Finally" to complete TryStatement
+15:             Class.forName("com.mysql.jdbc.Driver");
+16:             con = DriverManager.getConnection("jdbc:mysql://localhost:3306/gevorgyan?autoReconnect=true&useSSL=false", user, password);
+17:             out.println(db + " database successfully opened.<br/><br/>");
+18:         }
+19:             con.close();
+20:         } 
+21:         catch(SQLException e) 
+
+
+An error occurred at line: [19] in the jsp file: [/index.jsp]
+con cannot be resolved
+16:             con = DriverManager.getConnection("jdbc:mysql://localhost:3306/gevorgyan?autoReconnect=true&useSSL=false", user, password);
+17:             out.println(db + " database successfully opened.<br/><br/>");
+18:         }
+19:             con.close();
+20:         } 
+21:         catch(SQLException e) 
+22:         {
+
+
+An error occurred at line: [140] in the generated java file: [C:\tomcat\work\Catalina\localhost\ROOT\org\apache\jsp\index_jsp.java]
+Syntax error on token "catch", Identifier expected
+
+An error occurred at line: [142] in the generated java file: [C:\tomcat\work\Catalina\localhost\ROOT\org\apache\jsp\index_jsp.java]
+out cannot be resolved to a variable
+
+An error occurred at line: [142] in the generated java file: [C:\tomcat\work\Catalina\localhost\ROOT\org\apache\jsp\index_jsp.java]
+_jspx_out cannot be resolved to a variable
+
+An error occurred at line: [143] in the generated java file: [C:\tomcat\work\Catalina\localhost\ROOT\org\apache\jsp\index_jsp.java]
+out cannot be resolved to a variable
+
+An error occurred at line: [143] in the generated java file: [C:\tomcat\work\Catalina\localhost\ROOT\org\apache\jsp\index_jsp.java]
+out cannot be resolved
+
+An error occurred at line: [145] in the generated java file: [C:\tomcat\work\Catalina\localhost\ROOT\org\apache\jsp\index_jsp.java]
+response cannot be resolved
+
+An error occurred at line: [146] in the generated java file: [C:\tomcat\work\Catalina\localhost\ROOT\org\apache\jsp\index_jsp.java]
+out cannot be resolved
+
+An error occurred at line: [148] in the generated java file: [C:\tomcat\work\Catalina\localhost\ROOT\org\apache\jsp\index_jsp.java]
+out cannot be resolved
+
+An error occurred at line: [151] in the generated java file: [C:\tomcat\work\Catalina\localhost\ROOT\org\apache\jsp\index_jsp.java]
+_jspx_page_context cannot be resolved to a variable
+
+An error occurred at line: [151] in the generated java file: [C:\tomcat\work\Catalina\localhost\ROOT\org\apache\jsp\index_jsp.java]
+_jspx_page_context cannot be resolved
+
+An error occurred at line: [154] in the generated java file: [C:\tomcat\work\Catalina\localhost\ROOT\org\apache\jsp\index_jsp.java]
+Syntax error on token "finally", { expected
+
+An error occurred at line: [155] in the generated java file: [C:\tomcat\work\Catalina\localhost\ROOT\org\apache\jsp\index_jsp.java]
+_jspx_page_context cannot be resolved to a variable
+
+Stacktrace:
+		at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:102)
+		at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:213)
+		at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:600)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:381)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:351)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:335)
+		at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:597)
+		at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:398)
+		at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:383)
+		at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:331)
+		at javax.servlet.http.HttpServlet.service(HttpServlet.java:583)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:212)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:156)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:181)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:156)
+		at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:168)
+		at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+		at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:130)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:679)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:617)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:932)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1694)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+		at java.lang.Thread.run(Unknown Source)
+19-Sep-2023 16:37:20.833 SEVERE [http-nio-8080-exec-7] org.apache.catalina.core.StandardWrapperValve.invoke Servlet.service() for servlet [jsp] in context with path [] threw exception [java.lang.ClassNotFoundException: org.apache.jsp.index_jsp] with root cause
+	java.lang.ClassNotFoundException: org.apache.jsp.index_jsp
+		at java.net.URLClassLoader.findClass(Unknown Source)
+		at org.apache.jasper.servlet.JasperLoader.loadClass(JasperLoader.java:129)
+		at org.apache.jasper.servlet.JasperLoader.loadClass(JasperLoader.java:58)
+		at org.apache.catalina.core.DefaultInstanceManager.newInstance(DefaultInstanceManager.java:150)
+		at org.apache.jasper.servlet.JspServletWrapper.getServlet(JspServletWrapper.java:191)
+		at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:412)
+		at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:383)
+		at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:331)
+		at javax.servlet.http.HttpServlet.service(HttpServlet.java:583)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:212)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:156)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:181)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:156)
+		at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:168)
+		at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+		at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:130)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:679)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:617)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:932)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1694)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+		at java.lang.Thread.run(Unknown Source)
+19-Sep-2023 16:37:21.262 SEVERE [http-nio-8080-exec-8] org.apache.catalina.core.StandardWrapperValve.invoke Servlet.service() for servlet [jsp] in context with path [] threw exception [java.lang.ClassNotFoundException: org.apache.jsp.index_jsp] with root cause
+	java.lang.ClassNotFoundException: org.apache.jsp.index_jsp
+		at java.net.URLClassLoader.findClass(Unknown Source)
+		at org.apache.jasper.servlet.JasperLoader.loadClass(JasperLoader.java:129)
+		at org.apache.jasper.servlet.JasperLoader.loadClass(JasperLoader.java:58)
+		at org.apache.catalina.core.DefaultInstanceManager.newInstance(DefaultInstanceManager.java:150)
+		at org.apache.jasper.servlet.JspServletWrapper.getServlet(JspServletWrapper.java:191)
+		at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:412)
+		at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:383)
+		at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:331)
+		at javax.servlet.http.HttpServlet.service(HttpServlet.java:583)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:212)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:156)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:181)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:156)
+		at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:168)
+		at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+		at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:130)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:679)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:617)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:932)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1694)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+		at java.lang.Thread.run(Unknown Source)
