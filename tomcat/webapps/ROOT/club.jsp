@@ -12,7 +12,7 @@
     </head>
     <body>
         <!-- Navbar -->
-        <nav>
+        <nav style="background-color:#687494">
             <div class="nav-wrapper container">
               <ul id="nav-mobile" class="left hide-on-med-and-down">
                 <li><a href="index.jsp">Home</a></li>
@@ -22,11 +22,57 @@
             </div>
         </nav>
 
+        <!-- Get Club -->
+        <%
+        try 
+        {
+            String id = request.getParameter("id");
+
+            java.sql.Connection con;
+            Class.forName("com.mysql.jdbc.Driver");
+            con = DriverManager.getConnection("jdbc:mysql://localhost:8889/clubspartan?autoReconnect=true&useSSL=false", "root", "root");
+
+            PreparedStatement stmt = con.prepareStatement("SELECT * FROM club WHERE club_id = ?");
+            stmt.setString(1, id);
+            ResultSet rs = stmt.executeQuery();
+            rs.next();
+        %>
+
         <!-- Home -->
-        <div class="container">
-            <h2>Club</h2>
+        <div style="background-color:#e9ecee">
+            <div class="container center-align" style="padding: 15px;">
+                <h4><%= rs.getString(2) %></h4>
+
+                <div class="row">
+                    <div class="col s7 push-s5 left-align" style="padding: 15px; padding-left: 20px;">
+                        <b>Contact Email: </b><a href=<%= "mailto: " + rs.getString(4) %>><%= rs.getString(4) %></a><br/>
+                        <% 
+                            if(rs.getString(6) != null) {
+                        %>
+                            <b>Instagram Link: </b><a href=<%= rs.getString(6) %>><%= rs.getString(6) %></a><br/>
+                        <% } %>
+                        <% 
+                            if(rs.getString(5) != null) {
+                        %>
+                            <b>Discord Link: </b><a href=<%= rs.getString(5) %>><%= rs.getString(5) %></a><br/>
+                        <% } %>
+                        <p><%= rs.getString(7) %></p>
+                    </div>
+                    <div class="col s5 pull-s7 right-align" style="padding: 15px; padding-right: 20px;"><img style="object-fit: cover; width: 230px; height: 230px;" src=<%= rs.getString(3) %>></div>
+                </div>
+            </div>
         </div>
 
+        <%
+            rs.close();
+            stmt.close();
+            con.close();
+        }
+        catch(SQLException e) 
+        {
+            out.println("SQLException caught: " + e.getMessage());
+        }
+        %>
         <script type="text/javascript" src="js/materialize.min.js"></script>
     </body>
 </html>

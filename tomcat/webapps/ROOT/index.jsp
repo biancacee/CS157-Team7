@@ -12,7 +12,7 @@
     </head>
     <body>
         <!-- Navbar -->
-        <nav>
+        <nav style="background-color:#687494">
             <div class="nav-wrapper container">
               <ul id="nav-mobile" class="left hide-on-med-and-down">
                 <li><a href="index.jsp">Home</a></li>
@@ -35,7 +35,7 @@
                             <input id="name" name="club-name" type="text" class="validate" placeholder="Club Search...">
                         </div>
                         <div class="input-field col s6">
-                            <button class="btn-floating btn-large waves-effect waves-light" type="submit"><i class="material-icons left">search</i>Seach</button>
+                            <button class="btn-floating btn-large waves-effect waves-light" style="background-color:#687494" type="submit"><i class="material-icons left">search</i>Seach</button>
                         </div>
                     </div>
                 </form>
@@ -52,11 +52,11 @@
                     Class.forName("com.mysql.jdbc.Driver");
                     con = DriverManager.getConnection("jdbc:mysql://localhost:8889/clubspartan?autoReconnect=true&useSSL=false", "root", "root");
 
-                    PreparedStatement stmt = con.prepareStatement("SELECT club_id, name, logo, description, membership_fee, is_active FROM club");
+                    PreparedStatement stmt = con.prepareStatement("SELECT club_id, name, logo, description, is_active FROM club");
                     if(club_name != null)
                     {
-                    stmt = con.prepareStatement("SELECT club_id, name, logo, description, membership_fee, is_active FROM club WHERE club.name LIKE ?");
-                    stmt.setString(1, "%" + club_name + "%");
+                        stmt = con.prepareStatement("SELECT club_id, name, logo, description, is_active FROM club WHERE club.name LIKE ?");
+                        stmt.setString(1, "%" + club_name + "%");
                     }
                     ResultSet rs = stmt.executeQuery();
 
@@ -67,7 +67,11 @@
                     <img src=<%= rs.getString(3) %> alt="" class="circle">
                     <a href=<%= "club.jsp?id=" + rs.getInt(1) %> class="title"><%= rs.getString(2) %></a>
                     <p><%= rs.getString(4) %></p>
-                    <a class="secondary-content"><i class="material-icons">grade</i></a>
+                    <% if(rs.getInt(5) > 0) { %>
+                        <a class="secondary-content"><i class="material-icons tiny" style="color: green;">brightness_1</i></a>
+                    <% } else { %>
+                        <a class="secondary-content"><i class="material-icons tiny" style="color: red;">brightness_1</i></a>
+                    <% } %>
                 </li>
             <%
                 }
