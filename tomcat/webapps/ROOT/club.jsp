@@ -209,21 +209,28 @@
                     });
             
                     star.addEventListener("click", () => {
-                        // This click event keeps the stars lit up
+                        // This click event keeps the stars lit up along with those to the left
                         const rating = parseInt(star.getAttribute("data-rating"));
                         selectedRating.value = rating;
                     });
                 });
             
-                // Clear the rating when mouse leaves the star container
+                // Clear the rating when the mouse leaves the star container
                 document.getElementById("star-rating").addEventListener("mouseleave", () => {
-                    selectedRating.value = "0";
+                    const rating = parseInt(selectedRating.value);
                     stars.forEach(starItem => {
-                        starItem.classList.remove("filled");
+                        const starRating = parseInt(starItem.getAttribute("data-rating"));
+                        if (starRating <= rating) {
+                            starItem.classList.add("filled");
+                        } else {
+                            starItem.classList.remove("filled");
+                        }
                     });
                 });
             }
             </script>
+            
+            
             
     </body>
 </html>
