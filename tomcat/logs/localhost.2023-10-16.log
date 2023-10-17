@@ -1,0 +1,1460 @@
+16-Oct-2023 14:33:45.333 INFO [localhost-startStop-1] org.apache.catalina.core.ApplicationContext.log ContextListener: contextInitialized()
+16-Oct-2023 14:33:45.333 INFO [localhost-startStop-1] org.apache.catalina.core.ApplicationContext.log SessionListener: contextInitialized()
+16-Oct-2023 14:33:45.335 INFO [localhost-startStop-1] org.apache.catalina.core.ApplicationContext.log ContextListener: attributeAdded('StockTicker', 'async.Stockticker@67a20f9f')
+16-Oct-2023 15:25:06.335 SEVERE [http-nio-8080-exec-4] org.apache.catalina.core.StandardWrapperValve.invoke Servlet.service() for servlet [jsp] in context with path [] threw exception [Unable to compile class for JSP: 
+
+An error occurred at line: [195] in the generated java file: [/Users/joshuamedina/Desktop/ClubSpartan/CS157-Team7/tomcat/work/Catalina/localhost/ROOT/org/apache/jsp/rate_jsp.java]
+Syntax error, insert "Finally" to complete TryStatement
+
+An error occurred at line: [196] in the generated java file: [/Users/joshuamedina/Desktop/ClubSpartan/CS157-Team7/tomcat/work/Catalina/localhost/ROOT/org/apache/jsp/rate_jsp.java]
+Syntax error, insert "}" to complete ClassBody
+
+Stacktrace:] with root cause
+	org.apache.jasper.JasperException: Unable to compile class for JSP: 
+
+An error occurred at line: [195] in the generated java file: [/Users/joshuamedina/Desktop/ClubSpartan/CS157-Team7/tomcat/work/Catalina/localhost/ROOT/org/apache/jsp/rate_jsp.java]
+Syntax error, insert "Finally" to complete TryStatement
+
+An error occurred at line: [196] in the generated java file: [/Users/joshuamedina/Desktop/ClubSpartan/CS157-Team7/tomcat/work/Catalina/localhost/ROOT/org/apache/jsp/rate_jsp.java]
+Syntax error, insert "}" to complete ClassBody
+
+Stacktrace:
+		at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:102)
+		at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:213)
+		at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:600)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:381)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:351)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:335)
+		at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:597)
+		at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:398)
+		at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:383)
+		at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:331)
+		at javax.servlet.http.HttpServlet.service(HttpServlet.java:583)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:212)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:156)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:181)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:156)
+		at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:168)
+		at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+		at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:130)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:679)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:617)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:932)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1694)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+		at java.base/java.lang.Thread.run(Thread.java:1623)
+16-Oct-2023 15:25:16.763 SEVERE [http-nio-8080-exec-9] org.apache.catalina.core.StandardWrapperValve.invoke Servlet.service() for servlet [jsp] in context with path [] threw exception [Unable to compile class for JSP: 
+
+An error occurred at line: [195] in the generated java file: [/Users/joshuamedina/Desktop/ClubSpartan/CS157-Team7/tomcat/work/Catalina/localhost/ROOT/org/apache/jsp/rate_jsp.java]
+Syntax error, insert "Finally" to complete TryStatement
+
+An error occurred at line: [196] in the generated java file: [/Users/joshuamedina/Desktop/ClubSpartan/CS157-Team7/tomcat/work/Catalina/localhost/ROOT/org/apache/jsp/rate_jsp.java]
+Syntax error, insert "}" to complete ClassBody
+
+Stacktrace:] with root cause
+	org.apache.jasper.JasperException: Unable to compile class for JSP: 
+
+An error occurred at line: [195] in the generated java file: [/Users/joshuamedina/Desktop/ClubSpartan/CS157-Team7/tomcat/work/Catalina/localhost/ROOT/org/apache/jsp/rate_jsp.java]
+Syntax error, insert "Finally" to complete TryStatement
+
+An error occurred at line: [196] in the generated java file: [/Users/joshuamedina/Desktop/ClubSpartan/CS157-Team7/tomcat/work/Catalina/localhost/ROOT/org/apache/jsp/rate_jsp.java]
+Syntax error, insert "}" to complete ClassBody
+
+Stacktrace:
+		at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:102)
+		at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:213)
+		at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:600)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:381)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:351)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:335)
+		at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:597)
+		at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:398)
+		at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:383)
+		at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:331)
+		at javax.servlet.http.HttpServlet.service(HttpServlet.java:583)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:212)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:156)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:181)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:156)
+		at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:168)
+		at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+		at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:130)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:679)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:617)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:932)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1694)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+		at java.base/java.lang.Thread.run(Thread.java:1623)
+16-Oct-2023 15:25:20.937 SEVERE [http-nio-8080-exec-2] org.apache.catalina.core.StandardWrapperValve.invoke Servlet.service() for servlet [jsp] in context with path [] threw exception [Unable to compile class for JSP: 
+
+An error occurred at line: [195] in the generated java file: [/Users/joshuamedina/Desktop/ClubSpartan/CS157-Team7/tomcat/work/Catalina/localhost/ROOT/org/apache/jsp/rate_jsp.java]
+Syntax error, insert "Finally" to complete TryStatement
+
+An error occurred at line: [196] in the generated java file: [/Users/joshuamedina/Desktop/ClubSpartan/CS157-Team7/tomcat/work/Catalina/localhost/ROOT/org/apache/jsp/rate_jsp.java]
+Syntax error, insert "}" to complete ClassBody
+
+Stacktrace:] with root cause
+	org.apache.jasper.JasperException: Unable to compile class for JSP: 
+
+An error occurred at line: [195] in the generated java file: [/Users/joshuamedina/Desktop/ClubSpartan/CS157-Team7/tomcat/work/Catalina/localhost/ROOT/org/apache/jsp/rate_jsp.java]
+Syntax error, insert "Finally" to complete TryStatement
+
+An error occurred at line: [196] in the generated java file: [/Users/joshuamedina/Desktop/ClubSpartan/CS157-Team7/tomcat/work/Catalina/localhost/ROOT/org/apache/jsp/rate_jsp.java]
+Syntax error, insert "}" to complete ClassBody
+
+Stacktrace:
+		at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:102)
+		at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:213)
+		at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:600)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:381)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:351)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:335)
+		at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:597)
+		at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:398)
+		at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:383)
+		at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:331)
+		at javax.servlet.http.HttpServlet.service(HttpServlet.java:583)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:212)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:156)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:181)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:156)
+		at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:168)
+		at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+		at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:130)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:679)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:617)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:932)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1694)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+		at java.base/java.lang.Thread.run(Thread.java:1623)
+16-Oct-2023 15:26:42.224 SEVERE [http-nio-8080-exec-3] org.apache.catalina.core.StandardWrapperValve.invoke Servlet.service() for servlet [jsp] in context with path [] threw exception [Unable to compile class for JSP: 
+
+An error occurred at line: [195] in the generated java file: [/Users/joshuamedina/Desktop/ClubSpartan/CS157-Team7/tomcat/work/Catalina/localhost/ROOT/org/apache/jsp/rate_jsp.java]
+Syntax error, insert "Finally" to complete TryStatement
+
+An error occurred at line: [196] in the generated java file: [/Users/joshuamedina/Desktop/ClubSpartan/CS157-Team7/tomcat/work/Catalina/localhost/ROOT/org/apache/jsp/rate_jsp.java]
+Syntax error, insert "}" to complete ClassBody
+
+Stacktrace:] with root cause
+	org.apache.jasper.JasperException: Unable to compile class for JSP: 
+
+An error occurred at line: [195] in the generated java file: [/Users/joshuamedina/Desktop/ClubSpartan/CS157-Team7/tomcat/work/Catalina/localhost/ROOT/org/apache/jsp/rate_jsp.java]
+Syntax error, insert "Finally" to complete TryStatement
+
+An error occurred at line: [196] in the generated java file: [/Users/joshuamedina/Desktop/ClubSpartan/CS157-Team7/tomcat/work/Catalina/localhost/ROOT/org/apache/jsp/rate_jsp.java]
+Syntax error, insert "}" to complete ClassBody
+
+Stacktrace:
+		at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:102)
+		at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:213)
+		at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:600)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:381)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:351)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:335)
+		at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:597)
+		at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:398)
+		at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:383)
+		at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:331)
+		at javax.servlet.http.HttpServlet.service(HttpServlet.java:583)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:212)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:156)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:181)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:156)
+		at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:168)
+		at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+		at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:130)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:679)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:617)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:932)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1694)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+		at java.base/java.lang.Thread.run(Thread.java:1623)
+16-Oct-2023 16:00:09.206 SEVERE [http-nio-8080-exec-9] org.apache.catalina.core.StandardWrapperValve.invoke Servlet.service() for servlet [jsp] in context with path [] threw exception [Unable to compile class for JSP: 
+
+An error occurred at line: [29] in the jsp file: [/rate.jsp]
+rs cannot be resolved
+26:         <div class="container">
+27:           <div style="background-color:#e9ecee">
+28:             <div class="container center-align" style="padding: 15px;">
+29:                 <h4><%= rs.getString(2) %></h4>
+30:             </div>
+31:           </div>
+32:             
+
+
+Stacktrace:] with root cause
+	org.apache.jasper.JasperException: Unable to compile class for JSP: 
+
+An error occurred at line: [29] in the jsp file: [/rate.jsp]
+rs cannot be resolved
+26:         <div class="container">
+27:           <div style="background-color:#e9ecee">
+28:             <div class="container center-align" style="padding: 15px;">
+29:                 <h4><%= rs.getString(2) %></h4>
+30:             </div>
+31:           </div>
+32:             
+
+
+Stacktrace:
+		at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:102)
+		at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:213)
+		at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:600)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:381)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:351)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:335)
+		at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:597)
+		at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:398)
+		at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:383)
+		at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:331)
+		at javax.servlet.http.HttpServlet.service(HttpServlet.java:583)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:212)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:156)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:181)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:156)
+		at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:168)
+		at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+		at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:130)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:679)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:617)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:932)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1694)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+		at java.base/java.lang.Thread.run(Thread.java:1623)
+16-Oct-2023 16:00:52.674 SEVERE [http-nio-8080-exec-3] org.apache.catalina.core.StandardWrapperValve.invoke Servlet.service() for servlet [jsp] in context with path [] threw exception [Unable to compile class for JSP: 
+
+An error occurred at line: [184] in the generated java file: [/Users/joshuamedina/Desktop/ClubSpartan/CS157-Team7/tomcat/work/Catalina/localhost/ROOT/org/apache/jsp/rate_jsp.java]
+Syntax error, insert "Finally" to complete TryStatement
+
+An error occurred at line: [185] in the generated java file: [/Users/joshuamedina/Desktop/ClubSpartan/CS157-Team7/tomcat/work/Catalina/localhost/ROOT/org/apache/jsp/rate_jsp.java]
+Syntax error, insert "}" to complete ClassBody
+
+Stacktrace:] with root cause
+	org.apache.jasper.JasperException: Unable to compile class for JSP: 
+
+An error occurred at line: [184] in the generated java file: [/Users/joshuamedina/Desktop/ClubSpartan/CS157-Team7/tomcat/work/Catalina/localhost/ROOT/org/apache/jsp/rate_jsp.java]
+Syntax error, insert "Finally" to complete TryStatement
+
+An error occurred at line: [185] in the generated java file: [/Users/joshuamedina/Desktop/ClubSpartan/CS157-Team7/tomcat/work/Catalina/localhost/ROOT/org/apache/jsp/rate_jsp.java]
+Syntax error, insert "}" to complete ClassBody
+
+Stacktrace:
+		at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:102)
+		at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:213)
+		at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:600)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:381)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:351)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:335)
+		at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:597)
+		at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:398)
+		at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:383)
+		at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:331)
+		at javax.servlet.http.HttpServlet.service(HttpServlet.java:583)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:212)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:156)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:181)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:156)
+		at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:168)
+		at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+		at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:130)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:679)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:617)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:932)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1694)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+		at java.base/java.lang.Thread.run(Thread.java:1623)
+16-Oct-2023 16:01:35.820 SEVERE [http-nio-8080-exec-1] org.apache.catalina.core.StandardWrapperValve.invoke Servlet.service() for servlet [jsp] in context with path [] threw exception [Unable to compile class for JSP: 
+
+An error occurred at line: [52] in the jsp file: [/rate.jsp]
+rs_rate cannot be resolved
+49: 
+50:         <%
+51:             rs.close();
+52:             rs_rate.close();
+53:             rs_review.close();
+54:             stmt.close();
+55:             stmt_rate.close();
+
+
+An error occurred at line: [53] in the jsp file: [/rate.jsp]
+rs_review cannot be resolved
+50:         <%
+51:             rs.close();
+52:             rs_rate.close();
+53:             rs_review.close();
+54:             stmt.close();
+55:             stmt_rate.close();
+56:             stmt_review.close();
+
+
+An error occurred at line: [55] in the jsp file: [/rate.jsp]
+stmt_rate cannot be resolved
+52:             rs_rate.close();
+53:             rs_review.close();
+54:             stmt.close();
+55:             stmt_rate.close();
+56:             stmt_review.close();
+57:             con.close();
+58:         }
+
+
+An error occurred at line: [56] in the jsp file: [/rate.jsp]
+stmt_review cannot be resolved
+53:             rs_review.close();
+54:             stmt.close();
+55:             stmt_rate.close();
+56:             stmt_review.close();
+57:             con.close();
+58:         }
+59:         catch(SQLException e) 
+
+
+Stacktrace:] with root cause
+	org.apache.jasper.JasperException: Unable to compile class for JSP: 
+
+An error occurred at line: [52] in the jsp file: [/rate.jsp]
+rs_rate cannot be resolved
+49: 
+50:         <%
+51:             rs.close();
+52:             rs_rate.close();
+53:             rs_review.close();
+54:             stmt.close();
+55:             stmt_rate.close();
+
+
+An error occurred at line: [53] in the jsp file: [/rate.jsp]
+rs_review cannot be resolved
+50:         <%
+51:             rs.close();
+52:             rs_rate.close();
+53:             rs_review.close();
+54:             stmt.close();
+55:             stmt_rate.close();
+56:             stmt_review.close();
+
+
+An error occurred at line: [55] in the jsp file: [/rate.jsp]
+stmt_rate cannot be resolved
+52:             rs_rate.close();
+53:             rs_review.close();
+54:             stmt.close();
+55:             stmt_rate.close();
+56:             stmt_review.close();
+57:             con.close();
+58:         }
+
+
+An error occurred at line: [56] in the jsp file: [/rate.jsp]
+stmt_review cannot be resolved
+53:             rs_review.close();
+54:             stmt.close();
+55:             stmt_rate.close();
+56:             stmt_review.close();
+57:             con.close();
+58:         }
+59:         catch(SQLException e) 
+
+
+Stacktrace:
+		at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:102)
+		at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:213)
+		at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:600)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:381)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:351)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:335)
+		at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:597)
+		at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:398)
+		at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:383)
+		at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:331)
+		at javax.servlet.http.HttpServlet.service(HttpServlet.java:583)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:212)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:156)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:181)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:156)
+		at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:168)
+		at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+		at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:130)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:679)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:617)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:932)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1694)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+		at java.base/java.lang.Thread.run(Thread.java:1623)
+16-Oct-2023 16:01:41.020 SEVERE [http-nio-8080-exec-8] org.apache.catalina.core.StandardWrapperValve.invoke Servlet.service() for servlet [jsp] in context with path [] threw exception [Unable to compile class for JSP: 
+
+An error occurred at line: [52] in the jsp file: [/rate.jsp]
+rs_rate cannot be resolved
+49: 
+50:         <%
+51:             rs.close();
+52:             rs_rate.close();
+53:             rs_review.close();
+54:             stmt.close();
+55:             stmt_rate.close();
+
+
+An error occurred at line: [53] in the jsp file: [/rate.jsp]
+rs_review cannot be resolved
+50:         <%
+51:             rs.close();
+52:             rs_rate.close();
+53:             rs_review.close();
+54:             stmt.close();
+55:             stmt_rate.close();
+56:             stmt_review.close();
+
+
+An error occurred at line: [55] in the jsp file: [/rate.jsp]
+stmt_rate cannot be resolved
+52:             rs_rate.close();
+53:             rs_review.close();
+54:             stmt.close();
+55:             stmt_rate.close();
+56:             stmt_review.close();
+57:             con.close();
+58:         }
+
+
+An error occurred at line: [56] in the jsp file: [/rate.jsp]
+stmt_review cannot be resolved
+53:             rs_review.close();
+54:             stmt.close();
+55:             stmt_rate.close();
+56:             stmt_review.close();
+57:             con.close();
+58:         }
+59:         catch(SQLException e) 
+
+
+Stacktrace:] with root cause
+	org.apache.jasper.JasperException: Unable to compile class for JSP: 
+
+An error occurred at line: [52] in the jsp file: [/rate.jsp]
+rs_rate cannot be resolved
+49: 
+50:         <%
+51:             rs.close();
+52:             rs_rate.close();
+53:             rs_review.close();
+54:             stmt.close();
+55:             stmt_rate.close();
+
+
+An error occurred at line: [53] in the jsp file: [/rate.jsp]
+rs_review cannot be resolved
+50:         <%
+51:             rs.close();
+52:             rs_rate.close();
+53:             rs_review.close();
+54:             stmt.close();
+55:             stmt_rate.close();
+56:             stmt_review.close();
+
+
+An error occurred at line: [55] in the jsp file: [/rate.jsp]
+stmt_rate cannot be resolved
+52:             rs_rate.close();
+53:             rs_review.close();
+54:             stmt.close();
+55:             stmt_rate.close();
+56:             stmt_review.close();
+57:             con.close();
+58:         }
+
+
+An error occurred at line: [56] in the jsp file: [/rate.jsp]
+stmt_review cannot be resolved
+53:             rs_review.close();
+54:             stmt.close();
+55:             stmt_rate.close();
+56:             stmt_review.close();
+57:             con.close();
+58:         }
+59:         catch(SQLException e) 
+
+
+Stacktrace:
+		at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:102)
+		at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:213)
+		at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:600)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:381)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:351)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:335)
+		at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:597)
+		at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:398)
+		at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:383)
+		at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:331)
+		at javax.servlet.http.HttpServlet.service(HttpServlet.java:583)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:212)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:156)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:181)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:156)
+		at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:168)
+		at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+		at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:130)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:679)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:617)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:932)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1694)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+		at java.base/java.lang.Thread.run(Thread.java:1623)
+16-Oct-2023 16:03:26.920 SEVERE [http-nio-8080-exec-5] org.apache.catalina.core.StandardWrapperValve.invoke Servlet.service() for servlet [jsp] in context with path [] threw exception [Unable to compile class for JSP: 
+
+An error occurred at line: [35] in the jsp file: [/rate.jsp]
+id cannot be resolved to a variable
+32:             con = DriverManager.getConnection("jdbc:mysql://localhost:"+"3306"+"/clubspartan?autoReconnect=true&useSSL=false", "root", "Million95!");
+33: 
+34:             PreparedStatement stmt = con.prepareStatement("SELECT * FROM club WHERE club_id = ?");
+35:             stmt.setString(1, id);
+36:             ResultSet rs = stmt.executeQuery();
+37:             rs.next();
+38:         %>
+
+
+Stacktrace:] with root cause
+	org.apache.jasper.JasperException: Unable to compile class for JSP: 
+
+An error occurred at line: [35] in the jsp file: [/rate.jsp]
+id cannot be resolved to a variable
+32:             con = DriverManager.getConnection("jdbc:mysql://localhost:"+"3306"+"/clubspartan?autoReconnect=true&useSSL=false", "root", "Million95!");
+33: 
+34:             PreparedStatement stmt = con.prepareStatement("SELECT * FROM club WHERE club_id = ?");
+35:             stmt.setString(1, id);
+36:             ResultSet rs = stmt.executeQuery();
+37:             rs.next();
+38:         %>
+
+
+Stacktrace:
+		at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:102)
+		at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:213)
+		at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:600)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:381)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:351)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:335)
+		at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:597)
+		at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:398)
+		at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:383)
+		at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:331)
+		at javax.servlet.http.HttpServlet.service(HttpServlet.java:583)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:212)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:156)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:181)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:156)
+		at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:168)
+		at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+		at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:130)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:679)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:617)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:932)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1694)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+		at java.base/java.lang.Thread.run(Thread.java:1623)
+16-Oct-2023 16:16:42.581 SEVERE [http-nio-8080-exec-9] org.apache.catalina.core.StandardWrapperValve.invoke Servlet.service() for servlet [jsp] in context with path [] threw exception [Unable to compile class for JSP: 
+
+An error occurred at line: [96] in the jsp file: [/club.jsp]
+Syntax error on token "modal", delete this token
+93:                                 <p>A bunch of text</p>
+94:                               </div>
+95:                               <div class="modal-footer">
+96:                                 <a href="<%= "rate.jsp?club_id=" + id%" class="modal-close waves-effect waves-green btn-flat">Rate</a>
+97:                               </div>
+98:                             </div>
+99:                             <div class="col"><a href=<%= "rate.jsp?club_id=" + id%> style="background-color:#687494" class="waves-effect waves-light btn"><i class="material-icons left">offline_pin</i>Rate</a></div>
+
+
+An error occurred at line: [96] in the jsp file: [/club.jsp]
+Syntax error on token "waves", delete this token
+93:                                 <p>A bunch of text</p>
+94:                               </div>
+95:                               <div class="modal-footer">
+96:                                 <a href="<%= "rate.jsp?club_id=" + id%" class="modal-close waves-effect waves-green btn-flat">Rate</a>
+97:                               </div>
+98:                             </div>
+99:                             <div class="col"><a href=<%= "rate.jsp?club_id=" + id%> style="background-color:#687494" class="waves-effect waves-light btn"><i class="material-icons left">offline_pin</i>Rate</a></div>
+
+
+An error occurred at line: [96] in the jsp file: [/club.jsp]
+Syntax error on token "waves", delete this token
+93:                                 <p>A bunch of text</p>
+94:                               </div>
+95:                               <div class="modal-footer">
+96:                                 <a href="<%= "rate.jsp?club_id=" + id%" class="modal-close waves-effect waves-green btn-flat">Rate</a>
+97:                               </div>
+98:                             </div>
+99:                             <div class="col"><a href=<%= "rate.jsp?club_id=" + id%> style="background-color:#687494" class="waves-effect waves-light btn"><i class="material-icons left">offline_pin</i>Rate</a></div>
+
+
+An error occurred at line: [96] in the jsp file: [/club.jsp]
+Syntax error on token "btn", delete this token
+93:                                 <p>A bunch of text</p>
+94:                               </div>
+95:                               <div class="modal-footer">
+96:                                 <a href="<%= "rate.jsp?club_id=" + id%" class="modal-close waves-effect waves-green btn-flat">Rate</a>
+97:                               </div>
+98:                             </div>
+99:                             <div class="col"><a href=<%= "rate.jsp?club_id=" + id%> style="background-color:#687494" class="waves-effect waves-light btn"><i class="material-icons left">offline_pin</i>Rate</a></div>
+
+
+An error occurred at line: [96] in the jsp file: [/club.jsp]
+String literal is not properly closed by a double-quote
+93:                                 <p>A bunch of text</p>
+94:                               </div>
+95:                               <div class="modal-footer">
+96:                                 <a href="<%= "rate.jsp?club_id=" + id%" class="modal-close waves-effect waves-green btn-flat">Rate</a>
+97:                               </div>
+98:                             </div>
+99:                             <div class="col"><a href=<%= "rate.jsp?club_id=" + id%> style="background-color:#687494" class="waves-effect waves-light btn"><i class="material-icons left">offline_pin</i>Rate</a></div>
+
+
+An error occurred at line: [96] in the jsp file: [/club.jsp]
+String literal is not properly closed by a double-quote
+93:                                 <p>A bunch of text</p>
+94:                               </div>
+95:                               <div class="modal-footer">
+96:                                 <a href="<%= "rate.jsp?club_id=" + id%" class="modal-close waves-effect waves-green btn-flat">Rate</a>
+97:                               </div>
+98:                             </div>
+99:                             <div class="col"><a href=<%= "rate.jsp?club_id=" + id%> style="background-color:#687494" class="waves-effect waves-light btn"><i class="material-icons left">offline_pin</i>Rate</a></div>
+
+
+An error occurred at line: [96] in the jsp file: [/club.jsp]
+Syntax error on token "/", delete this token
+93:                                 <p>A bunch of text</p>
+94:                               </div>
+95:                               <div class="modal-footer">
+96:                                 <a href="<%= "rate.jsp?club_id=" + id%" class="modal-close waves-effect waves-green btn-flat">Rate</a>
+97:                               </div>
+98:                             </div>
+99:                             <div class="col"><a href=<%= "rate.jsp?club_id=" + id%> style="background-color:#687494" class="waves-effect waves-light btn"><i class="material-icons left">offline_pin</i>Rate</a></div>
+
+
+An error occurred at line: [97] in the jsp file: [/club.jsp]
+Syntax error on token "<", invalid Expression
+94:                               </div>
+95:                               <div class="modal-footer">
+96:                                 <a href="<%= "rate.jsp?club_id=" + id%" class="modal-close waves-effect waves-green btn-flat">Rate</a>
+97:                               </div>
+98:                             </div>
+99:                             <div class="col"><a href=<%= "rate.jsp?club_id=" + id%> style="background-color:#687494" class="waves-effect waves-light btn"><i class="material-icons left">offline_pin</i>Rate</a></div>
+100:                             <div class="col left-align"><a href=<%= "review.jsp?club_id=" + id%> style="background-color:#687494" class="waves-effect waves-light btn"><i class="material-icons left">border_color</i>Write Review</a></div>
+
+
+An error occurred at line: [97] in the jsp file: [/club.jsp]
+Syntax error on token(s), misplaced construct(s)
+94:                               </div>
+95:                               <div class="modal-footer">
+96:                                 <a href="<%= "rate.jsp?club_id=" + id%" class="modal-close waves-effect waves-green btn-flat">Rate</a>
+97:                               </div>
+98:                             </div>
+99:                             <div class="col"><a href=<%= "rate.jsp?club_id=" + id%> style="background-color:#687494" class="waves-effect waves-light btn"><i class="material-icons left">offline_pin</i>Rate</a></div>
+100:                             <div class="col left-align"><a href=<%= "review.jsp?club_id=" + id%> style="background-color:#687494" class="waves-effect waves-light btn"><i class="material-icons left">border_color</i>Write Review</a></div>
+
+
+An error occurred at line: [97] in the jsp file: [/club.jsp]
+Syntax error on token "class", ) expected
+94:                               </div>
+95:                               <div class="modal-footer">
+96:                                 <a href="<%= "rate.jsp?club_id=" + id%" class="modal-close waves-effect waves-green btn-flat">Rate</a>
+97:                               </div>
+98:                             </div>
+99:                             <div class="col"><a href=<%= "rate.jsp?club_id=" + id%> style="background-color:#687494" class="waves-effect waves-light btn"><i class="material-icons left">offline_pin</i>Rate</a></div>
+100:                             <div class="col left-align"><a href=<%= "review.jsp?club_id=" + id%> style="background-color:#687494" class="waves-effect waves-light btn"><i class="material-icons left">border_color</i>Write Review</a></div>
+
+
+An error occurred at line: [97] in the jsp file: [/club.jsp]
+Syntax error on token(s), misplaced construct(s)
+94:                               </div>
+95:                               <div class="modal-footer">
+96:                                 <a href="<%= "rate.jsp?club_id=" + id%" class="modal-close waves-effect waves-green btn-flat">Rate</a>
+97:                               </div>
+98:                             </div>
+99:                             <div class="col"><a href=<%= "rate.jsp?club_id=" + id%> style="background-color:#687494" class="waves-effect waves-light btn"><i class="material-icons left">offline_pin</i>Rate</a></div>
+100:                             <div class="col left-align"><a href=<%= "review.jsp?club_id=" + id%> style="background-color:#687494" class="waves-effect waves-light btn"><i class="material-icons left">border_color</i>Write Review</a></div>
+
+
+An error occurred at line: [97] in the jsp file: [/club.jsp]
+Syntax error, insert ":: IdentifierOrNew" to complete ReferenceExpression
+94:                               </div>
+95:                               <div class="modal-footer">
+96:                                 <a href="<%= "rate.jsp?club_id=" + id%" class="modal-close waves-effect waves-green btn-flat">Rate</a>
+97:                               </div>
+98:                             </div>
+99:                             <div class="col"><a href=<%= "rate.jsp?club_id=" + id%> style="background-color:#687494" class="waves-effect waves-light btn"><i class="material-icons left">offline_pin</i>Rate</a></div>
+100:                             <div class="col left-align"><a href=<%= "review.jsp?club_id=" + id%> style="background-color:#687494" class="waves-effect waves-light btn"><i class="material-icons left">border_color</i>Write Review</a></div>
+
+
+An error occurred at line: [97] in the jsp file: [/club.jsp]
+Syntax error, insert ";" to complete Statement
+94:                               </div>
+95:                               <div class="modal-footer">
+96:                                 <a href="<%= "rate.jsp?club_id=" + id%" class="modal-close waves-effect waves-green btn-flat">Rate</a>
+97:                               </div>
+98:                             </div>
+99:                             <div class="col"><a href=<%= "rate.jsp?club_id=" + id%> style="background-color:#687494" class="waves-effect waves-light btn"><i class="material-icons left">offline_pin</i>Rate</a></div>
+100:                             <div class="col left-align"><a href=<%= "review.jsp?club_id=" + id%> style="background-color:#687494" class="waves-effect waves-light btn"><i class="material-icons left">border_color</i>Write Review</a></div>
+
+
+An error occurred at line: [97] in the jsp file: [/club.jsp]
+Syntax error on token "<", invalid Expression
+94:                               </div>
+95:                               <div class="modal-footer">
+96:                                 <a href="<%= "rate.jsp?club_id=" + id%" class="modal-close waves-effect waves-green btn-flat">Rate</a>
+97:                               </div>
+98:                             </div>
+99:                             <div class="col"><a href=<%= "rate.jsp?club_id=" + id%> style="background-color:#687494" class="waves-effect waves-light btn"><i class="material-icons left">offline_pin</i>Rate</a></div>
+100:                             <div class="col left-align"><a href=<%= "review.jsp?club_id=" + id%> style="background-color:#687494" class="waves-effect waves-light btn"><i class="material-icons left">border_color</i>Write Review</a></div>
+
+
+An error occurred at line: [97] in the jsp file: [/club.jsp]
+Syntax error on token ")", delete this token
+94:                               </div>
+95:                               <div class="modal-footer">
+96:                                 <a href="<%= "rate.jsp?club_id=" + id%" class="modal-close waves-effect waves-green btn-flat">Rate</a>
+97:                               </div>
+98:                             </div>
+99:                             <div class="col"><a href=<%= "rate.jsp?club_id=" + id%> style="background-color:#687494" class="waves-effect waves-light btn"><i class="material-icons left">offline_pin</i>Rate</a></div>
+100:                             <div class="col left-align"><a href=<%= "review.jsp?club_id=" + id%> style="background-color:#687494" class="waves-effect waves-light btn"><i class="material-icons left">border_color</i>Write Review</a></div>
+
+
+Stacktrace:] with root cause
+	org.apache.jasper.JasperException: Unable to compile class for JSP: 
+
+An error occurred at line: [96] in the jsp file: [/club.jsp]
+Syntax error on token "modal", delete this token
+93:                                 <p>A bunch of text</p>
+94:                               </div>
+95:                               <div class="modal-footer">
+96:                                 <a href="<%= "rate.jsp?club_id=" + id%" class="modal-close waves-effect waves-green btn-flat">Rate</a>
+97:                               </div>
+98:                             </div>
+99:                             <div class="col"><a href=<%= "rate.jsp?club_id=" + id%> style="background-color:#687494" class="waves-effect waves-light btn"><i class="material-icons left">offline_pin</i>Rate</a></div>
+
+
+An error occurred at line: [96] in the jsp file: [/club.jsp]
+Syntax error on token "waves", delete this token
+93:                                 <p>A bunch of text</p>
+94:                               </div>
+95:                               <div class="modal-footer">
+96:                                 <a href="<%= "rate.jsp?club_id=" + id%" class="modal-close waves-effect waves-green btn-flat">Rate</a>
+97:                               </div>
+98:                             </div>
+99:                             <div class="col"><a href=<%= "rate.jsp?club_id=" + id%> style="background-color:#687494" class="waves-effect waves-light btn"><i class="material-icons left">offline_pin</i>Rate</a></div>
+
+
+An error occurred at line: [96] in the jsp file: [/club.jsp]
+Syntax error on token "waves", delete this token
+93:                                 <p>A bunch of text</p>
+94:                               </div>
+95:                               <div class="modal-footer">
+96:                                 <a href="<%= "rate.jsp?club_id=" + id%" class="modal-close waves-effect waves-green btn-flat">Rate</a>
+97:                               </div>
+98:                             </div>
+99:                             <div class="col"><a href=<%= "rate.jsp?club_id=" + id%> style="background-color:#687494" class="waves-effect waves-light btn"><i class="material-icons left">offline_pin</i>Rate</a></div>
+
+
+An error occurred at line: [96] in the jsp file: [/club.jsp]
+Syntax error on token "btn", delete this token
+93:                                 <p>A bunch of text</p>
+94:                               </div>
+95:                               <div class="modal-footer">
+96:                                 <a href="<%= "rate.jsp?club_id=" + id%" class="modal-close waves-effect waves-green btn-flat">Rate</a>
+97:                               </div>
+98:                             </div>
+99:                             <div class="col"><a href=<%= "rate.jsp?club_id=" + id%> style="background-color:#687494" class="waves-effect waves-light btn"><i class="material-icons left">offline_pin</i>Rate</a></div>
+
+
+An error occurred at line: [96] in the jsp file: [/club.jsp]
+String literal is not properly closed by a double-quote
+93:                                 <p>A bunch of text</p>
+94:                               </div>
+95:                               <div class="modal-footer">
+96:                                 <a href="<%= "rate.jsp?club_id=" + id%" class="modal-close waves-effect waves-green btn-flat">Rate</a>
+97:                               </div>
+98:                             </div>
+99:                             <div class="col"><a href=<%= "rate.jsp?club_id=" + id%> style="background-color:#687494" class="waves-effect waves-light btn"><i class="material-icons left">offline_pin</i>Rate</a></div>
+
+
+An error occurred at line: [96] in the jsp file: [/club.jsp]
+String literal is not properly closed by a double-quote
+93:                                 <p>A bunch of text</p>
+94:                               </div>
+95:                               <div class="modal-footer">
+96:                                 <a href="<%= "rate.jsp?club_id=" + id%" class="modal-close waves-effect waves-green btn-flat">Rate</a>
+97:                               </div>
+98:                             </div>
+99:                             <div class="col"><a href=<%= "rate.jsp?club_id=" + id%> style="background-color:#687494" class="waves-effect waves-light btn"><i class="material-icons left">offline_pin</i>Rate</a></div>
+
+
+An error occurred at line: [96] in the jsp file: [/club.jsp]
+Syntax error on token "/", delete this token
+93:                                 <p>A bunch of text</p>
+94:                               </div>
+95:                               <div class="modal-footer">
+96:                                 <a href="<%= "rate.jsp?club_id=" + id%" class="modal-close waves-effect waves-green btn-flat">Rate</a>
+97:                               </div>
+98:                             </div>
+99:                             <div class="col"><a href=<%= "rate.jsp?club_id=" + id%> style="background-color:#687494" class="waves-effect waves-light btn"><i class="material-icons left">offline_pin</i>Rate</a></div>
+
+
+An error occurred at line: [97] in the jsp file: [/club.jsp]
+Syntax error on token "<", invalid Expression
+94:                               </div>
+95:                               <div class="modal-footer">
+96:                                 <a href="<%= "rate.jsp?club_id=" + id%" class="modal-close waves-effect waves-green btn-flat">Rate</a>
+97:                               </div>
+98:                             </div>
+99:                             <div class="col"><a href=<%= "rate.jsp?club_id=" + id%> style="background-color:#687494" class="waves-effect waves-light btn"><i class="material-icons left">offline_pin</i>Rate</a></div>
+100:                             <div class="col left-align"><a href=<%= "review.jsp?club_id=" + id%> style="background-color:#687494" class="waves-effect waves-light btn"><i class="material-icons left">border_color</i>Write Review</a></div>
+
+
+An error occurred at line: [97] in the jsp file: [/club.jsp]
+Syntax error on token(s), misplaced construct(s)
+94:                               </div>
+95:                               <div class="modal-footer">
+96:                                 <a href="<%= "rate.jsp?club_id=" + id%" class="modal-close waves-effect waves-green btn-flat">Rate</a>
+97:                               </div>
+98:                             </div>
+99:                             <div class="col"><a href=<%= "rate.jsp?club_id=" + id%> style="background-color:#687494" class="waves-effect waves-light btn"><i class="material-icons left">offline_pin</i>Rate</a></div>
+100:                             <div class="col left-align"><a href=<%= "review.jsp?club_id=" + id%> style="background-color:#687494" class="waves-effect waves-light btn"><i class="material-icons left">border_color</i>Write Review</a></div>
+
+
+An error occurred at line: [97] in the jsp file: [/club.jsp]
+Syntax error on token "class", ) expected
+94:                               </div>
+95:                               <div class="modal-footer">
+96:                                 <a href="<%= "rate.jsp?club_id=" + id%" class="modal-close waves-effect waves-green btn-flat">Rate</a>
+97:                               </div>
+98:                             </div>
+99:                             <div class="col"><a href=<%= "rate.jsp?club_id=" + id%> style="background-color:#687494" class="waves-effect waves-light btn"><i class="material-icons left">offline_pin</i>Rate</a></div>
+100:                             <div class="col left-align"><a href=<%= "review.jsp?club_id=" + id%> style="background-color:#687494" class="waves-effect waves-light btn"><i class="material-icons left">border_color</i>Write Review</a></div>
+
+
+An error occurred at line: [97] in the jsp file: [/club.jsp]
+Syntax error on token(s), misplaced construct(s)
+94:                               </div>
+95:                               <div class="modal-footer">
+96:                                 <a href="<%= "rate.jsp?club_id=" + id%" class="modal-close waves-effect waves-green btn-flat">Rate</a>
+97:                               </div>
+98:                             </div>
+99:                             <div class="col"><a href=<%= "rate.jsp?club_id=" + id%> style="background-color:#687494" class="waves-effect waves-light btn"><i class="material-icons left">offline_pin</i>Rate</a></div>
+100:                             <div class="col left-align"><a href=<%= "review.jsp?club_id=" + id%> style="background-color:#687494" class="waves-effect waves-light btn"><i class="material-icons left">border_color</i>Write Review</a></div>
+
+
+An error occurred at line: [97] in the jsp file: [/club.jsp]
+Syntax error, insert ":: IdentifierOrNew" to complete ReferenceExpression
+94:                               </div>
+95:                               <div class="modal-footer">
+96:                                 <a href="<%= "rate.jsp?club_id=" + id%" class="modal-close waves-effect waves-green btn-flat">Rate</a>
+97:                               </div>
+98:                             </div>
+99:                             <div class="col"><a href=<%= "rate.jsp?club_id=" + id%> style="background-color:#687494" class="waves-effect waves-light btn"><i class="material-icons left">offline_pin</i>Rate</a></div>
+100:                             <div class="col left-align"><a href=<%= "review.jsp?club_id=" + id%> style="background-color:#687494" class="waves-effect waves-light btn"><i class="material-icons left">border_color</i>Write Review</a></div>
+
+
+An error occurred at line: [97] in the jsp file: [/club.jsp]
+Syntax error, insert ";" to complete Statement
+94:                               </div>
+95:                               <div class="modal-footer">
+96:                                 <a href="<%= "rate.jsp?club_id=" + id%" class="modal-close waves-effect waves-green btn-flat">Rate</a>
+97:                               </div>
+98:                             </div>
+99:                             <div class="col"><a href=<%= "rate.jsp?club_id=" + id%> style="background-color:#687494" class="waves-effect waves-light btn"><i class="material-icons left">offline_pin</i>Rate</a></div>
+100:                             <div class="col left-align"><a href=<%= "review.jsp?club_id=" + id%> style="background-color:#687494" class="waves-effect waves-light btn"><i class="material-icons left">border_color</i>Write Review</a></div>
+
+
+An error occurred at line: [97] in the jsp file: [/club.jsp]
+Syntax error on token "<", invalid Expression
+94:                               </div>
+95:                               <div class="modal-footer">
+96:                                 <a href="<%= "rate.jsp?club_id=" + id%" class="modal-close waves-effect waves-green btn-flat">Rate</a>
+97:                               </div>
+98:                             </div>
+99:                             <div class="col"><a href=<%= "rate.jsp?club_id=" + id%> style="background-color:#687494" class="waves-effect waves-light btn"><i class="material-icons left">offline_pin</i>Rate</a></div>
+100:                             <div class="col left-align"><a href=<%= "review.jsp?club_id=" + id%> style="background-color:#687494" class="waves-effect waves-light btn"><i class="material-icons left">border_color</i>Write Review</a></div>
+
+
+An error occurred at line: [97] in the jsp file: [/club.jsp]
+Syntax error on token ")", delete this token
+94:                               </div>
+95:                               <div class="modal-footer">
+96:                                 <a href="<%= "rate.jsp?club_id=" + id%" class="modal-close waves-effect waves-green btn-flat">Rate</a>
+97:                               </div>
+98:                             </div>
+99:                             <div class="col"><a href=<%= "rate.jsp?club_id=" + id%> style="background-color:#687494" class="waves-effect waves-light btn"><i class="material-icons left">offline_pin</i>Rate</a></div>
+100:                             <div class="col left-align"><a href=<%= "review.jsp?club_id=" + id%> style="background-color:#687494" class="waves-effect waves-light btn"><i class="material-icons left">border_color</i>Write Review</a></div>
+
+
+Stacktrace:
+		at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:102)
+		at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:213)
+		at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:600)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:381)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:351)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:335)
+		at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:597)
+		at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:398)
+		at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:383)
+		at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:331)
+		at javax.servlet.http.HttpServlet.service(HttpServlet.java:583)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:212)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:156)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:181)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:156)
+		at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:168)
+		at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+		at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:130)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:679)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:617)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:932)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1694)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+		at java.base/java.lang.Thread.run(Thread.java:1623)
+16-Oct-2023 16:16:52.857 SEVERE [http-nio-8080-exec-10] org.apache.catalina.core.StandardWrapperValve.invoke Servlet.service() for servlet [jsp] in context with path [] threw exception [Unable to compile class for JSP: 
+
+An error occurred at line: [96] in the jsp file: [/club.jsp]
+Syntax error on token "modal", delete this token
+93:                                 <p>A bunch of text</p>
+94:                               </div>
+95:                               <div class="modal-footer">
+96:                                 <a href="<%= "rate.jsp?club_id=" + id%" class="modal-close waves-effect waves-green btn-flat">Rate</a>
+97:                               </div>
+98:                             </div>
+99:                             
+
+
+An error occurred at line: [96] in the jsp file: [/club.jsp]
+Syntax error on token "waves", delete this token
+93:                                 <p>A bunch of text</p>
+94:                               </div>
+95:                               <div class="modal-footer">
+96:                                 <a href="<%= "rate.jsp?club_id=" + id%" class="modal-close waves-effect waves-green btn-flat">Rate</a>
+97:                               </div>
+98:                             </div>
+99:                             
+
+
+An error occurred at line: [96] in the jsp file: [/club.jsp]
+Syntax error on token "waves", delete this token
+93:                                 <p>A bunch of text</p>
+94:                               </div>
+95:                               <div class="modal-footer">
+96:                                 <a href="<%= "rate.jsp?club_id=" + id%" class="modal-close waves-effect waves-green btn-flat">Rate</a>
+97:                               </div>
+98:                             </div>
+99:                             
+
+
+An error occurred at line: [96] in the jsp file: [/club.jsp]
+Syntax error on token "btn", delete this token
+93:                                 <p>A bunch of text</p>
+94:                               </div>
+95:                               <div class="modal-footer">
+96:                                 <a href="<%= "rate.jsp?club_id=" + id%" class="modal-close waves-effect waves-green btn-flat">Rate</a>
+97:                               </div>
+98:                             </div>
+99:                             
+
+
+An error occurred at line: [96] in the jsp file: [/club.jsp]
+String literal is not properly closed by a double-quote
+93:                                 <p>A bunch of text</p>
+94:                               </div>
+95:                               <div class="modal-footer">
+96:                                 <a href="<%= "rate.jsp?club_id=" + id%" class="modal-close waves-effect waves-green btn-flat">Rate</a>
+97:                               </div>
+98:                             </div>
+99:                             
+
+
+An error occurred at line: [96] in the jsp file: [/club.jsp]
+String literal is not properly closed by a double-quote
+93:                                 <p>A bunch of text</p>
+94:                               </div>
+95:                               <div class="modal-footer">
+96:                                 <a href="<%= "rate.jsp?club_id=" + id%" class="modal-close waves-effect waves-green btn-flat">Rate</a>
+97:                               </div>
+98:                             </div>
+99:                             
+
+
+An error occurred at line: [96] in the jsp file: [/club.jsp]
+Syntax error on token "/", delete this token
+93:                                 <p>A bunch of text</p>
+94:                               </div>
+95:                               <div class="modal-footer">
+96:                                 <a href="<%= "rate.jsp?club_id=" + id%" class="modal-close waves-effect waves-green btn-flat">Rate</a>
+97:                               </div>
+98:                             </div>
+99:                             
+
+
+An error occurred at line: [97] in the jsp file: [/club.jsp]
+Syntax error on token "<", invalid Expression
+94:                               </div>
+95:                               <div class="modal-footer">
+96:                                 <a href="<%= "rate.jsp?club_id=" + id%" class="modal-close waves-effect waves-green btn-flat">Rate</a>
+97:                               </div>
+98:                             </div>
+99:                             
+100:                             <div class="col left-align"><a href=<%= "review.jsp?club_id=" + id%> style="background-color:#687494" class="waves-effect waves-light btn"><i class="material-icons left">border_color</i>Write Review</a></div>
+
+
+An error occurred at line: [97] in the jsp file: [/club.jsp]
+Syntax error on token(s), misplaced construct(s)
+94:                               </div>
+95:                               <div class="modal-footer">
+96:                                 <a href="<%= "rate.jsp?club_id=" + id%" class="modal-close waves-effect waves-green btn-flat">Rate</a>
+97:                               </div>
+98:                             </div>
+99:                             
+100:                             <div class="col left-align"><a href=<%= "review.jsp?club_id=" + id%> style="background-color:#687494" class="waves-effect waves-light btn"><i class="material-icons left">border_color</i>Write Review</a></div>
+
+
+An error occurred at line: [96] in the jsp file: [/club.jsp]
+Syntax error on token "class", ) expected
+93:                                 <p>A bunch of text</p>
+94:                               </div>
+95:                               <div class="modal-footer">
+96:                                 <a href="<%= "rate.jsp?club_id=" + id%" class="modal-close waves-effect waves-green btn-flat">Rate</a>
+97:                               </div>
+98:                             </div>
+99:                             
+
+
+An error occurred at line: [96] in the jsp file: [/club.jsp]
+Syntax error on token(s), misplaced construct(s)
+93:                                 <p>A bunch of text</p>
+94:                               </div>
+95:                               <div class="modal-footer">
+96:                                 <a href="<%= "rate.jsp?club_id=" + id%" class="modal-close waves-effect waves-green btn-flat">Rate</a>
+97:                               </div>
+98:                             </div>
+99:                             
+
+
+An error occurred at line: [96] in the jsp file: [/club.jsp]
+Syntax error, insert ":: IdentifierOrNew" to complete ReferenceExpression
+93:                                 <p>A bunch of text</p>
+94:                               </div>
+95:                               <div class="modal-footer">
+96:                                 <a href="<%= "rate.jsp?club_id=" + id%" class="modal-close waves-effect waves-green btn-flat">Rate</a>
+97:                               </div>
+98:                             </div>
+99:                             
+
+
+An error occurred at line: [96] in the jsp file: [/club.jsp]
+Syntax error, insert ";" to complete Statement
+93:                                 <p>A bunch of text</p>
+94:                               </div>
+95:                               <div class="modal-footer">
+96:                                 <a href="<%= "rate.jsp?club_id=" + id%" class="modal-close waves-effect waves-green btn-flat">Rate</a>
+97:                               </div>
+98:                             </div>
+99:                             
+
+
+An error occurred at line: [96] in the jsp file: [/club.jsp]
+Syntax error on token "<", invalid Expression
+93:                                 <p>A bunch of text</p>
+94:                               </div>
+95:                               <div class="modal-footer">
+96:                                 <a href="<%= "rate.jsp?club_id=" + id%" class="modal-close waves-effect waves-green btn-flat">Rate</a>
+97:                               </div>
+98:                             </div>
+99:                             
+
+
+An error occurred at line: [96] in the jsp file: [/club.jsp]
+Syntax error on token ")", delete this token
+93:                                 <p>A bunch of text</p>
+94:                               </div>
+95:                               <div class="modal-footer">
+96:                                 <a href="<%= "rate.jsp?club_id=" + id%" class="modal-close waves-effect waves-green btn-flat">Rate</a>
+97:                               </div>
+98:                             </div>
+99:                             
+
+
+Stacktrace:] with root cause
+	org.apache.jasper.JasperException: Unable to compile class for JSP: 
+
+An error occurred at line: [96] in the jsp file: [/club.jsp]
+Syntax error on token "modal", delete this token
+93:                                 <p>A bunch of text</p>
+94:                               </div>
+95:                               <div class="modal-footer">
+96:                                 <a href="<%= "rate.jsp?club_id=" + id%" class="modal-close waves-effect waves-green btn-flat">Rate</a>
+97:                               </div>
+98:                             </div>
+99:                             
+
+
+An error occurred at line: [96] in the jsp file: [/club.jsp]
+Syntax error on token "waves", delete this token
+93:                                 <p>A bunch of text</p>
+94:                               </div>
+95:                               <div class="modal-footer">
+96:                                 <a href="<%= "rate.jsp?club_id=" + id%" class="modal-close waves-effect waves-green btn-flat">Rate</a>
+97:                               </div>
+98:                             </div>
+99:                             
+
+
+An error occurred at line: [96] in the jsp file: [/club.jsp]
+Syntax error on token "waves", delete this token
+93:                                 <p>A bunch of text</p>
+94:                               </div>
+95:                               <div class="modal-footer">
+96:                                 <a href="<%= "rate.jsp?club_id=" + id%" class="modal-close waves-effect waves-green btn-flat">Rate</a>
+97:                               </div>
+98:                             </div>
+99:                             
+
+
+An error occurred at line: [96] in the jsp file: [/club.jsp]
+Syntax error on token "btn", delete this token
+93:                                 <p>A bunch of text</p>
+94:                               </div>
+95:                               <div class="modal-footer">
+96:                                 <a href="<%= "rate.jsp?club_id=" + id%" class="modal-close waves-effect waves-green btn-flat">Rate</a>
+97:                               </div>
+98:                             </div>
+99:                             
+
+
+An error occurred at line: [96] in the jsp file: [/club.jsp]
+String literal is not properly closed by a double-quote
+93:                                 <p>A bunch of text</p>
+94:                               </div>
+95:                               <div class="modal-footer">
+96:                                 <a href="<%= "rate.jsp?club_id=" + id%" class="modal-close waves-effect waves-green btn-flat">Rate</a>
+97:                               </div>
+98:                             </div>
+99:                             
+
+
+An error occurred at line: [96] in the jsp file: [/club.jsp]
+String literal is not properly closed by a double-quote
+93:                                 <p>A bunch of text</p>
+94:                               </div>
+95:                               <div class="modal-footer">
+96:                                 <a href="<%= "rate.jsp?club_id=" + id%" class="modal-close waves-effect waves-green btn-flat">Rate</a>
+97:                               </div>
+98:                             </div>
+99:                             
+
+
+An error occurred at line: [96] in the jsp file: [/club.jsp]
+Syntax error on token "/", delete this token
+93:                                 <p>A bunch of text</p>
+94:                               </div>
+95:                               <div class="modal-footer">
+96:                                 <a href="<%= "rate.jsp?club_id=" + id%" class="modal-close waves-effect waves-green btn-flat">Rate</a>
+97:                               </div>
+98:                             </div>
+99:                             
+
+
+An error occurred at line: [97] in the jsp file: [/club.jsp]
+Syntax error on token "<", invalid Expression
+94:                               </div>
+95:                               <div class="modal-footer">
+96:                                 <a href="<%= "rate.jsp?club_id=" + id%" class="modal-close waves-effect waves-green btn-flat">Rate</a>
+97:                               </div>
+98:                             </div>
+99:                             
+100:                             <div class="col left-align"><a href=<%= "review.jsp?club_id=" + id%> style="background-color:#687494" class="waves-effect waves-light btn"><i class="material-icons left">border_color</i>Write Review</a></div>
+
+
+An error occurred at line: [97] in the jsp file: [/club.jsp]
+Syntax error on token(s), misplaced construct(s)
+94:                               </div>
+95:                               <div class="modal-footer">
+96:                                 <a href="<%= "rate.jsp?club_id=" + id%" class="modal-close waves-effect waves-green btn-flat">Rate</a>
+97:                               </div>
+98:                             </div>
+99:                             
+100:                             <div class="col left-align"><a href=<%= "review.jsp?club_id=" + id%> style="background-color:#687494" class="waves-effect waves-light btn"><i class="material-icons left">border_color</i>Write Review</a></div>
+
+
+An error occurred at line: [96] in the jsp file: [/club.jsp]
+Syntax error on token "class", ) expected
+93:                                 <p>A bunch of text</p>
+94:                               </div>
+95:                               <div class="modal-footer">
+96:                                 <a href="<%= "rate.jsp?club_id=" + id%" class="modal-close waves-effect waves-green btn-flat">Rate</a>
+97:                               </div>
+98:                             </div>
+99:                             
+
+
+An error occurred at line: [96] in the jsp file: [/club.jsp]
+Syntax error on token(s), misplaced construct(s)
+93:                                 <p>A bunch of text</p>
+94:                               </div>
+95:                               <div class="modal-footer">
+96:                                 <a href="<%= "rate.jsp?club_id=" + id%" class="modal-close waves-effect waves-green btn-flat">Rate</a>
+97:                               </div>
+98:                             </div>
+99:                             
+
+
+An error occurred at line: [96] in the jsp file: [/club.jsp]
+Syntax error, insert ":: IdentifierOrNew" to complete ReferenceExpression
+93:                                 <p>A bunch of text</p>
+94:                               </div>
+95:                               <div class="modal-footer">
+96:                                 <a href="<%= "rate.jsp?club_id=" + id%" class="modal-close waves-effect waves-green btn-flat">Rate</a>
+97:                               </div>
+98:                             </div>
+99:                             
+
+
+An error occurred at line: [96] in the jsp file: [/club.jsp]
+Syntax error, insert ";" to complete Statement
+93:                                 <p>A bunch of text</p>
+94:                               </div>
+95:                               <div class="modal-footer">
+96:                                 <a href="<%= "rate.jsp?club_id=" + id%" class="modal-close waves-effect waves-green btn-flat">Rate</a>
+97:                               </div>
+98:                             </div>
+99:                             
+
+
+An error occurred at line: [96] in the jsp file: [/club.jsp]
+Syntax error on token "<", invalid Expression
+93:                                 <p>A bunch of text</p>
+94:                               </div>
+95:                               <div class="modal-footer">
+96:                                 <a href="<%= "rate.jsp?club_id=" + id%" class="modal-close waves-effect waves-green btn-flat">Rate</a>
+97:                               </div>
+98:                             </div>
+99:                             
+
+
+An error occurred at line: [96] in the jsp file: [/club.jsp]
+Syntax error on token ")", delete this token
+93:                                 <p>A bunch of text</p>
+94:                               </div>
+95:                               <div class="modal-footer">
+96:                                 <a href="<%= "rate.jsp?club_id=" + id%" class="modal-close waves-effect waves-green btn-flat">Rate</a>
+97:                               </div>
+98:                             </div>
+99:                             
+
+
+Stacktrace:
+		at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:102)
+		at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:213)
+		at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:600)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:381)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:351)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:335)
+		at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:597)
+		at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:398)
+		at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:383)
+		at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:331)
+		at javax.servlet.http.HttpServlet.service(HttpServlet.java:583)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:212)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:156)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:181)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:156)
+		at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:168)
+		at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+		at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:130)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:679)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:617)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:932)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1694)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+		at java.base/java.lang.Thread.run(Thread.java:1623)
+16-Oct-2023 17:39:55.496 SEVERE [http-nio-8080-exec-7] org.apache.catalina.core.StandardWrapperValve.invoke Servlet.service() for servlet [jsp] in context with path [] threw exception [The absolute uri: [http://java.sun.com/jsp/jstl/core] cannot be resolved in either web.xml or the jar files deployed with this application] with root cause
+	org.apache.jasper.JasperException: The absolute uri: [http://java.sun.com/jsp/jstl/core] cannot be resolved in either web.xml or the jar files deployed with this application
+		at org.apache.jasper.compiler.DefaultErrorHandler.jspError(DefaultErrorHandler.java:54)
+		at org.apache.jasper.compiler.ErrorDispatcher.dispatch(ErrorDispatcher.java:294)
+		at org.apache.jasper.compiler.ErrorDispatcher.jspError(ErrorDispatcher.java:81)
+		at org.apache.jasper.compiler.TagLibraryInfoImpl.generateTldResourcePath(TagLibraryInfoImpl.java:251)
+		at org.apache.jasper.compiler.TagLibraryInfoImpl.<init>(TagLibraryInfoImpl.java:122)
+		at org.apache.jasper.compiler.Parser.parseTaglibDirective(Parser.java:435)
+		at org.apache.jasper.compiler.Parser.parseDirective(Parser.java:493)
+		at org.apache.jasper.compiler.Parser.parseElements(Parser.java:1450)
+		at org.apache.jasper.compiler.Parser.parse(Parser.java:144)
+		at org.apache.jasper.compiler.ParserController.doParse(ParserController.java:245)
+		at org.apache.jasper.compiler.ParserController.parse(ParserController.java:106)
+		at org.apache.jasper.compiler.Compiler.generateJava(Compiler.java:203)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:375)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:351)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:335)
+		at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:597)
+		at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:398)
+		at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:383)
+		at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:331)
+		at javax.servlet.http.HttpServlet.service(HttpServlet.java:583)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:212)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:156)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:181)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:156)
+		at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:168)
+		at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+		at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:130)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:679)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:617)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:932)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1694)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+		at java.base/java.lang.Thread.run(Thread.java:1623)
+16-Oct-2023 17:40:01.388 SEVERE [http-nio-8080-exec-1] org.apache.catalina.core.StandardWrapperValve.invoke Servlet.service() for servlet [jsp] in context with path [] threw exception [The absolute uri: [http://java.sun.com/jsp/jstl/core] cannot be resolved in either web.xml or the jar files deployed with this application] with root cause
+	org.apache.jasper.JasperException: The absolute uri: [http://java.sun.com/jsp/jstl/core] cannot be resolved in either web.xml or the jar files deployed with this application
+		at org.apache.jasper.compiler.DefaultErrorHandler.jspError(DefaultErrorHandler.java:54)
+		at org.apache.jasper.compiler.ErrorDispatcher.dispatch(ErrorDispatcher.java:294)
+		at org.apache.jasper.compiler.ErrorDispatcher.jspError(ErrorDispatcher.java:81)
+		at org.apache.jasper.compiler.TagLibraryInfoImpl.generateTldResourcePath(TagLibraryInfoImpl.java:251)
+		at org.apache.jasper.compiler.TagLibraryInfoImpl.<init>(TagLibraryInfoImpl.java:122)
+		at org.apache.jasper.compiler.Parser.parseTaglibDirective(Parser.java:435)
+		at org.apache.jasper.compiler.Parser.parseDirective(Parser.java:493)
+		at org.apache.jasper.compiler.Parser.parseElements(Parser.java:1450)
+		at org.apache.jasper.compiler.Parser.parse(Parser.java:144)
+		at org.apache.jasper.compiler.ParserController.doParse(ParserController.java:245)
+		at org.apache.jasper.compiler.ParserController.parse(ParserController.java:106)
+		at org.apache.jasper.compiler.Compiler.generateJava(Compiler.java:203)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:375)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:351)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:335)
+		at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:597)
+		at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:398)
+		at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:383)
+		at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:331)
+		at javax.servlet.http.HttpServlet.service(HttpServlet.java:583)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:212)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:156)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:181)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:156)
+		at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:168)
+		at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+		at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:130)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:679)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:617)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:932)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1694)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+		at java.base/java.lang.Thread.run(Thread.java:1623)
