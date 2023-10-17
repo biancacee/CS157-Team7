@@ -50,7 +50,7 @@
 
                     java.sql.Connection con;
                     Class.forName("com.mysql.jdbc.Driver");
-                    con = DriverManager.getConnection("jdbc:mysql://localhost:8889/clubspartan?autoReconnect=true&useSSL=false", "root", "root");
+                    con = DriverManager.getConnection("jdbc:mysql://localhost:3306/clubspartan?autoReconnect=true&useSSL=false", "root", "Million95!");
 
                     PreparedStatement stmt = con.prepareStatement("SELECT club_id, name, logo, description, is_active FROM club");
                     if(club_name != null)

@@ -22,10 +22,42 @@
             </div>
         </nav>
 
+        <%
+        try 
+        {
+            String club_id = request.getParameter("club_id");
+
+            java.sql.Connection con;
+            Class.forName("com.mysql.jdbc.Driver");
+            con = DriverManager.getConnection("jdbc:mysql://localhost:"+"3306"+"/clubspartan?autoReconnect=true&useSSL=false", "root", "Million95!");
+
+            PreparedStatement stmt = con.prepareStatement("SELECT * FROM club WHERE club_id = ?");
+            stmt.setString(1, club_id);
+            ResultSet rs = stmt.executeQuery();
+            rs.next();
+
+            
+        %>
+
         <!-- Home -->
         <div class="container">
+          <div style="background-color:#e9ecee">
+            <div class="container center-align" style="padding: 15px;">
+                <h4><%= rs.getString(2) %></h4>
+            </div>
+          </div>
             
         </div>
+
+        <%
+            rs.close();
+            con.close();
+        }
+        catch(SQLException e) 
+        {
+            out.println("SQLException caught: " + e.getMessage());
+        }
+        %>
 
         <script type="text/javascript" src="js/materialize.min.js"></script>
     </body>

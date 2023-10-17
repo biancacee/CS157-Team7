@@ -6,7 +6,9 @@
         <!-- Includes -->
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+        <link rel="stylesheet" type="text/css" href="style.css">
         <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     </head>
@@ -30,7 +32,7 @@
 
             java.sql.Connection con;
             Class.forName("com.mysql.jdbc.Driver");
-            con = DriverManager.getConnection("jdbc:mysql://localhost:8889/clubspartan?autoReconnect=true&useSSL=false", "root", "root");
+            con = DriverManager.getConnection("jdbc:mysql://localhost:"+"3306"+"/clubspartan?autoReconnect=true&useSSL=false", "root", "Million95!");
 
             PreparedStatement stmt = con.prepareStatement("SELECT * FROM club WHERE club_id = ?");
             stmt.setString(1, id);
@@ -84,7 +86,29 @@
                         <p><%= rs.getString(7) %></p>
                         <hr />
                         <div class="row">
-                            <div class="col"><a href=<%= "rate.jsp?club_id=" + id%> style="background-color:#687494" class="waves-effect waves-light btn"><i class="material-icons left">offline_pin</i>Rate</a></div>
+                                    <!-- Modal Trigger -->
+                            <a class="waves-effect waves-light btn modal-trigger" style="background-color:#687494" href="#modal"><i class="material-icons left">offline_pin</i>Rate</a>
+
+                            <!-- Modal Structure -->
+                            <div id="modal" class="modal">
+                                <div class="modal-content">
+                                    <h4>Rate the Club</h4>
+                                    <p style="padding-top:10px">
+                                        <div class="rating center-align" id="star-rating">
+                                            <div style="font-size: 30px;">Overall experience</div>
+                                            <span class="star" data-rating="1"></span>
+                                            <span class="star" data-rating="2"></span>
+                                            <span class="star" data-rating="3"></span>
+                                            <span class="star" data-rating="4"></span>
+                                            <span class="star" data-rating="5"></span>
+                                        </div>
+                                        
+                                    </p>
+                                </div>
+                                <div class="modal-footer">
+                                    <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
+                                </div>
+                            </div>
                             <div class="col left-align"><a href=<%= "review.jsp?club_id=" + id%> style="background-color:#687494" class="waves-effect waves-light btn"><i class="material-icons left">border_color</i>Write Review</a></div>
                         </div>
                     </div>
@@ -132,5 +156,42 @@
         }
         %>
         <script type="text/javascript" src="js/materialize.min.js"></script>
+        <!-- Needed for Modal review -->
+        <script>
+            const stars = document.querySelectorAll(".star");
+        
+            stars.forEach(star => {
+                star.addEventListener("mouseenter", () => {
+                    const rating = parseInt(star.getAttribute("data-rating"));
+                    stars.forEach(s => {
+                        const sRating = parseInt(s.getAttribute("data-rating"));
+                        if (sRating <= rating) {
+                            s.classList.add("filled");
+                        } else {
+                            s.classList.remove("filled");
+                        }
+                    });
+                });
+        
+                star.addEventListener("mouseleave", () => {
+                    // Clear all stars when the mouse leaves the rating area
+                    stars.forEach(s => {
+                        s.classList.remove("filled");
+                    });
+                });
+        
+                star.addEventListener("click", () => {
+                    // Set the rating when a star is clicked
+                    const rating = parseInt(star.getAttribute("data-rating"));
+                    // Perform any additional action on clicking if needed
+                });
+            });
+        </script>
+        <!-- Needed for Modal -->
+        <script>
+            $(document).ready(function(){
+            $('#modal').modal();
+            });
+        </script>
     </body>
 </html>
