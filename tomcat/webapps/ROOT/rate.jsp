@@ -29,7 +29,7 @@
 
             java.sql.Connection con;
             Class.forName("com.mysql.jdbc.Driver");
-            con = DriverManager.getConnection("jdbc:mysql://localhost:"+"3306"+"/clubspartan?autoReconnect=true&useSSL=false", "root", "password");
+            con = DriverManager.getConnection("jdbc:mysql://localhost:"+"3306"+"/clubspartan?autoReconnect=true&useSSL=false", "root", "MySql.0189");
 
             PreparedStatement stmt = con.prepareStatement("SELECT * FROM club WHERE club_id = ?");
             stmt.setString(1, club_id);
@@ -44,10 +44,7 @@
           <div style="background-color:#e9ecee">
             <div class="container center-align" style="padding: 15px;">
                 <h4><%= rs.getString(2) %></h4>
-            </div>
-          </div>
-            
-        </div>
+
 
         <%
             rs.close();
