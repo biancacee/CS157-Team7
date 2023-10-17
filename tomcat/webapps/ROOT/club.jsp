@@ -32,7 +32,7 @@
 
             java.sql.Connection con;
             Class.forName("com.mysql.jdbc.Driver");
-            con = DriverManager.getConnection("jdbc:mysql://localhost:"+"3306"+"/clubspartan?autoReconnect=true&useSSL=false", "root", "Million95!");
+            con = DriverManager.getConnection("jdbc:mysql://localhost:"+"3306"+"/clubspartan?autoReconnect=true&useSSL=false", "root", "password");
 
             PreparedStatement stmt = con.prepareStatement("SELECT * FROM club WHERE club_id = ?");
             stmt.setString(1, id);
