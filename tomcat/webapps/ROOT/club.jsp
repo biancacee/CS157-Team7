@@ -86,7 +86,7 @@
                         <p><%= rs.getString(7) %></p>
                         <hr />
                         <div class="row">
-                                    <!-- Modal Trigger -->
+                            <!-- Modal Trigger -->
                             <a class="waves-effect waves-light btn modal-trigger" style="background-color:#687494" href="#modal"><i class="material-icons left">offline_pin</i>Rate</a>
 
                             <!-- Modal Structure -->
@@ -96,19 +96,21 @@
                                     <p style="padding-top:10px">
                                         <div class="rating center-align" id="star-rating">
                                             <div style="font-size: 30px;">Overall experience</div>
-                                            <span class="star" data-rating="1"></span>
-                                            <span class="star" data-rating="2"></span>
-                                            <span class="star" data-rating="3"></span>
-                                            <span class="star" data-rating="4"></span>
-                                            <span class="star" data-rating="5"></span>
+                                            <div class="star" data-rating="1"></div>
+                                            <div class="star" data-rating="2"></div>
+                                            <div class="star" data-rating="3"></div>
+                                            <div class="star" data-rating="4"></div>
+                                            <div class="star" data-rating="5"></div>
                                         </div>
-                                        
+                                        <!-- Hidden input to store the selected rating -->
+                                        <input type="hidden" id="selected-rating" name="selected-rating" value="1">
                                     </p>
                                 </div>
                                 <div class="modal-footer">
-                                    <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
+                                    <a id="agree-button" href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
                                 </div>
                             </div>
+                                                                       
                             <div class="col left-align"><a href=<%= "review.jsp?club_id=" + id%> style="background-color:#687494" class="waves-effect waves-light btn"><i class="material-icons left">border_color</i>Write Review</a></div>
                         </div>
                     </div>
@@ -158,40 +160,70 @@
         <script type="text/javascript" src="js/materialize.min.js"></script>
         <!-- Needed for Modal review -->
         <script>
-            const stars = document.querySelectorAll(".star");
-        
-            stars.forEach(star => {
-                star.addEventListener("mouseenter", () => {
-                    const rating = parseInt(star.getAttribute("data-rating"));
-                    stars.forEach(s => {
-                        const sRating = parseInt(s.getAttribute("data-rating"));
-                        if (sRating <= rating) {
-                            s.classList.add("filled");
-                        } else {
-                            s.classList.remove("filled");
+            $(document).ready(function() {
+                $('#modal').modal({
+                    onOpenEnd: function() {
+                        initializeRatingSystem();
+                    }
+                });
+            
+                $('#agree-button').on('click', function() {
+                    const selectedRating = document.getElementById("selected-rating").value;
+            
+                    // Send the rating to the server using an AJAX request
+                    $.ajax({
+                        type: "POST",
+                        url: "update_rate.jsp", // JSP file to handle the database insertion
+                        data: {
+                            rating: selectedRating
+                        },
+                        success: function(data) {
+                            console.log("Rating sent to the server.");
+                            // You can handle the response from the server here if needed
+                        },
+                        error: function() {
+                            console.error("Failed to send rating.");
                         }
                     });
                 });
-        
-                star.addEventListener("mouseleave", () => {
-                    // Clear all stars when the mouse leaves the rating area
-                    stars.forEach(s => {
-                        s.classList.remove("filled");
+            });
+            
+            function initializeRatingSystem() {
+                const stars = document.querySelectorAll("#modal .star");
+                const selectedRating = document.getElementById("selected-rating");
+            
+                stars.forEach(star => {
+                    star.addEventListener("mouseover", () => {
+                        const rating = parseInt(star.getAttribute("data-rating"));
+                        selectedRating.value = rating;
+            
+                        // Toggle the 'filled' class for all stars based on the selected rating
+                        stars.forEach(starItem => {
+                            const starRating = parseInt(starItem.getAttribute("data-rating"));
+                            if (starRating <= rating) {
+                                starItem.classList.add("filled");
+                            } else {
+                                starItem.classList.remove("filled");
+                            }
+                        });
+                    });
+            
+                    star.addEventListener("click", () => {
+                        // This click event keeps the stars lit up
+                        const rating = parseInt(star.getAttribute("data-rating"));
+                        selectedRating.value = rating;
                     });
                 });
-        
-                star.addEventListener("click", () => {
-                    // Set the rating when a star is clicked
-                    const rating = parseInt(star.getAttribute("data-rating"));
-                    // Perform any additional action on clicking if needed
+            
+                // Clear the rating when mouse leaves the star container
+                document.getElementById("star-rating").addEventListener("mouseleave", () => {
+                    selectedRating.value = "0";
+                    stars.forEach(starItem => {
+                        starItem.classList.remove("filled");
+                    });
                 });
-            });
-        </script>
-        <!-- Needed for Modal -->
-        <script>
-            $(document).ready(function(){
-            $('#modal').modal();
-            });
-        </script>
+            }
+            </script>
+            
     </body>
 </html>
