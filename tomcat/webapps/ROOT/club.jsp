@@ -19,7 +19,7 @@
               <ul id="nav-mobile" class="left hide-on-med-and-down">
                 <li><a href="index.jsp">Home</a></li>
                 <li><a href="log-in">Log In</a></li>
-                <li><a href="sign-up">Sign Up</a></li>
+                <li><a href="signup.jsp">Sign Up</a></li>
               </ul>
             </div>
         </nav>
@@ -32,7 +32,7 @@
 
             java.sql.Connection con;
             Class.forName("com.mysql.jdbc.Driver");
-            con = DriverManager.getConnection("jdbc:mysql://localhost:"+"3306"+"/clubspartan?autoReconnect=true&useSSL=false", "root", "password");
+            con = DriverManager.getConnection("jdbc:mysql://localhost:"+"3306"+"/clubspartan?autoReconnect=true&useSSL=false", "root", "MySql.0189");
 
             PreparedStatement stmt = con.prepareStatement("SELECT * FROM club WHERE club_id = ?");
             stmt.setString(1, id);
@@ -102,7 +102,7 @@
                                             <span class="star" data-rating="4"></span>
                                             <span class="star" data-rating="5"></span>
                                         </div>
-                                        
+
                                     </p>
                                 </div>
                                 <div class="modal-footer">
@@ -118,7 +118,7 @@
                 </div>
             </div>
         </div>
-        
+
         <!-- Reviews -->
         <div class="container" style="margin-top: 20px;">
             <div class="row">
@@ -155,6 +155,7 @@
             out.println("SQLException caught: " + e.getMessage());
         }
         %>
+
         <script type="text/javascript" src="js/materialize.min.js"></script>
         <!-- Needed for Modal review -->
         <script>
