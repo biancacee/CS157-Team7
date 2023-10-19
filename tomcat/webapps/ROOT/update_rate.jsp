@@ -12,7 +12,6 @@
         int rate_value = Integer.parseInt(request.getParameter("rating"));
         
         int id = 0;
-        
         Class.forName("com.mysql.jdbc.Driver");
         
         String dbUrl = "jdbc:mysql://localhost:3306/clubspartan?autoReconnect=true&useSSL=false";
