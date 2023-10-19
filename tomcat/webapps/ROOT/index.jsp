@@ -17,7 +17,7 @@
               <ul id="nav-mobile" class="left hide-on-med-and-down">
                 <li><a href="index.jsp">Home</a></li>
                 <li><a href="log-in">Log In</a></li>
-                <li><a href="signup.jsp">Sign Up</a></li>
+                <li><a href="sign-up">Sign Up</a></li>
               </ul>
             </div>
         </nav>
@@ -50,7 +50,7 @@
 
                     java.sql.Connection con;
                     Class.forName("com.mysql.jdbc.Driver");
-                    con = DriverManager.getConnection("jdbc:mysql://localhost:3306/clubspartan?autoReconnect=true&useSSL=false", "root", "MySql.0189");
+                    con = DriverManager.getConnection("jdbc:mysql://localhost:3306/clubspartan?autoReconnect=true&useSSL=false", "root", "root");
 
                     PreparedStatement stmt = con.prepareStatement("SELECT club_id, name, logo, description, is_active FROM club");
                     if(club_name != null)

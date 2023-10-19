@@ -1,19 +1,19 @@
 /* Style the stars */
 .star {
   display: inline-block;
-  width: 70px; /* Adjust the width to control the size of the stars */
-  height: 70px; /* Adjust the height to control the size of the stars */
+  width: 70px;
+  height: 70px;
   background-color: black;
   border: 1px solid #000;
   text-align: center;
   cursor: pointer;
   font-size: 20px;
-  margin-right: 5px; /* Adjust the margin between stars */
+  margin-right: 5px;
   clip-path: polygon(50% 0%, 61.8% 38.2%, 100% 44.1%, 70.9% 70.1%, 79.1% 100%, 50% 82.4%, 20.9% 100%, 29.1% 70.1%, 0% 44.1%, 38.2% 38.2%);
 }
 
 /* Style the filled stars */
 .star.filled {
-  background-color: #FFD700; /* You can change this color to your preferred star fill color */
-  border: 1px solid #FFD700; /* You can change this color to match the fill color */
+  background-color: #FFD700;
+  border: 1px solid #FFD700;
 }
