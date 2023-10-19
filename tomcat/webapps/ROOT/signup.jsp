@@ -24,77 +24,87 @@
     </div>
 </nav>
 <!-- Home -->
-<div class="container">
+<div class="container" style="margin-top: 40px;">
+    <form class="col s12" action = "signup.jsp" method="post">
+        <div class="row">
+            <div class="input-field col s6">
+                <input id="name" name="name" type="text" class="validate">
+                <label for="name">Enter Name</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s12">
+                <input id="major" name="major" type="text" class="validate">
+                <label for="major">Major</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s12">
+                <input id="password" name="password" type="password" class="validate">
+                <label for="password">Password</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s12">
+                <input id="sjsu_email" name="sjsu_email" type="email" class="validate">
+                <label for="sjsu_email">SJSU Email</label>
+            </div>
+        </div>
+        <div class="row">
+        <button class="btn btn-primary btn-sm" type="submit" name="signup.jsp">Submit
+            <i class="material-icons right">send</i>
+        </button>
+        </div>
+    </form>
     <%
-        // post request
-            String sjsu_email = request.getParameter("sjsu_email");
-            String password = request.getParameter("password");
-            String name = request.getParameter("name");
-            String major = request.getParameter("major");
+        String sjsu_email = request.getParameter("sjsu_email");
+        String password = request.getParameter("password");
+        String name = request.getParameter("name");
+        String major = request.getParameter("major");
 
-
-          try
+        if(sjsu_email != null && password != null && name != null && major != null)
+        {
+            String email_domain = sjsu_email.split("@")[1];
+            if(email_domain.equals("sjsu.edu"))
             {
-                java.sql.Connection con;
-                Class.forName("com.mysql.jdbc.Driver");
-                con = DriverManager.getConnection("jdbc:mysql://localhost:3306/clubspartan?autoReconnect=true&useSSL=false", "root", "MySql.0189");
-
-                PreparedStatement ps = con.prepareStatement("insert into user(sjsu_email,password,name,major) VALUES (?,?,?,?)");
-
-                ps.setString(1,sjsu_email);
-                ps.setString(2,password);
-                ps.setString(3,name);
-                ps.setString(4,major);
-
-                int x = ps.executeUpdate();
-
-                if (x>0)
+                try
                 {
-                    System.out.println("Registration done successfully");
-                }
+                    java.sql.Connection con;
+                    Class.forName("com.mysql.jdbc.Driver");
+                    con = DriverManager.getConnection("jdbc:mysql://localhost:3306/clubspartan?autoReconnect=true&useSSL=false", "root", "root");
 
+                    PreparedStatement ps = con.prepareStatement("insert into user(sjsu_email,password,name,major) VALUES (?,?,?,?)");
+
+                    ps.setString(1, sjsu_email);
+                    ps.setString(2, password);
+                    ps.setString(3, name);
+                    ps.setString(4, major);
+
+                    int x = ps.executeUpdate();
+
+                    if (x > 0)
+                    {
+                        %>
+                        <h4 class="center-align">Registration Done Successfully</h4>
+                        <%
+                    }
+
+                    ps.close();
+                    con.close();
+                }
+                catch(SQLException e)
+                {
+                    out.println("SQLException caught: " + e.getMessage());
+                }
+            }
+            else
+            {
+                %>
+                <h4 class="center-align">Use SJSU Email</h4>
+                <%
+            }
+        }
     %>
-        <%
-        con.close();
-    }
-    catch(SQLException e)
-    {
-        out.println("SQLException caught: " + e.getMessage());
-    }
-%>
-    <div class="container">
-        <form class="col s12" action = "signup.jsp" method="post">
-            <div class="row">
-                <div class="input-field col s6">
-                    <input id="name" name="name" type="text" class="validate">
-                    <label for="name">Enter Name</label>
-                </div>
-            </div>
-            <div class="row">
-                <div class="input-field col s12">
-                    <input id="major" name="major" type="text" class="validate">
-                    <label for="major">Major</label>
-                </div>
-            </div>
-            <div class="row">
-                <div class="input-field col s12">
-                    <input id="password" name="password" type="password" class="validate">
-                    <label for="password">Password</label>
-                </div>
-            </div>
-            <div class="row">
-                <div class="input-field col s12">
-                    <input id="sjsu_email" name="sjsu_email" type="email" class="validate">
-                    <label for="sjsu_email">SJSU Email</label>
-                </div>
-            </div>
-            <div class="row">
-            <button class="btn btn-primary btn-sm" type="submit" name="action">Submit
-                <i class="material-icons right">send</i>
-            </button>
-            </div>
-        </form>
-    </div>
 </div>
 <script type="text/javascript" src="js/materialize.min.js"></script>
 </body>

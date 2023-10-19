@@ -18,8 +18,8 @@
             <div class="nav-wrapper container">
               <ul id="nav-mobile" class="left hide-on-med-and-down">
                 <li><a href="index.jsp">Home</a></li>
-                <li><a href="log-in">Log In</a></li>
-                <li><a href="sign-up">Sign Up</a></li>
+                <li><a href="login.jsp">Log In</a></li>
+                <li><a href="signup.jsp">Sign Up</a></li>
               </ul>
             </div>
         </nav>
@@ -168,17 +168,22 @@
                 });
             
                 $('#agree-button').on('click', function() {
+                    const urlParams = new URLSearchParams(document.location.search);
+                    const club_id = urlParams.get('id');
+                    console.log(club_id)
                     const selectedRating = document.getElementById("selected-rating").value;
-            
+
                     // Send the rating to the server using an AJAX request
                     $.ajax({
                         type: "POST",
                         url: "update_rate.jsp", // JSP file to handle the database insertion
                         data: {
+                            club_id: club_id,
                             rating: selectedRating
                         },
                         success: function(data) {
                             console.log("Rating sent to the server.");
+                            location.reload()
                             // You can handle the response from the server here if needed
                         },
                         error: function() {
@@ -194,6 +199,10 @@
             
                 stars.forEach(star => {
                     star.addEventListener("mouseover", () => {
+                        
+                    });
+            
+                    star.addEventListener("click", () => {
                         const rating = parseInt(star.getAttribute("data-rating"));
                         selectedRating.value = rating;
             
@@ -206,12 +215,6 @@
                                 starItem.classList.remove("filled");
                             }
                         });
-                    });
-            
-                    star.addEventListener("click", () => {
-                        // This click event keeps the stars lit up along with those to the left
-                        const rating = parseInt(star.getAttribute("data-rating"));
-                        selectedRating.value = rating;
                     });
                 });
             
