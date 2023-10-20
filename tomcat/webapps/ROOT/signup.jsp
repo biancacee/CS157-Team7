@@ -18,7 +18,7 @@
     <div class="nav-wrapper container">
         <ul id="nav-mobile" class="left hide-on-med-and-down">
             <li><a href="index.jsp">Home</a></li>
-            <li><a href="log-in">Log In</a></li>
+            <li><a href="login.jsp">Log In</a></li>
             <li><a href="signup.jsp">Sign Up</a></li>
         </ul>
     </div>
