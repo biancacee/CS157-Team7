@@ -266,7 +266,8 @@
 
                     var title = $('#title').val();
                     var review = $('#review').val();
-                    var club_id = 6; // Change this value to the actual club_id you want to pass
+                    var urlParams = new URLSearchParams(window.location.search); // Create URLSearchParams
+                    var club_id = urlParams.get('id'); // Extract 'id' from the URL
 
                     $.ajax({
                         type: 'POST',
