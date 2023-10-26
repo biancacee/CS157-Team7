@@ -110,8 +110,29 @@
                                     <a id="agree-button" href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
                                 </div>
                             </div>
-                                                                       
-                            <div class="col left-align"><a href=<%= "review.jsp?club_id=" + id%> style="background-color:#687494" class="waves-effect waves-light btn"><i class="material-icons left">border_color</i>Write Review</a></div>
+
+                            <!-- Modal Trigger -->
+                            <a class="waves-effect waves-light btn modal-trigger" style="background-color: #687494" href="#modalReview"><i class="material-icons left">border_color</i>Write Review</a>
+
+                            <!-- Modal Structure -->
+                            <div id="modalReview" class="modal">
+                                <div class="modal-content">
+                                    <h1>Submit a Review</h1>
+                                    <form id="reviewForm">
+                                        <label for="title">Title:</label>
+                                        <input type="text" id="title" name="title" required><br>
+                                        <label for="review">Review:</label>
+                                        <textarea id="review" name="review" required></textarea><br>
+                                        <button type="submit">Submit</button>
+                                    </form>
+                                    <div id="response"></div>
+                                </div>
+                                <div class="modal-footer">
+                                    <a href="#!" id="close-button" class="modal-action modal-close waves-effect waves-green btn-flat">Close</a>
+                                </div>
+                            </div>
+                            
+
                         </div>
                     </div>
                     <div class="col s5 pull-s7 right-align" style="padding: 15px; padding-right: 20px;">
@@ -158,7 +179,7 @@
         }
         %>
         <script type="text/javascript" src="js/materialize.min.js"></script>
-        <!-- Needed for Modal review -->
+        <!-- Needed for Modal rate -->
         <script>
             $(document).ready(function() {
                 $('#modal').modal({
@@ -232,6 +253,48 @@
                 });
             }
             </script>
+            <!-- Needed for Modal Write review -->
+            <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+            
+            <script>
+                $(document).ready(function() {
+                $('#modalReview').modal();
+
+                $('#reviewForm').submit(function(e) {
+                    e.preventDefault();
+
+                    var title = $('#title').val();
+                    var review = $('#review').val();
+                    var club_id = 6; // Change this value to the actual club_id you want to pass
+
+                    $.ajax({
+                        type: 'POST',
+                        url: 'processReview.jsp',
+                        data: {
+                            title: title,
+                            review: review,
+                            club_id: club_id // Include club_id in the data
+                        },
+                        success: function(response) {
+                            $('#response').html(response);
+                        },
+                        error: function() {
+                            $('#response').html('An error occurred while submitting the review.');
+                        }
+                    });
+                });
+
+                // Add an event listener to the "Close" button
+                $('#close-button').click(function() {
+                    location.reload(); // Reload the page
+                });
+            });
+
+                </script>
+                
+            
+
             
             
             
