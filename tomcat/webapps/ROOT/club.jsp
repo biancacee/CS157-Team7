@@ -13,6 +13,11 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     </head>
     <body>
+        <% 
+        int user_id = -1;
+        if(session.getAttribute("user_id") != null)
+            user_id = (int)session.getAttribute("user_id");
+        %>
         <!-- Navbar -->
         <nav style="background-color:#687494">
             <div class="nav-wrapper container">
@@ -201,8 +206,8 @@
                 $('#agree-button').on('click', function() {
                     const urlParams = new URLSearchParams(document.location.search);
                     const club_id = urlParams.get('id');
-                    console.log(club_id)
                     const selectedRating = document.getElementById("selected-rating").value;
+                    const user_id = '${user_id}';
 
                     // Send the rating to the server using an AJAX request
                     $.ajax({
@@ -210,6 +215,7 @@
                         url: "update_rate.jsp", // JSP file to handle the database insertion
                         data: {
                             club_id: club_id,
+                            user_id: user_id,
                             rating: selectedRating
                         },
                         success: function(data) {
@@ -278,6 +284,7 @@
                     var review = $('#review').val();
                     var urlParams = new URLSearchParams(window.location.search); // Create URLSearchParams
                     var club_id = urlParams.get('id'); // Extract 'id' from the URL
+                    const user_id = '${user_id}';
 
                     $.ajax({
                         type: 'POST',
@@ -285,7 +292,8 @@
                         data: {
                             title: title,
                             review: review,
-                            club_id: club_id // Include club_id in the data
+                            club_id: club_id, // Include club_id in the data
+                            user_id: user_id
                         },
                         success: function(response) {
                             $('#response').html(response);
