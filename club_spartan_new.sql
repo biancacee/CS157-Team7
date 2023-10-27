@@ -25,12 +25,12 @@ DROP TABLE IF EXISTS `amentities`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `amentities` (
-  `amentity_id` int NOT NULL,
+  `amentity_id` int NOT NULL AUTO_INCREMENT,
   `image` varchar(255) DEFAULT NULL,
   `name` varchar(255) NOT NULL,
   `description` text NOT NULL,
   PRIMARY KEY (`amentity_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -39,7 +39,7 @@ CREATE TABLE `amentities` (
 
 LOCK TABLES `amentities` WRITE;
 /*!40000 ALTER TABLE `amentities` DISABLE KEYS */;
-INSERT INTO `amentities` VALUES (0,'https://d2rzw8waxoxhv2.cloudfront.net/facilities/xlarge/7fb0579ab742b965eefa/1672239213179-758-106.jpg','Theater','Movie night for everyone.'),(1,'https://upload.wikimedia.org/wikipedia/commons/thumb/9/92/Backyardpool.jpg/1200px-Backyardpool.jpg','Swimming Pool','Swimming pools are equipped with filtration and chlorination systems to maintain water quality.'),(2,'https://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/WiFi_Logo.svg/640px-WiFi_Logo.svg.png','Wi-Fi Access','Wi-Fi is commonly available in public places such as cafes, hotels, airports, and residential buildings.'),(3,'https://www.hussle.com/blog/wp-content/uploads/2020/12/Gym-structure-1080x675.png','Gym','A fitness center or gym is a facility equipped with exercise machines, weights, and other fitness equipment for physical workouts and exercise routines.'),(4,'https://media.timeout.com/images/105859999/750/422/image.jpg','Pet-Friendly','Accommodations welcome pets, allowing guests to bring their furry companions along for their stay, making travel more accessible for pet owners.'),(5,'https://t3.gstatic.com/licensed-image?q=tbn:ANd9GcQcHbxCjB7FY6Rttw1VZFdh0gIZmm4MLLjfmD0dhA11saxBKG_D49VVkmlvz3sE71-b','Pizza','Wheat-based dough topped with tomatoes, cheese, and often various other ingredients');
+INSERT INTO `amentities` VALUES (1,'https://d2rzw8waxoxhv2.cloudfront.net/facilities/xlarge/7fb0579ab742b965eefa/1672239213179-758-106.jpg','Theater','Movie night for everyone.'),(2,'https://upload.wikimedia.org/wikipedia/commons/thumb/9/92/Backyardpool.jpg/1200px-Backyardpool.jpg','Swimming Pool','Swimming pools are equipped with filtration and chlorination systems to maintain water quality.'),(3,'https://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/WiFi_Logo.svg/640px-WiFi_Logo.svg.png','Wi-Fi Access','Wi-Fi is commonly available in public places such as cafes, hotels, airports, and residential buildings.'),(4,'https://www.hussle.com/blog/wp-content/uploads/2020/12/Gym-structure-1080x675.png','Gym','A fitness center or gym is a facility equipped with exercise machines, weights, and other fitness equipment for physical workouts and exercise routines.'),(5,'https://media.timeout.com/images/105859999/750/422/image.jpg','Pet-Friendly','Accommodations welcome pets, allowing guests to bring their furry companions along for their stay, making travel more accessible for pet owners.'),(6,'https://t3.gstatic.com/licensed-image?q=tbn:ANd9GcQcHbxCjB7FY6Rttw1VZFdh0gIZmm4MLLjfmD0dhA11saxBKG_D49VVkmlvz3sE71-b','Pizza','Wheat-based dough topped with tomatoes, cheese, and often various other ingredients');
 /*!40000 ALTER TABLE `amentities` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -51,7 +51,7 @@ DROP TABLE IF EXISTS `club`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `club` (
-  `club_id` int NOT NULL,
+  `club_id` int NOT NULL AUTO_INCREMENT,
   `name` varchar(255) NOT NULL,
   `logo` varchar(255) NOT NULL,
   `contact_email` varchar(255) DEFAULT NULL,
@@ -61,7 +61,7 @@ CREATE TABLE `club` (
   `membership_fee` decimal(10,0) NOT NULL DEFAULT '0',
   `is_active` tinyint NOT NULL DEFAULT '1',
   PRIMARY KEY (`club_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -70,7 +70,7 @@ CREATE TABLE `club` (
 
 LOCK TABLES `club` WRITE;
 /*!40000 ALTER TABLE `club` DISABLE KEYS */;
-INSERT INTO `club` VALUES (0,'Computer Science Club','https://i.imgur.com/a6W3vxM.jpeg','sjsucsclub@gmail.com','https://discord.gg/12ajfm31','https://www.instagram.com/sjsucsclub/','Best club ever for anyone who wants to code',5,1),(1,'iRobots','https://www.airport-technology.com/wp-content/uploads/sites/14/2022/01/Ameca_White_BG_03-1038x778.jpg','irobot@sjsu.edu',NULL,NULL,'Build your own robots in our club.',10,1),(2,'Black Business Student Association','https://www.sjsu.edu/cob/pics/BBSA%20LOGO%20200x200.jpg','bbsasjsu@gmail.com',NULL,'https://www.instagram.com/bbsasjsu/','The mission of the Black Business Student Association (BBSA) is to support Black students in their academic, personal, and professional development within the Lucas College of Business.',0,1),(3,'International Student Club','https://www.sjsu.edu/cob/pics/IBA%20new.png','isc.president.sjsu@gmail.com',NULL,'https://www.instagram.com/iscsjsu/','A professional networking organization for students, faculty and alumni from all majors interested in global commerce.',0,1),(4,'Spartan Analytics ','https://www.sjsu.edu/cob/pics/SALogo.png','sjsu.spartananalytics@gmail.com',NULL,'https://www.instagram.com/sjsuspartananalytics/','The goal of Spartan Analytics is to further the knowledge of data analytics, enhance professional career skills, and create networking opportunities for members of San Jose State University.',25,0),(5,'Women in Business','https://www.sjsu.edu/cob/pics/NEW%20WIB%20logo.png','connect.sjsuwib@gmail.com ',NULL,'https://www.instagram.com/sjsuwib/','Women in Business is a pre-professional business organization founded in 2016 with the goal of breaking glass-ceiling boundaries in the business world today.',0,1);
+INSERT INTO `club` VALUES (1,'Computer Science Club','https://i.imgur.com/a6W3vxM.jpeg','sjsucsclub@gmail.com','https://discord.gg/12ajfm31','https://www.instagram.com/sjsucsclub/','Best club ever for anyone who wants to code',5,1),(2,'iRobots','https://www.airport-technology.com/wp-content/uploads/sites/14/2022/01/Ameca_White_BG_03-1038x778.jpg','irobot@sjsu.edu',NULL,NULL,'Build your own robots in our club.',10,1),(3,'Black Business Student Association','https://www.sjsu.edu/cob/pics/BBSA%20LOGO%20200x200.jpg','bbsasjsu@gmail.com',NULL,'https://www.instagram.com/bbsasjsu/','The mission of the Black Business Student Association (BBSA) is to support Black students in their academic, personal, and professional development within the Lucas College of Business.',0,1),(4,'International Student Club','https://www.sjsu.edu/cob/pics/IBA%20new.png','isc.president.sjsu@gmail.com',NULL,'https://www.instagram.com/iscsjsu/','A professional networking organization for students, faculty and alumni from all majors interested in global commerce.',0,1),(5,'Spartan Analytics ','https://www.sjsu.edu/cob/pics/SALogo.png','sjsu.spartananalytics@gmail.com',NULL,'https://www.instagram.com/sjsuspartananalytics/','The goal of Spartan Analytics is to further the knowledge of data analytics, enhance professional career skills, and create networking opportunities for members of San Jose State University.',25,0),(6,'Women in Business','https://www.sjsu.edu/cob/pics/NEW%20WIB%20logo.png','connect.sjsuwib@gmail.com ',NULL,'https://www.instagram.com/sjsuwib/','Women in Business is a pre-professional business organization founded in 2016 with the goal of breaking glass-ceiling boundaries in the business world today.',0,1);
 /*!40000 ALTER TABLE `club` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -98,7 +98,7 @@ CREATE TABLE `comment` (
 
 LOCK TABLES `comment` WRITE;
 /*!40000 ALTER TABLE `comment` DISABLE KEYS */;
-INSERT INTO `comment` VALUES (0,3,'I completely agree!'),(3,3,'I couldn\'t agree more'),(2,1,'Maybe it\'s a good club'),(5,2,'Platform to meet like-minded individuals and create lasting friendships'),(0,0,'I disagree'),(4,1,'You\'re spot on');
+INSERT INTO `comment` VALUES (1,2,'I completely agree!'),(1,2,'I couldn\'t agree more'),(2,1,'Maybe it\'s a good club'),(5,2,'Platform to meet like-minded individuals and create lasting friendships'),(1,2,'I disagree'),(4,1,'You\'re spot on');
 /*!40000 ALTER TABLE `comment` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -110,7 +110,7 @@ DROP TABLE IF EXISTS `event`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `event` (
-  `event_id` int NOT NULL,
+  `event_id` int NOT NULL AUTO_INCREMENT,
   `club_id` int NOT NULL,
   `location` varchar(255) NOT NULL,
   `title` varchar(255) NOT NULL,
@@ -121,7 +121,7 @@ CREATE TABLE `event` (
   PRIMARY KEY (`event_id`),
   KEY `club_id_idx` (`club_id`),
   CONSTRAINT `club_event_fk` FOREIGN KEY (`club_id`) REFERENCES `club` (`club_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -130,7 +130,7 @@ CREATE TABLE `event` (
 
 LOCK TABLES `event` WRITE;
 /*!40000 ALTER TABLE `event` DISABLE KEYS */;
-INSERT INTO `event` VALUES (1,0,'211 S 9th Student Union Building','Orientation','We will show around the campus','2024-10-06','14:00:00','14:45:00'),(2,1,'Student Union, Inc. Spartan Recreation and Aquatic Center','Graduate Studies','Explore part-time, full-time, online, or in-person graduate degrees','2024-10-14','09:30:00','11:30:00'),(3,2,'Washington Square Hall','Presentation','Presentation of our achievements','2024-11-01','10:15:00','10:30:00'),(4,1,'211 S 9th Student Union Building','Research','Our group will work on researching new technologies.','2024-11-03','09:30:00','11:30:00'),(5,3,'1 Washington Sq, San Jose, CA 95192','Graduation','Prepare for the graduation ceremony.','2024-11-05','14:00:00','14:45:00');
+INSERT INTO `event` VALUES (1,1,'211 S 9th Student Union Building','Orientation','We will show around the campus','2024-10-06','14:00:00','14:45:00'),(2,1,'Student Union, Inc. Spartan Recreation and Aquatic Center','Graduate Studies','Explore part-time, full-time, online, or in-person graduate degrees','2024-10-14','09:30:00','11:30:00'),(3,2,'Washington Square Hall','Presentation','Presentation of our achievements','2024-11-01','10:15:00','10:30:00'),(4,1,'211 S 9th Student Union Building','Research','Our group will work on researching new technologies.','2024-11-03','09:30:00','11:30:00'),(5,3,'1 Washington Sq, San Jose, CA 95192','Graduation','Prepare for the graduation ceremony.','2024-11-05','14:00:00','14:45:00');
 /*!40000 ALTER TABLE `event` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -157,7 +157,7 @@ CREATE TABLE `event_includes` (
 
 LOCK TABLES `event_includes` WRITE;
 /*!40000 ALTER TABLE `event_includes` DISABLE KEYS */;
-INSERT INTO `event_includes` VALUES (1,0),(1,2),(2,2),(2,1),(2,0),(4,5),(4,3);
+INSERT INTO `event_includes` VALUES (1,1),(1,2),(2,2),(2,1),(2,1),(4,5),(4,3);
 /*!40000 ALTER TABLE `event_includes` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -184,7 +184,7 @@ CREATE TABLE `like` (
 
 LOCK TABLES `like` WRITE;
 /*!40000 ALTER TABLE `like` DISABLE KEYS */;
-INSERT INTO `like` VALUES (0,2),(0,5),(4,1),(3,5),(3,2),(1,0),(4,2),(1,0);
+INSERT INTO `like` VALUES (2,2),(2,5),(4,1),(3,5),(3,2),(1,1),(4,2),(1,1);
 /*!40000 ALTER TABLE `like` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -211,7 +211,7 @@ CREATE TABLE `moderates` (
 
 LOCK TABLES `moderates` WRITE;
 /*!40000 ALTER TABLE `moderates` DISABLE KEYS */;
-INSERT INTO `moderates` VALUES (0,0),(1,0),(2,0),(3,1),(4,2),(5,3);
+INSERT INTO `moderates` VALUES (1,1),(1,1),(2,1),(3,1),(4,2),(5,3);
 /*!40000 ALTER TABLE `moderates` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -223,7 +223,7 @@ DROP TABLE IF EXISTS `private_message`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `private_message` (
-  `message_id` int NOT NULL,
+  `message_id` int NOT NULL AUTO_INCREMENT,
   `sender_id` int NOT NULL,
   `receiver_id` int NOT NULL,
   `message` text NOT NULL,
@@ -233,7 +233,7 @@ CREATE TABLE `private_message` (
   KEY `receiver_id_idx` (`receiver_id`),
   CONSTRAINT `receiver_id_fk` FOREIGN KEY (`receiver_id`) REFERENCES `user` (`user_id`),
   CONSTRAINT `sender_id_fk` FOREIGN KEY (`sender_id`) REFERENCES `user` (`user_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -242,7 +242,7 @@ CREATE TABLE `private_message` (
 
 LOCK TABLES `private_message` WRITE;
 /*!40000 ALTER TABLE `private_message` DISABLE KEYS */;
-INSERT INTO `private_message` VALUES (0,0,1,'How\'s your day going?','2023-10-01 12:52:12'),(1,1,0,'It\'s been a busy day at work, but I\'m hanging in there. How about you?','2023-10-01 20:52:12'),(2,0,1,'I just finished \"The Martian\" by Andy Weir. It\'s incredible. You should definitely check it out if you haven\'t already.','2023-10-01 20:53:32'),(3,2,0,'Hiking sounds like a fantastic idea! I\'m meeting up with some old friends on Saturday for a barbecue, and on Sunday, I\'ll probably catch up on some Netflix shows.','2023-10-02 12:32:32'),(4,2,0,'If you find any great hiking spots, let me know. We should swap recommendations more often!','2023-10-02 14:34:34'),(5,1,2,'I\'m thinking of going hiking on Saturday.','2023-10-02 14:54:09'),(6,2,1,'That sounds amazing! I\'m actually going to a concert on Saturday night.','2023-10-03 21:33:29');
+INSERT INTO `private_message` VALUES (1,1,2,'How\'s your day going?','2023-10-01 12:52:12'),(2,2,1,'It\'s been a busy day at work, but I\'m hanging in there. How about you?','2023-10-01 20:52:12'),(3,1,2,'I just finished \"The Martian\" by Andy Weir. It\'s incredible. You should definitely check it out if you haven\'t already.','2023-10-01 20:53:32'),(4,3,1,'Hiking sounds like a fantastic idea! I\'m meeting up with some old friends on Saturday for a barbecue, and on Sunday, I\'ll probably catch up on some Netflix shows.','2023-10-02 12:32:32'),(5,3,1,'If you find any great hiking spots, let me know. We should swap recommendations more often!','2023-10-02 14:34:34'),(6,2,3,'I\'m thinking of going hiking on Saturday.','2023-10-02 14:54:09'),(7,3,2,'That sounds amazing! I\'m actually going to a concert on Saturday night.','2023-10-03 21:33:29');
 /*!40000 ALTER TABLE `private_message` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -257,6 +257,7 @@ CREATE TABLE `rate` (
   `user_id` int NOT NULL,
   `club_id` int NOT NULL,
   `rating` int NOT NULL,
+  PRIMARY KEY (`user_id`,`club_id`),
   KEY `user_rate_id_fk_idx` (`user_id`),
   KEY `rate_club_id_fk_idx` (`club_id`),
   CONSTRAINT `rate_club_id_fk` FOREIGN KEY (`club_id`) REFERENCES `club` (`club_id`),
@@ -270,7 +271,7 @@ CREATE TABLE `rate` (
 
 LOCK TABLES `rate` WRITE;
 /*!40000 ALTER TABLE `rate` DISABLE KEYS */;
-INSERT INTO `rate` VALUES (0,1,5),(3,2,5),(2,1,4),(1,1,5),(5,4,3),(3,1,1);
+INSERT INTO `rate` VALUES (21,1,1);
 /*!40000 ALTER TABLE `rate` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -282,7 +283,7 @@ DROP TABLE IF EXISTS `review`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `review` (
-  `review_id` int NOT NULL,
+  `review_id` int NOT NULL AUTO_INCREMENT,
   `user_id` int NOT NULL,
   `club_id` int NOT NULL,
   `title` varchar(255) NOT NULL,
@@ -292,7 +293,7 @@ CREATE TABLE `review` (
   KEY `review_club_id_fk_idx` (`club_id`),
   CONSTRAINT `review_club_id_fk` FOREIGN KEY (`club_id`) REFERENCES `club` (`club_id`),
   CONSTRAINT `review_user_id_fk` FOREIGN KEY (`user_id`) REFERENCES `user` (`user_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -301,7 +302,7 @@ CREATE TABLE `review` (
 
 LOCK TABLES `review` WRITE;
 /*!40000 ALTER TABLE `review` DISABLE KEYS */;
-INSERT INTO `review` VALUES (0,0,1,'Amazing','Joining university clubs has been an incredible experience for me. The diverse range of clubs available at my university has allowed me to explore my interests and connect with like-minded individuals. '),(1,0,3,'Fantastic Hub','They offer leadership opportunities, community service initiatives, and chances to network with peers and professionals. '),(2,3,2,'Unleash Your Potential ','From attending club meetings to participating in events, these experiences have broadened my horizons and given me a well-rounded education beyond the classroom. '),(3,1,0,'Well-Rounded Experience!','This club provides a safe and nurturing environment to explore and experiment.'),(4,2,1,'Finding My Passion','Whether it\'s a themed party organized by a cultural club or a weekend hiking trip with the outdoor enthusiasts, these clubs offer countless opportunities to socialize and have a blast.'),(5,5,5,'The Social Lifeline','hey provide a sense of belonging that makes you feel at home in the sprawling campus community.');
+INSERT INTO `review` VALUES (1,1,2,'Amazing','Joining university clubs has been an incredible experience for me. The diverse range of clubs available at my university has allowed me to explore my interests and connect with like-minded individuals. '),(2,1,4,'Fantastic Hub','They offer leadership opportunities, community service initiatives, and chances to network with peers and professionals. '),(3,4,3,'Unleash Your Potential ','From attending club meetings to participating in events, these experiences have broadened my horizons and given me a well-rounded education beyond the classroom. '),(4,2,1,'Well-Rounded Experience!','This club provides a safe and nurturing environment to explore and experiment.'),(5,3,2,'Finding My Passion','Whether it\'s a themed party organized by a cultural club or a weekend hiking trip with the outdoor enthusiasts, these clubs offer countless opportunities to socialize and have a blast.'),(6,6,6,'The Social Lifeline','hey provide a sense of belonging that makes you feel at home in the sprawling campus community.');
 /*!40000 ALTER TABLE `review` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -313,7 +314,7 @@ DROP TABLE IF EXISTS `user`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `user` (
-  `user_id` int NOT NULL,
+  `user_id` int NOT NULL AUTO_INCREMENT,
   `sjsu_email` varchar(255) NOT NULL,
   `password` varchar(255) NOT NULL,
   `name` varchar(255) NOT NULL,
@@ -321,7 +322,7 @@ CREATE TABLE `user` (
   `profile_pic` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`user_id`),
   UNIQUE KEY `sjsu_email_UNIQUE` (`sjsu_email`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -330,7 +331,7 @@ CREATE TABLE `user` (
 
 LOCK TABLES `user` WRITE;
 /*!40000 ALTER TABLE `user` DISABLE KEYS */;
-INSERT INTO `user` VALUES (0,'spartak.gevorgyan@sjsu.edu','12345','Spartak Gevorgyan','SE','https://i.imgur.com/C8vkb0Y.jpeg'),(1,'burl.moreno@sjsu.edu','brulM','Burl Moreno','SE',NULL),(2,'ricky.esparza@sjsu.edu','totallae','Ricky Esparza','CS','https://i.imgur.com/EF98MFH.jpeg'),(3,'lucio.gallegos@sjsu.edu','interestingPass','Lucio Gallegos','CS','https://i.imgur.com/SEgUP2K.jpeg'),(4,'omar.cabrera@sjsu.edu','guessPssword1233','Omar Cabrera','SE',NULL),(5,'rudolph.bond@sjsu.edu','7462973A','Rudolph Bond','ART',NULL);
+INSERT INTO `user` VALUES (1,'spartak.gevorgyan@sjsu.edu','12345','Spartak Gevorgyan','SE','https://i.imgur.com/C8vkb0Y.jpeg'),(2,'burl.moreno@sjsu.edu','brulM','Burl Moreno','SE',NULL),(3,'ricky.esparza@sjsu.edu','totallae','Ricky Esparza','CS','https://i.imgur.com/EF98MFH.jpeg'),(4,'lucio.gallegos@sjsu.edu','interestingPass','Lucio Gallegos','CS','https://i.imgur.com/SEgUP2K.jpeg'),(5,'omar.cabrera@sjsu.edu','guessPssword1233','Omar Cabrera','SE',NULL),(6,'rudolph.bond@sjsu.edu','7462973A','Rudolph Bond','ART',NULL),(7,'Duck@sjsu.com','123','Duck','Duck',NULL),(10,'Duck1@sjsu.com','asfasf','asfasf','asfsaf',NULL),(11,'afas@mail.om','215125','Spartak Gevorgyan','asfasfasf',NULL),(13,'12141@mail.com','asgasg','asfsafasg','asgsagsg',NULL),(15,'afssaf@mail.com','asfasf','asfasf','asfasfas',NULL),(19,'asfasf@mail.com','asfsf','asfasf','asfasf',NULL),(20,'duckduck@sjsu.edu','asfassaf','fasasfsaf','fasfasf',NULL),(21,'spartak@sjsu.edu','123','spartak','cs',NULL);
 /*!40000 ALTER TABLE `user` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -343,4 +344,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-10-16 14:06:45
+-- Dump completed on 2023-10-26 23:11:34
