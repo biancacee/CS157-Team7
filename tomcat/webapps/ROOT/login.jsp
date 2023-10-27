@@ -56,7 +56,7 @@
                 Class.forName("com.mysql.jdbc.Driver");
                 con = DriverManager.getConnection("jdbc:mysql://localhost:3306/clubspartan?autoReconnect=true&useSSL=false", "root", "root");
 
-                PreparedStatement ps = con.prepareStatement("SELECT * FROM user WHERE sjsu_email = ? and password = ?");
+                PreparedStatement ps = con.prepareStatement("SELECT user_id FROM user WHERE sjsu_email = ? and password = ?");
 
                 ps.setString(1, sjsu_email);
                 ps.setString(2, password);
@@ -64,6 +64,8 @@
 
                 if (rs.next())
                 {
+                    session.setAttribute("user_id", rs.getInt(1));
+                    response.sendRedirect("index.jsp");
                     %>
                     <h4 class="center-align">Login Done Successfully</h4>
                     <%
