@@ -18,8 +18,14 @@
     <div class="nav-wrapper container">
         <ul id="nav-mobile" class="left hide-on-med-and-down">
             <li><a href="index.jsp">Home</a></li>
+            <% if(session.getAttribute("user_id") == null){ %>
             <li><a href="login.jsp">Log In</a></li>
             <li><a href="signup.jsp">Sign Up</a></li>
+            <% } %>
+
+            <% if(session.getAttribute("user_id") != null){ %>
+                <li><a href="logout.jsp">Logout</a></li>
+            <% } %>
         </ul>
     </div>
 </nav>

@@ -18,8 +18,14 @@
             <div class="nav-wrapper container">
               <ul id="nav-mobile" class="left hide-on-med-and-down">
                 <li><a href="index.jsp">Home</a></li>
+                <% if(session.getAttribute("user_id") == null){ %>
                 <li><a href="login.jsp">Log In</a></li>
                 <li><a href="signup.jsp">Sign Up</a></li>
+                <% } %>
+
+                <% if(session.getAttribute("user_id") != null){ %>
+                    <li><a href="logout.jsp">Logout</a></li>
+                <% } %>
               </ul>
             </div>
         </nav>
@@ -87,8 +93,9 @@
                         <hr />
                         <div class="row">
                             <!-- Modal Trigger -->
+                            <% if(session.getAttribute("user_id") != null){ %>
                             <a class="waves-effect waves-light btn modal-trigger" style="background-color:#687494" href="#modal"><i class="material-icons left">offline_pin</i>Rate</a>
-
+                            <% } %>
                             <!-- Modal Structure -->
                             <div id="modal" class="modal">
                                 <div class="modal-content">
@@ -112,8 +119,9 @@
                             </div>
 
                             <!-- Modal Trigger -->
+                            <% if(session.getAttribute("user_id") != null){ %>
                             <a class="waves-effect waves-light btn modal-trigger" style="background-color: #687494" href="#modalReview"><i class="material-icons left">border_color</i>Write Review</a>
-
+                            <% } %>
                             <!-- Modal Structure -->
                             <div id="modalReview" class="modal">
                                 <div class="modal-content">
@@ -153,8 +161,10 @@
                         <p><%= rs_review.getString(4) %></p>
                         </div>
                         <div class="card-action">
+                        <% if(session.getAttribute("user_id") != null){ %>
                         <a href=<%= "like.jsp?club_id=" + id%> class="waves-effect waves-teal btn-flat"><i class="material-icons left Small">thumb_up</i>0 Likes</a>
                         <a href="comment.jsp" class="waves-effect waves-teal btn-flat"><i class="material-icons left Small">comment</i>Comment</a>
+                        <% } %>
                         </div>
                     </div>
                     </div>
