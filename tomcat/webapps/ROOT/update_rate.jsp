@@ -21,13 +21,14 @@
     
         try (Connection conn = DriverManager.getConnection(dbUrl, dbUser, dbPassword)) 
         {
-            String updateQuery = "INSERT INTO rate VALUES (?, ?, ?)";
+            String updateQuery = "INSERT INTO rate VALUES (?, ?, ?) ON DUPLICATE KEY UPDATE rating = ?";
             try (PreparedStatement preparedStatement = conn.prepareStatement(updateQuery)) 
             {
                 preparedStatement.setInt(1, user_id);
                 preparedStatement.setInt(2, club_id);
                 preparedStatement.setInt(3, rating);
-    
+                preparedStatement.setInt(4, rating);
+
                 int rowsAffected = preparedStatement.executeUpdate();
                 if (rowsAffected > 0) 
                 {
