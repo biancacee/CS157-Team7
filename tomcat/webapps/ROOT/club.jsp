@@ -67,6 +67,11 @@
             PreparedStatement stmt_review = con.prepareStatement("SELECT review_id, user_id, title, description FROM review WHERE club_id = ?");
             stmt_review.setString(1, id);
             ResultSet rs_review = stmt_review.executeQuery();
+
+            PreparedStatement stmt_comment = con.prepareStatement("SELECT message FROM comment WHERE review_id = ?");
+            stmt_comment.setString(1, id);
+            ResultSet rsComment = stmt_comment.executeQuery();
+            rsComment.next();
         %>
 
         <!-- Club -->
@@ -144,8 +149,6 @@
                                     <a href="#!" id="close-button" class="modal-action modal-close waves-effect waves-green btn-flat">Close</a>
                                 </div>
                             </div>
-                            
-
                         </div>
                     </div>
                     <div class="col s5 pull-s7 right-align" style="padding: 15px; padding-right: 20px;">
@@ -154,7 +157,6 @@
                 </div>
             </div>
         </div>
-        
         <!-- Reviews -->
         <div class="container" style="margin-top: 20px;">
             <div class="row">
@@ -164,15 +166,29 @@
                         <div class="card-content">
                         <span class="card-title"><%= rs_review.getString(3) %></span>
                         <p><%= rs_review.getString(4) %></p>
-                        </div>
+                            <% if(session.getAttribute("user_id") != null){ %>
+                            <% } %>
                         <div class="card-action">
-                        <% if(session.getAttribute("user_id") != null){ %>
-                        <a href=<%= "like.jsp?club_id=" + id%> class="waves-effect waves-teal btn-flat"><i class="material-icons left Small">thumb_up</i>0 Likes</a>
-                        <a href="comment.jsp" class="waves-effect waves-teal btn-flat"><i class="material-icons left Small">comment</i>Comment</a>
-                        <% } %>
+                            <a href=<%= "like.jsp?club_id=" + id%> class="waves-effect waves-teal btn-flat"><i class="material-icons left Small">thumb_up</i>0 Likes</a>
+                            <a href="comment.jsp" class="waves-effect waves-teal btn-flat"><i class="material-icons left Small">comment</i>Comment</a>
+                        </div>
+                            <%-- post comments here --%>
+                                <h6 style="color:cornflowerblue;">Comments</h6>
+                                <div>
+                                    <ul>
+                                        <%
+                                            while (rsComment.next()) {
+                                        %>
+                                        <li><%= rsComment.getString("message") %></li>
+                                        <%
+                                            }
+                                        %>
+                                    </ul>
+                                </div>
                         </div>
                     </div>
                     </div>
+
                 <% review_count++; } %>
                 <% if(review_count == 0) {%>
                     <h3 class="center-align">No Reviews...</h3>
@@ -182,10 +198,14 @@
         <%
             rs.close();
             rs_rate.close();
+            rsComment.close();
             rs_review.close();
+
             stmt.close();
             stmt_rate.close();
+            stmt_comment.close();
             stmt_review.close();
+
             con.close();
         }
         catch(SQLException e) 
@@ -311,11 +331,5 @@
             });
 
                 </script>
-                
-            
-
-            
-            
-            
     </body>
 </html>
