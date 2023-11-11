@@ -67,10 +67,6 @@
             PreparedStatement stmt_review = con.prepareStatement("SELECT review_id, user_id, title, description FROM review WHERE club_id = ?");
             stmt_review.setString(1, id);
             ResultSet rs_review = stmt_review.executeQuery();
-
-            PreparedStatement stmt_comment = con.prepareStatement("SELECT name, message FROM comment INNER JOIN user ON comment.user_id = user.user_id WHERE review_id = ?");
-            stmt_comment.setString(1, id);
-            ResultSet rsComment = stmt_comment.executeQuery();
         %>
 
         <!-- Club -->
@@ -171,7 +167,7 @@
                             <div class="card-action">
                                 <% if(session.getAttribute("user_id") != null){ %>
                                 <a href=<%= "like.jsp?club_id=" + id%> class="waves-effect waves-teal btn-flat"><i class="material-icons left Small">thumb_up</i>0 Likes</a>
-                                <a class="waves-effect waves-teal btn-flat modal-trigger" href="#modalComment" ><i class="material-icons left Small">comment</i>Comment</a>
+                                <a class="waves-effect waves-teal btn-flat modal-trigger" href="#modalComment" review_id=<%= rs_review.getInt(1) %>><i class="material-icons left Small">comment</i>Comment</a>
                                 <!-- Modal Comment -->
                                 <div id="modalComment" class="modal">
                                     <div class="modal-content">
@@ -195,11 +191,17 @@
                             <ul class="collection with-header" style="border:none">
                                 <li class="collection-header center-align blue-text">COMMENTS</li>
                                 <%
+                                    PreparedStatement stmt_comment = con.prepareStatement("SELECT name, message FROM comment INNER JOIN user ON comment.user_id = user.user_id WHERE review_id = ?");
+                                    stmt_comment.setInt(1, rs_review.getInt(1));
+                                    ResultSet rsComment = stmt_comment.executeQuery();
+
                                     while (rsComment.next()) {
                                 %>
                                     <li class="collection-item"><a class="blue-text"><%= rsComment.getString("name") %></a> - <%= rsComment.getString("message") %></li>
                                 <%
                                    }
+                                   rsComment.close();
+                                   stmt_comment.close();
                                 %>
                             </ul>
                     </div>
@@ -214,12 +216,10 @@
         <%
             rs.close();
             rs_rate.close();
-            rsComment.close();
             rs_review.close();
 
             stmt.close();
             stmt_rate.close();
-            stmt_comment.close();
             stmt_review.close();
 
             con.close();
@@ -353,12 +353,18 @@
                 $(document).ready(function() {
                 $('#modalComment').modal();
 
+                var review_id = 0;
+                $('.modal').modal({
+                    onOpenStart: function(modal, trigger) {
+                        review_id = $(trigger).attr('review_id');
+                    }
+                });
+
                 $('#commentForm').submit(function(e) {
                     e.preventDefault();
 
                     var comment = $('#comment').val();
-                    var urlParams = new URLSearchParams(window.location.search); // Create URLSearchParams
-                    var club_id = urlParams.get('id'); // Extract 'id' from the URL
+                    var urlParams = new URLSearchParams(window.location.search);
                     const user_id = '${user_id}';
 
                     $.ajax({
@@ -366,7 +372,7 @@
                         url: 'comment.jsp',
                         data: {
                             comment: comment,
-                            club_id: club_id,
+                            review_id: review_id,
                             user_id: user_id
                         },
                         success: function(response) {

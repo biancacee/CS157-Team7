@@ -9,7 +9,7 @@
 <body>
     <%
             String user_id = request.getParameter("user_id");
-            String club_id = request.getParameter("club_id");
+            String review_id = request.getParameter("review_id");
             String comment = request.getParameter("comment");
         try
         {
@@ -20,11 +20,11 @@
             PreparedStatement ps = con.prepareStatement("INSERT INTO comment(user_id, review_id, message) VALUES (?, ?, ?)");
 
             ps.setString(1, user_id);
-            ps.setString(2, club_id);
+            ps.setString(2, review_id);
             ps.setString(3, comment);
 
             int x = ps.executeUpdate();
-            
+
             ps.close();
             con.close();
         }
