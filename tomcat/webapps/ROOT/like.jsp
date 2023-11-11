@@ -1,32 +1,78 @@
-<%@ page import="java.sql.*"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ page import="java.sql.*" %>
+
+<!DOCTYPE html>
 <html>
-    <head>
-        <title>ClubSpartan</title>
+<head>
+    <title>Update Rating</title>
+</head>
+<body>
+    <%
+    try {
+        int user_id = Integer.parseInt(request.getParameter("user_id"));
+        int review_id = Integer.parseInt(request.getParameter("review_id"));
+        
+        Class.forName("com.mysql.jdbc.Driver");
+        
+        String dbUrl = "jdbc:mysql://localhost:3306/clubspartan?autoReconnect=true&useSSL=false";
+        String dbUser = "root";
+        String dbPassword = "root";
     
-        <!-- Includes -->
-        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+        try (Connection conn = DriverManager.getConnection(dbUrl, dbUser, dbPassword)) 
+        {
+            boolean doesLikeExist = true;
+            String queryCheck = "SELECT COUNT(*) FROM `like` WHERE user_id = ? AND review_id = ?";
+            try(PreparedStatement preparedStatement = conn.prepareStatement(queryCheck))
+            {
+              int count = 0;
+              preparedStatement.setInt(1, user_id);
+              preparedStatement.setInt(2, review_id);
+              ResultSet rs = preparedStatement.executeQuery();
+              rs.next();
+              count = rs.getInt(1);
+              if(count == 0)
+                doesLikeExist = false;
 
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    </head>
-    <body>
-        <!-- Navbar -->
-        <nav style="background-color:#687494">
-            <div class="nav-wrapper container">
-              <ul id="nav-mobile" class="left hide-on-med-and-down">
-                <li><a href="index.jsp">Home</a></li>
-                <li><a href="log-in">Log In</a></li>
-                <li><a href="sign-up">Sign Up</a></li>
-              </ul>
-            </div>
-        </nav>
+              preparedStatement.close();
+              rs.close();
+            }
 
-        <!-- Home -->
-        <div class="container">
-            
-        </div>
+            if(!doesLikeExist)
+            {
+              String query = "INSERT INTO `like` VALUES (?, ?)";
+              try (PreparedStatement preparedStatement = conn.prepareStatement(query)) 
+              {
+                preparedStatement.setInt(1, user_id);
+                preparedStatement.setInt(2, review_id);
 
-        <script type="text/javascript" src="js/materialize.min.js"></script>
-    </body>
+                preparedStatement.executeUpdate();
+                preparedStatement.close();
+              }
+            }
+            else
+            {
+              String query = "DELETE FROM `like` WHERE user_id = ? AND review_id = ?";
+              try (PreparedStatement preparedStatement = conn.prepareStatement(query)) 
+              {
+                preparedStatement.setInt(1, user_id);
+                preparedStatement.setInt(2, review_id);
+
+                preparedStatement.executeUpdate();
+                preparedStatement.close();
+              }
+            }
+        } 
+        catch (SQLException e) 
+        {
+            e.printStackTrace();
+            out.println("Error: " + e.getMessage());
+        }
+    } 
+    catch (NumberFormatException e) 
+    {
+        e.printStackTrace();
+        out.println("Invalid rating value");
+    }
+    %>    
+</body>
 </html>

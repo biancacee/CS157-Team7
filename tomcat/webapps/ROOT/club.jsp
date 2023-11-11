@@ -64,7 +64,8 @@
             if(count > 0)
                 avg_rating /= count; 
 
-            PreparedStatement stmt_review = con.prepareStatement("SELECT review_id, user_id, title, description FROM review WHERE club_id = ?");
+            String stmtQuery = "SELECT r.review_id, r.user_id, r.title, r.description, COUNT(l.user_id) AS like_count FROM review r LEFT JOIN `like` l ON r.review_id = l.review_id WHERE r.club_id = ? GROUP BY r.review_id ORDER BY like_count DESC";
+            PreparedStatement stmt_review = con.prepareStatement(stmtQuery);
             stmt_review.setString(1, id);
             ResultSet rs_review = stmt_review.executeQuery();
         %>
@@ -166,7 +167,7 @@
                             </div>
                             <div class="card-action">
                                 <% if(session.getAttribute("user_id") != null){ %>
-                                <a href=<%= "like.jsp?club_id=" + id%> class="waves-effect waves-teal btn-flat"><i class="material-icons left Small">thumb_up</i>0 Likes</a>
+                                <a onclick=<%= "likeReview(" + rs_review.getInt(1) + ")" %> class="waves-effect waves-teal btn-flat"><i class="material-icons left Small">thumb_up</i><%= rs_review.getInt(5) %> Likes</a>
                                 <a class="waves-effect waves-teal btn-flat modal-trigger" href="#modalComment" review_id=<%= rs_review.getInt(1) %>><i class="material-icons left Small">comment</i>Comment</a>
                                 <!-- Modal Comment -->
                                 <div id="modalComment" class="modal">
@@ -184,7 +185,7 @@
                                     </div>
                                 </div>
                                 <% } else { %>
-                                <a class="waves-effect waves-teal btn-flat disabled"><i class="material-icons left Small">thumb_up</i>0 Likes</a>
+                                <a class="waves-effect waves-teal btn-flat disabled"><i class="material-icons left Small">thumb_up</i><%= rs_review.getInt(5) %> Likes</a>
                                 <a class="waves-effect waves-teal btn-flat disabled"><i class="material-icons left Small">comment</i>Comment</a>
                                 <% } %>
                             </div>
@@ -230,6 +231,31 @@
         }
         %>
         <script type="text/javascript" src="js/materialize.min.js"></script>
+
+        <!-- Like Review Event -->
+        <script>
+            function likeReview(review_id) {
+                var urlParams = new URLSearchParams(window.location.search);
+                const user_id = '${user_id}';
+
+                $.ajax({
+                    type: 'POST',
+                    url: 'like.jsp',
+                    data: {
+                        review_id: review_id,
+                        user_id: user_id
+                    },
+                    success: function(response) {
+                        location.reload()
+                        $('#response').html(response);
+                    },
+                    error: function() {
+                        $('#response').html('An error occurred while submitting the like.');
+                    }
+                });
+            }
+        </script>
+
         <!-- Needed for Modal rate -->
         <script>
             $(document).ready(function() {
@@ -238,7 +264,7 @@
                         initializeRatingSystem();
                     }
                 });
-            
+
                 $('#agree-button').on('click', function() {
                     const urlParams = new URLSearchParams(document.location.search);
                     const club_id = urlParams.get('id');
@@ -354,7 +380,7 @@
                 $('#modalComment').modal();
 
                 var review_id = 0;
-                $('.modal').modal({
+                $('#modalComment').modal({
                     onOpenStart: function(modal, trigger) {
                         review_id = $(trigger).attr('review_id');
                     }
