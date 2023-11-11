@@ -68,10 +68,9 @@
             stmt_review.setString(1, id);
             ResultSet rs_review = stmt_review.executeQuery();
 
-            PreparedStatement stmt_comment = con.prepareStatement("SELECT message FROM comment WHERE review_id = ?");
+            PreparedStatement stmt_comment = con.prepareStatement("SELECT name, message FROM comment INNER JOIN user ON comment.user_id = user.user_id WHERE review_id = ?");
             stmt_comment.setString(1, id);
             ResultSet rsComment = stmt_comment.executeQuery();
-            rsComment.next();
         %>
 
         <!-- Club -->
@@ -141,7 +140,8 @@
                                         <input type="text" id="title" name="title" required><br>
                                         <label for="review">Review:</label>
                                         <textarea id="review" name="review" required></textarea><br>
-                                        <button type="submit">Submit</button>
+                                        <br>
+                                        <button type="submit" class="waves-effect waves-light btn">Submit</button>
                                     </form>
                                     <div id="response"></div>
                                 </div>
@@ -157,6 +157,7 @@
                 </div>
             </div>
         </div>
+
         <!-- Reviews -->
         <div class="container" style="margin-top: 20px;">
             <div class="row">
@@ -164,28 +165,43 @@
                     <div class="col s6 offset-s3">
                     <div class="card">
                         <div class="card-content">
-                        <span class="card-title"><%= rs_review.getString(3) %></span>
-                        <p><%= rs_review.getString(4) %></p>
-                            <% if(session.getAttribute("user_id") != null){ %>
-                            <% } %>
-                        <div class="card-action">
-                            <a href=<%= "like.jsp?club_id=" + id%> class="waves-effect waves-teal btn-flat"><i class="material-icons left Small">thumb_up</i>0 Likes</a>
-                            <a href="comment.jsp" class="waves-effect waves-teal btn-flat"><i class="material-icons left Small">comment</i>Comment</a>
-                        </div>
-                            <%-- post comments here --%>
-                                <h6 style="color:cornflowerblue;">Comments</h6>
-                                <div>
-                                    <ul>
-                                        <%
-                                            while (rsComment.next()) {
-                                        %>
-                                        <li><%= rsComment.getString("message") %></li>
-                                        <%
-                                            }
-                                        %>
-                                    </ul>
+                            <span class="card-title"><%= rs_review.getString(3) %></span>
+                                <p><%= rs_review.getString(4) %></p>
+                            </div>
+                            <div class="card-action">
+                                <% if(session.getAttribute("user_id") != null){ %>
+                                <a href=<%= "like.jsp?club_id=" + id%> class="waves-effect waves-teal btn-flat"><i class="material-icons left Small">thumb_up</i>0 Likes</a>
+                                <a class="waves-effect waves-teal btn-flat modal-trigger" href="#modalComment" ><i class="material-icons left Small">comment</i>Comment</a>
+                                <!-- Modal Comment -->
+                                <div id="modalComment" class="modal">
+                                    <div class="modal-content">
+                                        <h1>Write a comment</h1>
+                                        <form id="commentForm">
+                                            <label for="comment">Comment</label>
+                                            <input type="text" id="comment" name="comment" required><br>
+                                            <button type="submit" class="waves-effect waves-light btn">Submit</button>
+                                        </form>
+                                        <div id="response"></div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <a href="#!" id="close-button" class="modal-action modal-close waves-effect waves-green btn-flat">Close</a>
+                                    </div>
                                 </div>
-                        </div>
+                                <% } else { %>
+                                <a class="waves-effect waves-teal btn-flat disabled"><i class="material-icons left Small">thumb_up</i>0 Likes</a>
+                                <a class="waves-effect waves-teal btn-flat disabled"><i class="material-icons left Small">comment</i>Comment</a>
+                                <% } %>
+                            </div>
+                            <ul class="collection with-header" style="border:none">
+                                <li class="collection-header center-align blue-text">COMMENTS</li>
+                                <%
+                                    while (rsComment.next()) {
+                                %>
+                                    <li class="collection-item"><a class="blue-text"><%= rsComment.getString("name") %></a> - <%= rsComment.getString("message") %></li>
+                                <%
+                                   }
+                                %>
+                            </ul>
                     </div>
                     </div>
 
@@ -316,6 +332,7 @@
                             user_id: user_id
                         },
                         success: function(response) {
+                            location.reload()
                             $('#response').html(response);
                         },
                         error: function() {
@@ -329,7 +346,44 @@
                     location.reload(); // Reload the page
                 });
             });
+            </script>
 
-                </script>
+            <!-- Needed for comments -->
+            <script>
+                $(document).ready(function() {
+                $('#modalComment').modal();
+
+                $('#commentForm').submit(function(e) {
+                    e.preventDefault();
+
+                    var comment = $('#comment').val();
+                    var urlParams = new URLSearchParams(window.location.search); // Create URLSearchParams
+                    var club_id = urlParams.get('id'); // Extract 'id' from the URL
+                    const user_id = '${user_id}';
+
+                    $.ajax({
+                        type: 'POST',
+                        url: 'comment.jsp',
+                        data: {
+                            comment: comment,
+                            club_id: club_id,
+                            user_id: user_id
+                        },
+                        success: function(response) {
+                            location.reload()
+                            $('#response').html(response);
+                        },
+                        error: function() {
+                            $('#response').html('An error occurred while submitting the review.');
+                        }
+                    });
+                });
+
+                // Add an event listener to the "Close" button
+                $('#close-button').click(function() {
+                    location.reload(); // Reload the page
+                });
+            });
+            </script>
     </body>
 </html>
