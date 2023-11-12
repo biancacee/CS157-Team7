@@ -85,9 +85,21 @@
                 
             
                 <div id="settings" class="content">
-                    <h2>Account Settings Content</h2>
-                    <p>This is the account settings section.</p>
-                </div>
+                    <div id="passChange">
+                      <p><strong>Name:</strong> <span id="userName"><%= userName %></span></p>
+                      <p><strong>Password:</strong> <span id="pass">*******</span></p>
+                      <button onclick="showEditSettings()">Edit</button>
+                    </div>
+                
+                    <div id="editForm1">
+                      <form onsubmit="saveUserInfo1(); return false;">
+                        <label for="editPass">Password:</label>
+                        <input type="text" id="editPass" required>
+                        <button type="submit">Save</button>
+                        <button type="button" onclick="cancelEdit1()">Cancel</button>
+                      </form>
+                    </div>
+                  </div>
             
                 <div id="ratings" class="content">
                     <h2>Ratings Content</h2>
@@ -172,5 +184,33 @@
               document.getElementById("editForm").style.display = "none";
             }
           </script>
+            <script>
+                // Initially hide the editForm1
+                document.getElementById("editForm1").style.display = "none";
+            
+                function showEditSettings() {
+                  // Hide passChange and show editForm1
+                  document.getElementById("passChange").style.display = "none";
+                  document.getElementById("editForm1").style.display = "block";
+            
+                  // Populate edit form with current user info
+                  document.getElementById("editPass").value = document.getElementById("pass").innerText;
+                }
+            
+                function cancelEdit1() {
+                  // Show passChange and hide editForm1
+                  document.getElementById("passChange").style.display = "block";
+                  document.getElementById("editForm1").style.display = "none";
+                }
+            
+                function saveUserInfo1() {
+                  // Update user info with the values from the edit form
+                  document.getElementById("pass").innerText = document.getElementById("editPass").value;
+            
+                  // Show passChange and hide editForm1
+                  document.getElementById("passChange").style.display = "block";
+                  document.getElementById("editForm1").style.display = "none";
+                }
+              </script>
     </body>
 </html>
