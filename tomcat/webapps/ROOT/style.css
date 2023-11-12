@@ -20,5 +20,17 @@
 
 .underline {
   border-bottom: 1px solid #000; /* You can change the color (#000) to your preferred color */
-  padding-bottom: 5px; /* Adjust as needed to control the distance between the text and the underline */
+  padding-bottom: 0px; /* Adjust as needed to control the distance between the text and the underline */
+  width: 50%;
+}
+
+.profileTabs{
+  color: black;
+}
+
+.content {
+  display: none; /* initially hide the content */
+  padding: 20px;
+  text-align: center;
+  transition: opacity 0.5s ease-in-out;
 }
