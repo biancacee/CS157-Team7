@@ -464,9 +464,10 @@
                     location.reload(); // Reload the page
                 });
             });
+
             </script>
 
-            <!-- Events script -->
+            <!-- Events script-->
             <script>
                 $(document).ready(function() {
                 $('#events').modal();
