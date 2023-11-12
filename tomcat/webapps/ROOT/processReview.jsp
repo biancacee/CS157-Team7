@@ -9,7 +9,7 @@
 <body>
     <%
     try {
-        int user_id = Integer.parseInt(request.getParameter("club_id"));
+        int user_id = Integer.parseInt(request.getParameter("user_id"));
         int club_id = Integer.parseInt(request.getParameter("club_id"));
 
         String title = request.getParameter("title");
