@@ -29,6 +29,7 @@
                 <% } %>
 
                 <% if(session.getAttribute("user_id") != null){ %>
+                    <li><a href="userProfile.jsp">Profle</a></li>
                     <li><a href="logout.jsp">Logout</a></li>
                 <% } %>
               </ul>
@@ -62,12 +63,16 @@
                 count++;
             }
             if(count > 0)
-                avg_rating /= count; 
+                avg_rating /= count;
 
             String stmtQuery = "SELECT r.review_id, r.user_id, r.title, r.description, COUNT(l.user_id) AS like_count FROM review r LEFT JOIN `like` l ON r.review_id = l.review_id WHERE r.club_id = ? GROUP BY r.review_id ORDER BY like_count DESC";
             PreparedStatement stmt_review = con.prepareStatement(stmtQuery);
             stmt_review.setString(1, id);
             ResultSet rs_review = stmt_review.executeQuery();
+
+            PreparedStatement stmt_events = con.prepareStatement("SELECT * FROM event WHERE club_id = ? ORDER BY start_date");
+            stmt_events.setString(1, id);
+            ResultSet rs_events = stmt_events.executeQuery();
         %>
 
         <!-- Club -->
@@ -146,6 +151,20 @@
                                     <a href="#!" id="close-button" class="modal-action modal-close waves-effect waves-green btn-flat">Close</a>
                                 </div>
                             </div>
+                            
+                            <!-- Modal Trigger -->
+                            <a class="waves-effect waves-light btn modal-trigger" style="background-color:#687494" href="#events"><i class="material-icons left">event</i>Events</a>
+                            <!-- Modal Structure -->
+                            <div id="events" class="modal bottom-sheet">
+                                <div class="modal-content">
+                                    <h3 class="header">Events</h3>
+                                    <div class="collection">
+                                        <% while(rs_events.next()) { %>
+                                            <a href=<%= "/event.jsp?event_id=" + rs_events.getInt(1) %> class="collection-item"><%= rs_events.getString(6) %> : <%= rs_events.getString(4) %> - <%= rs_events.getString(5) %> </a>
+                                        <% } %>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div class="col s5 pull-s7 right-align" style="padding: 15px; padding-right: 20px;">
@@ -188,9 +207,10 @@
                                 <a class="waves-effect waves-teal btn-flat disabled"><i class="material-icons left Small">thumb_up</i><%= rs_review.getInt(5) %> Likes</a>
                                 <a class="waves-effect waves-teal btn-flat disabled"><i class="material-icons left Small">comment</i>Comment</a>
                                 <% } %>
+
                             </div>
                             <ul class="collection with-header" style="border:none">
-                                <li class="collection-header center-align blue-text">COMMENTS</li>
+                                <li class="collection-header center-align">COMMENTS</li>
                                 <%
                                     PreparedStatement stmt_comment = con.prepareStatement("SELECT name, message FROM comment INNER JOIN user ON comment.user_id = user.user_id WHERE review_id = ?");
                                     stmt_comment.setInt(1, rs_review.getInt(1));
@@ -218,7 +238,9 @@
             rs.close();
             rs_rate.close();
             rs_review.close();
-
+            rs_events.close();
+            
+            stmt_events.close();
             stmt.close();
             stmt_rate.close();
             stmt_review.close();
@@ -415,6 +437,13 @@
                 $('#close-button').click(function() {
                     location.reload(); // Reload the page
                 });
+            });
+            </script>
+
+            <!-- Events script -->
+            <script>
+                $(document).ready(function() {
+                $('#events').modal();
             });
             </script>
     </body>
