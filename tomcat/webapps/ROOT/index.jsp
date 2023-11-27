@@ -23,6 +23,7 @@
 
                 <% if(session.getAttribute("user_id") != null){ %>
                     <li><a href="userProfile.jsp">Profle</a></li>
+                    <li><a href="messages.jsp">Messages</a></li>
                     <li><a href="logout.jsp">Logout</a></li>
                 <% } %>
               </ul>
