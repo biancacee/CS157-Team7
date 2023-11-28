@@ -17,3 +17,25 @@
   background-color: #FFD700;
   border: 1px solid #FFD700;
 }
+
+.underline {
+  border-bottom: 1px solid #000; /* You can change the color (#000) to your preferred color */
+  padding-bottom: 0px; /* Adjust as needed to control the distance between the text and the underline */
+  width: 30rem;
+}
+
+.profileTabs{
+  color: black;
+}
+
+.content {
+  display: none; /* initially hide the content */
+  padding: 20px;
+  text-align: center;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.info{
+  font-size: 1.3rem
+  
+}
