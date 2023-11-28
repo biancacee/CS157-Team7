@@ -7,6 +7,10 @@
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
         <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+        <!-- Needed for Modal Write review -->
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
         <link rel="stylesheet" href="https://unpkg.com/tachyons@4.12.0/css/tachyons.min.css"/>
         <link rel="stylesheet" type="text/css" href="style.css">
 
@@ -72,41 +76,42 @@
                 <div class="underline"></div>
             </div>
             <div class="flex justify-center">
+                <!-- Profile tab to change name  -->
                 <div id="profile" class="content">
                     <div class="info" style="font-size: 1.3rem;" id="userInfo">
                         <p><strong>Name:</strong> <span id="userName"> <%= userName %> </span></p>
                         <p><strong>Email:</strong> <span id="userEmail"> <%= email %>  </span></p>
                         <button onclick="showEditForm()">Edit</button>
-                      </div>
-                    
-                      <div class="info" id="editForm">
-                        <form onsubmit="saveUserInfo(); return false;">
-                          <label for="editName">Name:</label>
-                          <input type="text" id="editName" required>
-                          <button type="submit">Save</button>
-                          <button type="button" onclick="cancelEdit()">Cancel</button>
-                        </form>
-                      </div>
+                    </div>
+                      <!-- used to bring up the form to edit name -->
+                    <div class="info" id="editForm">
+                    <form onsubmit="saveUserInfo();">
+                        <label for="editName">Name:</label>
+                        <input type="text" id="editName" required>
+                        <button type="submit">Save</button>
+                        <button type="button" onclick="cancelEdit()">Cancel</button>
+                    </form>
+                    </div>
                 </div>
                 
-            
+                <!-- Account settings to change the password -->
                 <div id="settings" class="content">
                     <div id="passChange">
                       <p><strong>Email:</strong> <span id="userName"><%= email %> </span></p>
                       <p><strong>Password:</strong> <span id="pass">*******</span></p>
                       <button onclick="showEditSettings()">Edit</button>
                     </div>
-                
+                    <!-- used to edit to change the password -->
                     <div id="editForm1">
                       <form onsubmit="saveUserInfo1(); return false;">
                         <label for="editPass">Password:</label>
-                        <input type="text" id="editPass" required>
+                        <input type="password" id="editPass" required>
                         <button type="submit">Save</button>
                         <button type="button" onclick="cancelEdit1()">Cancel</button>
                       </form>
                     </div>
                   </div>
-            
+                  <!-- used to show all the ratings the user has added -->
                 <div id="ratings" class="content">
                     <div class="container" style="margin-top: 20px;">
                         <div class="row" style="width: 60rem">
@@ -261,26 +266,85 @@
                   document.getElementById("editForm1").style.display = "none";
             }
         
-            function saveUserInfo() {
-              // Update user info with the values from the edit form
-              document.getElementById("userName").innerText = document.getElementById("editName").value;
-              document.getElementById("userEmail").innerText = document.getElementById("editEmail").value;
+        </script>
+        <script>
+            $(document).ready(function() {
         
-              // Show user info and hide edit form
-              document.getElementById("userInfo").style.display = "block";
-              document.getElementById("editForm").style.display = "none";
-            }
-            
-            function saveUserInfo1() {
-                  // Update user info with the values from the edit form
-                  document.getElementById("pass").innerText = document.getElementById("editPass").value;
-            
-                  // Show passChange and hide editForm1
-                  document.getElementById("passChange").style.display = "block";
-                  document.getElementById("editForm1").style.display = "none";
-            }
+                function saveUserInfo() {
+                    const newName = $('#editName').val();
+                    
+                    $.ajax({
+                        type: 'POST',
+                        url: 'update_name.jsp', 
+                        data: {
+                            newName: newName
+                            
+                        },
+                        success: function(response) {
+                            location.reload(); // Reload the page or update UI as needed
+                        },
+                        error: function() {
+                            console.log('An error occurred while updating user information.');
+                            // Handle error if needed
+                        }
+                    });
+                }
+        
+                function saveUserInfo1() {
+                    const newPassword = $('#editPass').val();
+        
+                    $.ajax({
+                        type: 'POST',
+                        url: 'update_password.jsp', // Replace with the actual URL of your JSP file
+                        data: {
+                            newPassword: newPassword
+                            // Add other parameters if needed
+                        },
+                        success: function(response) {
+                            location.reload(); // Reload the page or update UI as needed
+                        },
+                        error: function() {
+                            console.log('An error occurred while updating the password.');
+                            // Handle error if needed
+                        }
+                    });
+                }
+        
+                // Event listeners for the "Edit" buttons
+                $('#editButton').click(function() {
+                    showEditForm();
+                });
+        
+                $('#editSettingsButton').click(function() {
+                    showEditSettings();
+                });
+        
+                // Event listeners for the "Save" buttons in the edit forms
+                $('#editForm').submit(function(e) {
+                    e.preventDefault();
+                    saveUserInfo();
+                });
+        
+                $('#editForm1').submit(function(e) {
+                    e.preventDefault();
+                    saveUserInfo1();
+                });
+        
+                // Event listeners for the "Cancel" buttons in the edit forms
+                $('#cancelEditButton').click(function() {
+                    cancelEdit();
+                });
+        
+                $('#cancelEdit1Button').click(function() {
+                    cancelEdit1();
+                });
+            });
         </script>
         
+        
+        
+        
+        <!-- RATINGS -->
         <script>
             function likeReview(review_id) {
                 var urlParams = new URLSearchParams(window.location.search);
@@ -379,9 +443,6 @@
                 });
             }
             </script>
-            <!-- Needed for Modal Write review -->
-            <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-            <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
             
             <script>
                 $(document).ready(function() {
