@@ -12,6 +12,20 @@
     </head>
     <body>
         <!-- Navbar -->
+        <% Connection con1 = null;
+        try{
+            int user_id = -1;
+            if(session.getAttribute("user_id") != null)
+            {
+                user_id = (int)session.getAttribute("user_id");
+            }
+            Class.forName("com.mysql.jdbc.Driver");
+            con1 = DriverManager.getConnection("jdbc:mysql://localhost:3306/clubspartan?autoReconnect=true&useSSL=false", "root", "root");
+            String stmtQueryMod1 = "SELECT club_id FROM moderates WHERE user_id = ?;";
+            PreparedStatement isModerator1 = con1.prepareStatement(stmtQueryMod1);
+            isModerator1.setInt(1, user_id);
+            ResultSet boolMod1 = isModerator1.executeQuery();
+        %>
         <nav style="background-color:#687494">
             <div class="nav-wrapper container">
               <ul id="nav-mobile" class="left hide-on-med-and-down">
@@ -25,11 +39,32 @@
                     <li><a href="userProfile.jsp">Profile</a></li>
                     <li><a href="club_create.jsp">Create Club</a></li>
                     <li><a href="messages.jsp">Messages</a></li>
+                    <% if(boolMod1.next()) {%>
+                    <li><a href="messages.jsp">Moderator</a></li>
+                    <% } %>
                     <li><a href="logout.jsp">Logout</a></li>
                 <% } %>
+                
               </ul>
             </div>
         </nav>
+        <% 
+        boolMod1.close();
+        isModerator1.close();
+
+        con1.close();
+            } catch (SQLException | ClassNotFoundException e) {
+                e.printStackTrace();
+            } finally {
+                try {
+                    if (con1 != null) {
+                        con1.close();
+                    }
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+            }
+        %>
 
         <!-- Home -->
         <div class="container">
