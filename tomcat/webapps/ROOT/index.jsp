@@ -22,7 +22,8 @@
                 <% } %>
 
                 <% if(session.getAttribute("user_id") != null){ %>
-                    <li><a href="userProfile.jsp">Profle</a></li>
+                    <li><a href="userProfile.jsp">Profile</a></li>
+                    <li><a href="club_create.jsp">Create Club</a></li>
                     <li><a href="messages.jsp">Messages</a></li>
                     <li><a href="logout.jsp">Logout</a></li>
                 <% } %>
