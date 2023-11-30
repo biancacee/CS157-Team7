@@ -21,11 +21,19 @@
 .underline {
   border-bottom: 1px solid #000; /* You can change the color (#000) to your preferred color */
   padding-bottom: 0px; /* Adjust as needed to control the distance between the text and the underline */
-  width: 30rem;
+  width: 36rem;
+  margin-right: 30px;
 }
 
-.profileTabs{
+.profileTabs {
+  color: #ffab40;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.profileTabs:hover {
   color: black;
+  transform: scale(1.1); /* Adjust the scaling factor for the "grow" effect */
+  cursor: pointer;
 }
 
 .content {
@@ -35,7 +43,6 @@
   transition: opacity 0.5s ease-in-out;
 }
 
-.info{
-  font-size: 1.3rem
-  
+.grower{
+  font-size: 23px;
 }

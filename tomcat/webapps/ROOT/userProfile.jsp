@@ -2,7 +2,6 @@
 <html>
     <head>
         <title>Profile</title>
-    
         <!-- Includes -->
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
@@ -18,6 +17,20 @@
     </head>
     <body>
         <!-- Navbar -->
+        <% Connection con1 = null;
+        try{
+            int user_id = -1;
+            if(session.getAttribute("user_id") != null)
+            {
+                user_id = (int)session.getAttribute("user_id");
+            }
+            Class.forName("com.mysql.jdbc.Driver");
+            con1 = DriverManager.getConnection("jdbc:mysql://localhost:3306/clubspartan?autoReconnect=true&useSSL=false", "root", "root");
+            String stmtQueryMod1 = "SELECT club_id FROM moderates WHERE user_id = ?;";
+            PreparedStatement isModerator1 = con1.prepareStatement(stmtQueryMod1);
+            isModerator1.setInt(1, user_id);
+            ResultSet boolMod1 = isModerator1.executeQuery();
+        %>
         <nav style="background-color:#687494">
             <div class="nav-wrapper container">
               <ul id="nav-mobile" class="left hide-on-med-and-down">
@@ -29,11 +42,34 @@
 
                 <% if(session.getAttribute("user_id") != null){ %>
                     <li><a href="userProfile.jsp">Profile</a></li>
+                    <li><a href="club_create.jsp">Create Club</a></li>
+                    <li><a href="messages.jsp">Messages</a></li>
+                    <% if(boolMod1.next()) {%>
+                    <li><a href="moderator.jsp">Moderator</a></li>
+                    <% } %>
                     <li><a href="logout.jsp">Logout</a></li>
                 <% } %>
+                
               </ul>
             </div>
         </nav>
+        <% 
+        boolMod1.close();
+        isModerator1.close();
+
+        con1.close();
+            } catch (SQLException | ClassNotFoundException e) {
+                e.printStackTrace();
+            } finally {
+                try {
+                    if (con1 != null) {
+                        con1.close();
+                    }
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+            }
+        %>
         <%
         Connection con = null;
         try 
@@ -60,121 +96,167 @@
             PreparedStatement stmt_review = con.prepareStatement(stmtQuery);
             stmt_review.setString(1, id);
             ResultSet rs_review = stmt_review.executeQuery();
+            
+            String stmtQueryMod = "SELECT club_id FROM moderates WHERE user_id = ?;";
+            PreparedStatement isModerator = con.prepareStatement(stmtQueryMod);
+            isModerator.setString(1, id);
+            ResultSet boolMod = isModerator.executeQuery();
+
         %>
-        <div class="container">
-            <h2>ClubSpartan</h2>
-            <!-- Home -->
-            <div class="container center-align mb4 mt5 fw4" style="font-size: 2rem;">
-                Hello, <%= userName %>
-            </div>
-            <div class="flex justify-center" >
-                <div class="mr4 fw8 info"><a class="profileTabs" onclick="showContent('profile')">Profile</a></div>
-                <div class="mr4 fw8 info"><a class="profileTabs" onclick="showContent('settings')">Account Settings</a></div>
-                <div class="mr4 fw8 info"><a class="profileTabs" onclick="showContent('ratings')">Ratings</a></div>
-            </div>
-            <div class="flex justify-center">
-                <div class="underline"></div>
-            </div>
-            <div class="flex justify-center">
-                <!-- Profile tab to change name  -->
-                <div id="profile" class="content">
-                    <div class="info" style="font-size: 1.3rem;" id="userInfo">
-                        <p><strong>Name:</strong> <span id="userName"> <%= userName %> </span></p>
-                        <p><strong>Email:</strong> <span id="userEmail"> <%= email %>  </span></p>
-                        <button onclick="showEditForm()">Edit</button>
-                    </div>
-                      <!-- used to bring up the form to edit name -->
-                    <div class="info" id="editForm">
-                    <form onsubmit="saveUserInfo();">
-                        <label for="editName">Name:</label>
-                        <input type="text" id="editName" required>
-                        <button type="submit">Save</button>
-                        <button type="button" onclick="cancelEdit()">Cancel</button>
-                    </form>
-                    </div>
+            <div class="container grower">
+                <!-- Home -->
+                <div class="container center-align mb4 mt5 pt6 fw4" style="font-size: 2rem;">
+                    Hello, <%= userName %>
                 </div>
-                
-                <!-- Account settings to change the password -->
-                <div id="settings" class="content">
-                    <div id="passChange">
-                      <p><strong>Email:</strong> <span id="userName"><%= email %> </span></p>
-                      <p><strong>Password:</strong> <span id="pass">*******</span></p>
-                      <button onclick="showEditSettings()">Edit</button>
-                    </div>
-                    <!-- used to edit to change the password -->
-                    <div id="editForm1">
-                      <form onsubmit="saveUserInfo1(); return false;">
-                        <label for="editPass">Password:</label>
-                        <input type="password" id="editPass" required>
-                        <button type="submit">Save</button>
-                        <button type="button" onclick="cancelEdit1()">Cancel</button>
-                      </form>
-                    </div>
-                  </div>
-                  <!-- used to show all the ratings the user has added -->
-                <div id="ratings" class="content">
-                    <div class="container" style="margin-top: 20px;">
-                        <div class="row" style="width: 60rem">
-                            <% int review_count = 0; while(rs_review.next()) {%>
-                                <div class="col s6 offset-s1">
-                                <div class="card">
-                                    <div class="card-content">
-                                        <span class="card-title"><%= rs_review.getString(3) %></span>
-                                            <p><%= rs_review.getString(4) %></p>
-                                        </div>
-                                        <div class="card-action">
-                                            <% if(id != null){ %>
-                                                <a onclick=<%= "likeReview(" + rs_review.getInt(1) + ")" %> class="waves-effect waves-teal btn-flat"><i class="material-icons left Small">thumb_up</i><%= rs_review.getInt(5) %> Likes</a>
-                                            <a class="waves-effect waves-teal btn-flat modal-trigger" href="#modalComment" review_id=<%= rs_review.getInt(1) %>><i class="material-icons left Small">comment</i>Comment</a>
-                                            <div id="modalComment" class="modal">
-                                                <div class="modal-content">
-                                                    <h1>Write a comment</h1>
-                                                    <form id="commentForm">
-                                                        <label for="comment">Comment</label>
-                                                        <input type="text" id="comment" name="comment" required><br>
-                                                        <button type="submit" class="waves-effect waves-light btn">Submit</button>
-                                                    </form>
-                                                    <div id="response"></div>
-                                                </div>
-                                                <div class="modal-footer">
-                                                    <a href="#!" id="close-button" class="modal-action modal-close waves-effect waves-green btn-flat">Close</a>
-                                                </div>
-                                            </div>
-                                            <% } else { %>
-                                            <a class="waves-effect waves-teal btn-flat disabled"><i class="material-icons left Small">thumb_up</i><%= rs_review.getInt(5) %> Likes</a>
-                                            <a class="waves-effect waves-teal btn-flat disabled"><i class="material-icons left Small">comment</i>Comment</a>
-                                            <% } %>
-            
-                                        </div>
-                                        <ul class="collection with-header" style="border:none">
-                                            <li class="collection-header center-align">COMMENTS</li>
-                                            <%
-                                                PreparedStatement stmt_comment = con.prepareStatement("SELECT name, message FROM comment INNER JOIN user ON comment.user_id = user.user_id WHERE review_id = ?");
-                                                stmt_comment.setInt(1, rs_review.getInt(1));
-                                                ResultSet rsComment = stmt_comment.executeQuery();
-            
-                                                while (rsComment.next()) {
-                                            %>
-                                                <li class="collection-item"><a class="blue-text"><%= rsComment.getString("name") %></a> - <%= rsComment.getString("message") %></li>
-                                            <%
-                                               }
-                                               rsComment.close();
-                                               stmt_comment.close();
-                                            %>
-                                        </ul>
-                                </div>
-                                </div>
-            
-                            <% review_count++; } %>
-                            <% if(review_count == 0) {%>
-                                <h3 class="center-align">No Reviews...</h3>
-                            <% } %>
+                <div class="flex justify-center" >
+                    <div class="mr4 fw8 info"><a class="profileTabs" onclick="showContent('profile')">Profile</a></div>
+                    <div class="mr4 fw8 info"><a class="profileTabs" onclick="showContent('settings')">Account Settings</a></div>
+                    <div class="mr4 fw8 info"><a class="profileTabs" onclick="showContent('ratings')">Ratings</a></div>
+                    <% if(boolMod.next()){ %>
+                    <div class="mr4 fw8 info"><a class="profileTabs" onclick="showContent('Moderator')">Moderator</a></div>
+                    <% } %>
+                </div>
+                <div class="flex justify-center">
+                    <div class="underline"></div>
+                </div>
+                <div class="flex justify-center">
+                    <!-- Profile tab to change name  -->
+                    <div id="profile" class="content">
+                        <div class="info" style="font-size: 1.3rem;" id="userInfo">
+                            <p><strong>Name:</strong> <span id="userName"> <%= userName %> </span></p>
+                            <p><strong>Email:</strong> <span id="userEmail"> <%= email %>  </span></p>
+                            <button onclick="showEditForm()">Edit</button>
+                        </div>
+                        <!-- used to bring up the form to edit name -->
+                        <div class="info" id="editForm">
+                        <form onsubmit="saveUserInfo();">
+                            <label for="editName">Name:</label>
+                            <input type="text" id="editName" required>
+                            <button type="submit">Save</button>
+                            <button type="button" onclick="cancelEdit()">Cancel</button>
+                        </form>
                         </div>
                     </div>
+                    
+                    <!-- Account settings to change the password -->
+                    <div id="settings" class="content">
+                        <div id="passChange">
+                        <p><strong>Email:</strong> <span id="userName"><%= email %> </span></p>
+                        <p><strong>Password:</strong> <span id="pass">*******</span></p>
+                        <button onclick="showEditSettings()">Edit</button>
+                        </div>
+                        <!-- used to edit to change the password -->
+                        <div id="editForm1">
+                        <form onsubmit="saveUserInfo1(); return false;">
+                            <label for="editPass">Password:</label>
+                            <input type="password" id="editPass" required>
+                            <button type="submit">Save</button>
+                            <button type="button" onclick="cancelEdit1()">Cancel</button>
+                        </form>
+                        </div>
+                    </div>
+                    <!-- used to show all the ratings the user has added -->
+                    <div id="ratings" class="content">
+                        <div class="container" style="margin-top: 20px;">
+                            <div class="row" style="width: 60rem">
+                                <% int review_count = 0; while(rs_review.next()) {%>
+                                    <div class="col s6 offset-s1">
+                                    <div class="card">
+                                        <div class="card-content">
+                                            <span class="card-title"><%= rs_review.getString(3) %></span>
+                                                <p><%= rs_review.getString(4) %></p>
+                                            </div>
+                                            <div class="card-action">
+                                                <% if(id != null){ %>
+                                                    <a onclick=<%= "likeReview(" + rs_review.getInt(1) + ")" %> class="waves-effect waves-teal btn-flat"><i class="material-icons left Small">thumb_up</i><%= rs_review.getInt(5) %> Likes</a>
+                                                <a class="waves-effect waves-teal btn-flat modal-trigger" href="#modalComment" review_id=<%= rs_review.getInt(1) %>><i class="material-icons left Small">comment</i>Comment</a>
+                                                <div id="modalComment" class="modal">
+                                                    <div class="modal-content">
+                                                        <h1>Write a comment</h1>
+                                                        <form id="commentForm">
+                                                            <label for="comment">Comment</label>
+                                                            <input type="text" id="comment" name="comment" required><br>
+                                                            <button type="submit" class="waves-effect waves-light btn">Submit</button>
+                                                        </form>
+                                                        <div id="response"></div>
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <a href="#!" id="close-button" class="modal-action modal-close waves-effect waves-green btn-flat">Close</a>
+                                                    </div>
+                                                </div>
+                                                <% } else { %>
+                                                <a class="waves-effect waves-teal btn-flat disabled"><i class="material-icons left Small">thumb_up</i><%= rs_review.getInt(5) %> Likes</a>
+                                                <a class="waves-effect waves-teal btn-flat disabled"><i class="material-icons left Small">comment</i>Comment</a>
+                                                <% } %>
+                
+                                            </div>
+                                            <ul class="collection with-header" style="border:none">
+                                                <li class="collection-header center-align">COMMENTS</li>
+                                                <%
+                                                    PreparedStatement stmt_comment = con.prepareStatement("SELECT name, message FROM comment INNER JOIN user ON comment.user_id = user.user_id WHERE review_id = ?");
+                                                    stmt_comment.setInt(1, rs_review.getInt(1));
+                                                    ResultSet rsComment = stmt_comment.executeQuery();
+                
+                                                    while (rsComment.next()) {
+                                                %>
+                                                    <li class="collection-item"><a class="blue-text"><%= rsComment.getString("name") %></a> - <%= rsComment.getString("message") %></li>
+                                                <%
+                                                }
+                                                rsComment.close();
+                                                stmt_comment.close();
+                                                %>
+                                            </ul>
+                                    </div>
+                                    </div>
+                
+                                <% review_count++; } %>
+                                <% if(review_count == 0) {%>
+                                    <h3 class="center-align">No Reviews...</h3>
+                                <% } %>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="Moderator" class="container mw6 content">
+            
+                        <!-- List of clubs -->
+                        <ul class="collection with-header">
+                        <%
+                            try 
+                            {
+                                String club_name = request.getParameter("club-name");
+            
+                                java.sql.Connection connect;
+                                Class.forName("com.mysql.jdbc.Driver");
+                                connect = DriverManager.getConnection("jdbc:mysql://localhost:3306/clubspartan?autoReconnect=true&useSSL=false", "root", "root");
+            
+                                PreparedStatement list = connect.prepareStatement("SELECT club_id, name, logo FROM moderates NATURAL JOIN club WHERE club.club_id = moderates.club_id AND user_id = ?;");
+                                list.setInt(1, user_id);
+                                ResultSet sr = list.executeQuery();
+                                
+                                while(sr.next())
+                            {
+                        %>
+                            <li class="collection-item avatar">
+                                <img src=<%= sr.getString(3) %> alt="" class="circle">
+                                <a href=<%= "club.jsp?id=" + sr.getInt(1) %> class="title"><%= sr.getString(2) %></a>
+                                <a class="delete_user secondary-content" data-club-id="<%= sr.getInt(1) %>"><i class="material-icons " style="color: black;">remove_circle</i></a>
+                            </li>
+                        <%
+                            }
+                                sr.close();
+                                list.close();
+                                connect.close();
+                            }
+                            catch(SQLException e) 
+                            {
+                                out.println("SQLException caught: " + e.getMessage());
+                            }
+                        %>
+                        </ul>
+                    </div>
                 </div>
             </div>
-        </div>
-
+        </div>    
         <% 
         rs.close();
         rs_review.close();
@@ -526,6 +608,34 @@
                 });
             });
 
+            </script>
+            <script>
+                $(document).ready(function(){
+                    $('.delete_user').click(function(){
+
+                        var club_id = $(this).data('club-id');
+                        const user_id = '${user_id}';
+
+                        $.ajax({
+                            type: 'POST', // You can change this to 'GET' if your removeMod.jsp expects a GET request
+                            url: 'removeMod.jsp',
+                            data: { 
+                                
+                                user_id: user_id,
+                                club_id: club_id 
+                            },
+                            success: function (response) {
+                                // Handle the success response if needed
+                                console.log('Success:', response);
+                                location.reload();
+                            },
+                            error: function (error) {
+                                // Handle the error if needed
+                                console.error('Error:', error);
+                            }
+                            });
+                    });
+                });
             </script>
 
             <!-- Events script-->
