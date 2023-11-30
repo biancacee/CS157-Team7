@@ -25,8 +25,15 @@
   margin-right: 30px;
 }
 
-.profileTabs{
+.profileTabs {
+  color: #ffab40;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.profileTabs:hover {
   color: black;
+  transform: scale(1.1); /* Adjust the scaling factor for the "grow" effect */
+  cursor: pointer;
 }
 
 .content {

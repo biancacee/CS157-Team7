@@ -23,7 +23,7 @@
             int user_id = -1;
             if(session.getAttribute("user_id") != null)
             {
-                user_id = (Integer)session.getAttribute("user_id");
+                user_id = (int)session.getAttribute("user_id");
             }
             Class.forName("com.mysql.jdbc.Driver");
             con1 = DriverManager.getConnection("jdbc:mysql://localhost:3306/clubspartan?autoReconnect=true&useSSL=false", "root", "root");
@@ -71,64 +71,60 @@
                 }
             }
         %>
+        <%
+        Connection con = null;
+        try 
+        {
+            int user_id = -1;
+            if(session.getAttribute("user_id") != null)
+            {
+                user_id = (int)session.getAttribute("user_id");
+            }
+                
+            Class.forName("com.mysql.jdbc.Driver");
+            con = DriverManager.getConnection("jdbc:mysql://localhost:3306/clubspartan?autoReconnect=true&useSSL=false", "root", "root");
+
+            PreparedStatement stmt = con.prepareStatement("SELECT * FROM user WHERE user_id = ?");
+            stmt.setInt(1, user_id);
+            ResultSet rs = stmt.executeQuery();
+            rs.next(); // Move the cursor to the first row
+
+            String userName = rs.getString("name");
+            String email = rs.getString("sjsu_email");
+            String id = rs.getString("user_id");
+            
+            String stmtQuery = "SELECT r.review_id, r.user_id, r.title, r.description, COUNT(l.user_id) AS like_count FROM review r LEFT JOIN `like` l ON r.review_id = l.review_id WHERE r.user_id = ? GROUP BY r.review_id ORDER BY like_count DESC";
+            PreparedStatement stmt_review = con.prepareStatement(stmtQuery);
+            stmt_review.setString(1, id);
+            ResultSet rs_review = stmt_review.executeQuery();
+        %>
         <div class="container">
-            <h2>Create a New Club</h2>
+            <h2>ClubSpartan</h2>
+            
+            
         </div>
-        <div class="flex pt3 justify-center">
-            <div class="w-50">
-                <form class="col s12" id="clubForm" action="insert_Club.jsp" method="post" enctype="multipart/form-data">
-                    <div class="row">
-                        <div class="input-field col s6">
-                            <input id="clubName" name="clubName" type="text" class="validate">
-                            <label for="clubName">Club Name</label>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="input-field col s12">
-                            <input id="clubDescription" name="clubDescription" type="text" class="validate">
-                            <label for="clubDescription">Club Description</label>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="input-field col s12">
-                            <input id="clubEmail" name="clubEmail" type="text" class="validate">
-                            <label for="clubEmail">Club Email</label>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="input-field col s12">
-                            <input id="discordLink" name="discordLink" type="text" class="validate">
-                            <label for="discordLink">discord Link</label>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="input-field col s12">
-                            <input id="instagramLink" name="instagramLink" type="text" class="validate">
-                            <label for="instagramLink">Instagram Link</label>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="input-field col s12">
-                            <input id="memberFee" name="memberFee" type="text" class="validate">
-                            <label for="memberFee">Member Fee</label>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="file-field input-field">
-                            <div class="btn">
-                                <span>Upload Picture</span>
-                                <input type="file" name="clubPicture">
-                            </div>
-                            <div class="file-path-wrapper">
-                                <input class="file-path validate" type="text">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="flex justify-center row">
-                        <button class="btn btn-primary btn-sm" type="submit" id="submitButton">Submit</button>
-                    </div>  
-                </form>
-            </div>
-        </div>                
+
+        <% 
+        rs.close();
+        rs_review.close();
+        
+        stmt.close();
+        stmt_review.close();
+
+        con.close();
+            } catch (SQLException | ClassNotFoundException e) {
+                e.printStackTrace();
+            } finally {
+                try {
+                    if (con != null) {
+                        con.close();
+                    }
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+            }
+        %>
+                
+            
     </body>
 </html>
