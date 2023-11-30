@@ -12,6 +12,7 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 </head>
+
 <body>
 <!-- Navbar -->
 <%
@@ -41,17 +42,16 @@
 <div class="container">
 <a class="dropdown-trigger btn" href="#" data-target="dropdown1">Sort Messages</a>
 <ul id="dropdown1" class="dropdown-content">
-    <li><a href="#!">Inbox</a></li>
-    <li><a href="#!">Outbox</a></li>
+    <li><a href="messages.jsp">All Messages</a></li>
+    <li><a href="inbox.jsp">Inbox</a></li>
+    <li><a href="outbox.jsp">Outbox</a></li>
 </ul>
 </div>
 </div>
 <div class="container">
-
 <%
     try
     {
-        String currentUserId = request.getParameter("user_id");
         int itemsPerPage = 5;
         int currentPage = 1;
 
@@ -66,11 +66,12 @@
         Class.forName("com.mysql.jdbc.Driver");
         con = DriverManager.getConnection("jdbc:mysql://localhost:3306/clubspartan?autoReconnect=true&useSSL=false", "root", "root");
 
-        PreparedStatement stmt = con.prepareStatement("SELECT message_id, sender_id, receiver_id, message, time_stamp FROM private_message ORDER BY time_stamp DESC LIMIT ?, ?");
+        PreparedStatement stmt = con.prepareStatement("SELECT message_id, sender_id, receiver_id, message, time_stamp FROM private_message WHERE sender_id = ? or receiver_id = ? ORDER BY time_stamp DESC LIMIT ?, ?");
 
-        stmt.setString(1, currentUserId);
-        stmt.setInt(1, startItem);
-        stmt.setInt(2, itemsPerPage);
+        stmt.setInt(1, user_id);
+        stmt.setInt(2, user_id);
+        stmt.setInt(3, startItem);
+        stmt.setInt(4, itemsPerPage);
 
         ResultSet rs = stmt.executeQuery();
 
@@ -137,24 +138,29 @@
     <div class="modal-content">
         <h4>Compose Message</h4>
         <div class="row">
-            <form class="col s12">
-                <div class="row">
-                    <div class="input-field col s12">
-                        <textarea id="textarea2" class="materialize-textarea" data-length="120"></textarea>
-                        <label for="textarea2">Textarea</label>
-                    </div>
+            <div class="col s12">
+                <div class="input-field inline">
+                    <input id="email_inline" type="email" class="validate">
+                    <label for="email_inline">Email</label>
                 </div>
-            </form>
+            </div>
         </div>
+        <form id="message-form" action="send_msgs.jsp" method="post">
+            <div class="row">
+                <div class="input-field col s12">
+                    <textarea name="message" id="textarea2" class="materialize-textarea" data-length="120" required></textarea>
+                    <label for="textarea2">Textarea</label>
+                </div>
+            </div>
+        </form>
     </div>
     <div class="modal-footer">
         <div class="modal-footer">
-            <a href="#!" class="modal-close waves-effect waves-green btn-flat">Send</a>
+            <button class="modal-close waves-effect waves-green btn-flat" type="submit" form="message-form">Send</button>
             <a href="#!" class="modal-close waves-effect waves-green btn-flat">Close</a>
         </div>
     </div>
 </div>
-
 <script>
     //messages
     document.addEventListener('DOMContentLoaded', function()
@@ -176,7 +182,20 @@
     //dropdown inbox,outbox
     document.addEventListener('DOMContentLoaded', function() {
         var elems = document.querySelectorAll('.dropdown-trigger');
+        var inboxLink = document.getElementById("inboxLink");
+        var all_msgsLink = document.getElementById("all_msgsLink");
         var instances = M.Dropdown.init(elems, {});
+
+        inboxLink.addEventListener("click", function(event) {
+            event.preventDefault();
+
+            location.reload();
+        });
+        all_msgsLink.addEventListener("click", function(event) {
+            event.preventDefault();
+
+            location.reload();
+        });
     });
 </script>
 </body>
