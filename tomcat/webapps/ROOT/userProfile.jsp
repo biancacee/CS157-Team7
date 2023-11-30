@@ -239,7 +239,7 @@
                             <li class="collection-item avatar">
                                 <img src=<%= sr.getString(3) %> alt="" class="circle">
                                 <a href=<%= "club.jsp?id=" + sr.getInt(1) %> class="title"><%= sr.getString(2) %></a>
-                                <a class="delete_user secondary-content" data-club-id="<%= sr.getInt(1) %>"><i class="material-icons " style="color: black;">remove_circle</i></a>
+                                <a class="delete_user secondary-content" data-club-id="<%= sr.getInt(1) %>"><i class="material-icons " >remove_circle</i></a>
                             </li>
                         <%
                             }

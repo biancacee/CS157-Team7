@@ -46,3 +46,13 @@
 .grower{
   font-size: 23px;
 }
+
+.delete_user i {
+  color: #ffab40;
+  transition: color 0.2s; /* Added color transition */
+}
+
+.delete_user:hover i {
+  color: red; /* Change this to the desired highlight color */
+  cursor: pointer;
+}
