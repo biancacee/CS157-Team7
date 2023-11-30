@@ -14,10 +14,19 @@
 </head>
 <body>
 <!-- Navbar -->
-<%
-    int user_id = -1;
-    if(session.getAttribute("user_id") != null)
-        user_id = (int)session.getAttribute("user_id");
+<% Connection con1 = null;
+    try{
+        int user_id = -1;
+        if(session.getAttribute("user_id") != null)
+        {
+            user_id = (int)session.getAttribute("user_id");
+        }
+        Class.forName("com.mysql.jdbc.Driver");
+        con1 = DriverManager.getConnection("jdbc:mysql://localhost:3306/clubspartan?autoReconnect=true&useSSL=false", "root", "root");
+        String stmtQueryMod1 = "SELECT club_id FROM moderates WHERE user_id = ?;";
+        PreparedStatement isModerator1 = con1.prepareStatement(stmtQueryMod1);
+        isModerator1.setInt(1, user_id);
+        ResultSet boolMod1 = isModerator1.executeQuery();
 %>
 <nav style="background-color:#687494">
     <div class="nav-wrapper container">
@@ -29,21 +38,41 @@
             <% } %>
 
             <% if(session.getAttribute("user_id") != null){ %>
-            <li><a href="userProfile.jsp">Profle</a></li>
+            <li><a href="userProfile.jsp">Profile</a></li>
+            <li><a href="club_create.jsp">Create Club</a></li>
             <li><a href="messages.jsp">Messages</a></li>
+            <% if(boolMod1.next()) {%>
+            <li><a href="moderator.jsp">Moderator</a></li>
+            <% } %>
             <li><a href="logout.jsp">Logout</a></li>
             <% } %>
         </ul>
     </div>
 </nav>
+<%
+        boolMod1.close();
+        isModerator1.close();
+
+        con1.close();
+    } catch (SQLException | ClassNotFoundException e) {
+        e.printStackTrace();
+    } finally {
+        try {
+            if (con1 != null) {
+                con1.close();
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+%>
 <div class="divider"></div>
 <div class="section">
     <div class="container">
         <a class="dropdown-trigger btn" href="#" data-target="dropdown1">Sort Messages</a>
         <ul id="dropdown1" class="dropdown-content">
-            <li><a href="messages.jsp">All Messages</a></li>
-            <li><a href="inbox.jsp">Inbox</a></li>
-            <li><a href="outbox.jsp">Outbox</a></li>
+            <li><a href="messages.jsp">Inbox</a></li>
+            <li><a href="outbox.jsp">Sent Mail</a></li>
         </ul>
     </div>
 </div>
@@ -51,6 +80,11 @@
     <%
         try
         {
+            int user_id = -1;
+            if(session.getAttribute("user_id") != null)
+            {
+                user_id = (int)session.getAttribute("user_id");
+            }
             int itemsPerPage = 5;
             int currentPage = 1;
 
@@ -65,13 +99,17 @@
             Class.forName("com.mysql.jdbc.Driver");
             con = DriverManager.getConnection("jdbc:mysql://localhost:3306/clubspartan?autoReconnect=true&useSSL=false", "root", "root");
 
-            PreparedStatement stmt = con.prepareStatement("SELECT message_id, sender_id, receiver_id, message, time_stamp FROM private_message WHERE sender_id = ? ORDER BY time_stamp DESC LIMIT ?, ?");
-
+            PreparedStatement stmt = con.prepareStatement("SELECT message_id, sender_id, receiver_id, message, time_stamp FROM private_message WHERE sender_id =? ORDER BY time_stamp DESC LIMIT ?, ?");
             stmt.setInt(1, user_id);
             stmt.setInt(2, startItem);
             stmt.setInt(3, itemsPerPage);
 
             ResultSet rs = stmt.executeQuery();
+
+            PreparedStatement stmt2 = con.prepareStatement("SELECT sjsu_email FROM user WHERE user_id = ?");
+            stmt2.setInt(1, user_id);
+            ResultSet rs2 = stmt2.executeQuery();
+            rs2.next();
 
             while(rs.next())
             {
@@ -79,7 +117,7 @@
     <ul class="collection">
         <li class="collection-item avatar">
             <img src="images/yuna.jpg" alt="" class="circle">
-            <span class="title"><%= rs.getString("sender_id") %></span>
+            <span class="title"><%= rs2.getString("sjsu_email") %></span>
             <p><%= rs.getString("message") %></p>
             <p class="secondary-content"><%= rs.getString("time_stamp") %></p>
         </li>
@@ -88,6 +126,8 @@
         }
         rs.close();
         stmt.close();
+        rs2.close();
+        stmt2.close();
 
         PreparedStatement countStmt = con.prepareStatement("SELECT COUNT(*) as total FROM private_message");
         ResultSet countRs = countStmt.executeQuery();
@@ -98,7 +138,6 @@
         countStmt.close();
         con.close();
     %>
-
 </div>
 <div class="container">
     <ul class="pagination">
@@ -126,24 +165,22 @@
         out.println("Exception caught: " + e.getMessage());
     }
 %>
-<div class="fixed-action-btn">
-    <a class="btn-floating btn-large red" id="main-btn">
-        <i class="large material-icons">mode_edit</i>
-    </a>
+<div class="row">
+    <div class="col s10 offset-s10">
+        <a class="btn-floating btn-large waves-effect waves-light teal lighten-1" id="main-btn"><i class="material-icons">create</i></a></div>
 </div>
-
 <div id="message-modal" class="modal">
     <div class="modal-content">
         <h4>Compose Message</h4>
-        <div class="row">
-            <div class="col s12">
-                <div class="input-field inline">
-                    <input id="email_inline" type="email" class="validate">
-                    <label for="email_inline">Email</label>
+        <form id="message-form" action="send_msgs.jsp" method="post">
+            <div class="row">
+                <div class="col s12">
+                    <div class="input-field inline">
+                        <input id="email_inline" name = "email_inline" type="email" class="validate">
+                        <label for="email_inline">Email</label>
+                    </div>
                 </div>
             </div>
-        </div>
-        <form id="message-form" action="send_msgs.jsp" method="post">
             <div class="row">
                 <div class="input-field col s12">
                     <textarea name="message" id="textarea2" class="materialize-textarea" data-length="120" required></textarea>
