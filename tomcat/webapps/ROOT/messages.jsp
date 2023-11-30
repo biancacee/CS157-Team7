@@ -14,7 +14,6 @@
 </head>
 <body>
 <!-- Navbar -->
-<!-- Navbar -->
 <% Connection con1 = null;
     try{
         int user_id = -1;
@@ -73,9 +72,8 @@
     <div class="container">
         <a class="dropdown-trigger btn" href="#" data-target="dropdown1">Sort Messages</a>
         <ul id="dropdown1" class="dropdown-content">
-            <li><a href="messages.jsp">All Messages</a></li>
-            <li><a href="inbox.jsp">Inbox</a></li>
-            <li><a href="outbox.jsp">Outbox</a></li>
+            <li><a href="messages.jsp">Inbox</a></li>
+            <li><a href="outbox.jsp">Sent Mail</a></li>
         </ul>
     </div>
 </div>
@@ -104,22 +102,19 @@
             Class.forName("com.mysql.jdbc.Driver");
             con = DriverManager.getConnection("jdbc:mysql://localhost:3306/clubspartan?autoReconnect=true&useSSL=false", "root", "root");
 
-            PreparedStatement stmt = con.prepareStatement("SELECT message_id, sender_id, receiver_id, message, time_stamp FROM private_message WHERE sender_id =? OR receiver_id = ? ORDER BY time_stamp DESC LIMIT ?, ?");
-
+            PreparedStatement stmt = con.prepareStatement("SELECT pm.message_id, pm.sender_id, pm.receiver_id, pm.message, pm.time_stamp, u.sjsu_email FROM private_message pm JOIN user u ON pm.sender_id = u.user_id WHERE pm.receiver_id = ? ORDER BY pm.time_stamp DESC LIMIT ?, ?");
             stmt.setInt(1, user_id);
-            stmt.setInt(2, user_id);
-            stmt.setInt(3, startItem);
-            stmt.setInt(4, itemsPerPage);
+            stmt.setInt(2, startItem);
+            stmt.setInt(3, itemsPerPage);
 
             ResultSet rs = stmt.executeQuery();
-
             while(rs.next())
             {
     %>
     <ul class="collection">
         <li class="collection-item avatar">
             <img src="images/yuna.jpg" alt="" class="circle">
-            <span class="title"><%= rs.getString("sender_id") %></span>
+            <span class="title"><%= rs.getString("sjsu_email") %></span>
             <p><%= rs.getString("message") %></p>
             <p class="secondary-content"><%= rs.getString("time_stamp") %></p>
         </li>
@@ -165,34 +160,38 @@
         out.println("Exception caught: " + e.getMessage());
     }
 %>
-<div class="fixed-action-btn">
-    <a class="btn-floating btn-large red" id="main-btn">
-        <i class="large material-icons">mode_edit</i>
-    </a>
-</div>
 
+<div class="row">
+    <div class="col s10 offset-s10">
+        <a class="btn-floating btn-large waves-effect waves-light teal lighten-1" id="main-btn"><i class="material-icons">create</i></a></div>
+</div>
 <div id="message-modal" class="modal">
     <div class="modal-content">
         <h4>Compose Message</h4>
+        <form id="message-form" action="send_msgs.jsp" method="post">
         <div class="row">
-            <form class="col s12">
-                <div class="row">
-                    <div class="input-field col s12">
-                        <textarea id="textarea2" class="materialize-textarea" data-length="120"></textarea>
-                        <label for="textarea2">Textarea</label>
-                    </div>
+            <div class="col s12">
+                <div class="input-field inline">
+                    <input id="email_inline" name = "email_inline" type="email" class="validate">
+                    <label for="email_inline">Email</label>
                 </div>
-            </form>
+            </div>
         </div>
+            <div class="row">
+                <div class="input-field col s12">
+                    <textarea name="message" id="textarea2" class="materialize-textarea" data-length="120" required></textarea>
+                    <label for="textarea2">Textarea</label>
+                </div>
+            </div>
+        </form>
     </div>
     <div class="modal-footer">
         <div class="modal-footer">
-            <a href="#!" class="modal-close waves-effect waves-green btn-flat">Send</a>
+            <button class="modal-close waves-effect waves-green btn-flat" type="submit" form="message-form">Send</button>
             <a href="#!" class="modal-close waves-effect waves-green btn-flat">Close</a>
         </div>
     </div>
 </div>
-
 <script>
     //messages
     document.addEventListener('DOMContentLoaded', function()

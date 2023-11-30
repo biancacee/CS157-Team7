@@ -6,36 +6,50 @@
         user_id = (int)session.getAttribute("user_id");
 %>
 <%
+    String userEmail = request.getParameter("email_inline");
     String message = request.getParameter("message");
     try {
         Class.forName("com.mysql.jdbc.Driver");
-        try (
-                java.sql.Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/clubspartan?autoReconnect=true&useSSL=false", "root", "root");
-                PreparedStatement ps = con.prepareStatement("insert into private_message(sender_id, receiver_id, message, time_stamp) VALUES (?,21, ?, current_timestamp)")
-        ) {
-            // Validate user input
-            if (message != null && !message.isEmpty()) {
-                ps.setInt(1, user_id);
-                //ps.setInt(2, user_id);
-                ps.setString(2, message);
+        java.sql.Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/clubspartan?autoReconnect=true&useSSL=false", "root", "root");
+        String getEmail = "SELECT user_id FROM user WHERE sjsu_email = ?";
+        try (PreparedStatement userid_ps = con.prepareStatement(getEmail))
+        {
+            userid_ps.setString(1, userEmail);
+            ResultSet userid_Result = userid_ps.executeQuery();
 
-                int x = ps.executeUpdate();
+            int recipient_userid;
+            if (userid_Result.next())
+            {
+                recipient_userid = userid_Result.getInt("user_id");
 
-                if (x > 0) {
-                    out.println("Message successfully inserted.");
-                } else {
-                    out.println("Message insertion failed.");
+                String insertMessage = "INSERT INTO private_message (sender_id, receiver_id, message, time_stamp) VALUES (?, ?, ?, current_timestamp)";
+                try (PreparedStatement insertMessageStatement = con.prepareStatement(insertMessage))
+                {
+                    int senderUserId = (int) session.getAttribute("user_id");
+                    insertMessageStatement.setInt(1, senderUserId);
+                    insertMessageStatement.setInt(2, recipient_userid);
+                    insertMessageStatement.setString(3, message);
+
+                    int rowsAffected = insertMessageStatement.executeUpdate();
+
+                    if (rowsAffected > 0)
+                    {
+                        request.getRequestDispatcher("messages.jsp").forward(request, response);
+                        return;
+                    } else
+                    {
+                        out.println("<script>alert('Failed to send the message.');</script>");
+                    }
                 }
-            } else {
-                out.println("Please enter a message.");
             }
-        } catch (SQLException e) {
-            // Log the exception to a log file or another appropriate location
-            out.println("Error: An unexpected error occurred.");
-            e.printStackTrace();
+            else
+            {
+                out.println("<script>alert('User not found with the provided email.');</script>");
+            }
         }
-    } catch (ClassNotFoundException e) {
-        out.println("Error: JDBC Driver not found.");
-        e.printStackTrace();
-    }
-%>
+        }
+    catch (SQLException | ClassNotFoundException e)
+        {
+            out.println("<script>alert('Exception caught: " + e.getMessage() + "');</script>");
+        }
+        %>
