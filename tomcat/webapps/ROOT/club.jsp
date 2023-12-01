@@ -194,7 +194,6 @@
                                 </div>
                             </div>
 
-                            <!-- Modal Trigger -->
                                 <!-- Modal Structure -->
                                 <div id="modalEvent" class="modal">
                                     <div class="modal-content">
@@ -236,13 +235,13 @@
                                             if(isClubMod)
                                             {
                                                 %>
-                                                <li class="collection-item"><a href=<%= "/event.jsp?event_id=" + rs_events.getInt(1) %> class="collection-item"><%= rs_events.getString(6) %> : <%= rs_events.getString(4) %> - <%= rs_events.getString(5) %> </a></li>
+                                                <li class="collection-item"><a href=<%= "/event.jsp?event_id=" + rs_events.getInt(1) + "&user_id=" + user_id + "&club_id=" + id %> class="collection-item"><%= rs_events.getString(6) %> : <%= rs_events.getString(4) %> - <%= rs_events.getString(5) %> </a></li>
                                                 <%
                                             }
                                             else
                                             {
                                                 %>
-                                                <li class="collection-item"><div><a href=<%= "/event.jsp?event_id=" + rs_events.getInt(1) %>><%= rs_events.getString(6) %> : <%= rs_events.getString(4) %> - <%= rs_events.getString(5) %></a><a onclick=<%= "removeEvent(" + rs_events.getInt(1) + ")" %> class="secondary-content"><i class="material-icons">delete</i></a></div></li>
+                                                <li class="collection-item"><div><a href=<%= "/event.jsp?event_id=" + rs_events.getInt(1) + "&user_id=" + user_id + "&club_id=" + id %>><%= rs_events.getString(6) %> : <%= rs_events.getString(4) %> - <%= rs_events.getString(5) %></a><a onclick=<%= "removeEvent(" + rs_events.getInt(1) + ")" %> class="secondary-content"><i class="material-icons">delete</i></a></div></li>
                                                 <%
                                             }
                                         } %>
@@ -262,7 +261,7 @@
         <div class="container" style="margin-top: 20px;">
             <div class="row">
                 <% int review_count = 0; while(rs_review.next()) {%>
-                    <div class="col s6 offset-s3">
+                    <div class="col s6">
                     <div class="card">
                         <div class="card-content">
                             <span class="card-title"><%= rs_review.getString(3) %></span>
