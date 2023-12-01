@@ -40,7 +40,7 @@
                     <li><a href="club_create.jsp">Create Club</a></li>
                     <li><a href="messages.jsp">Messages</a></li>
                     <% if(boolMod1.next()) {%>
-                    <li><a href="moderator.jsp">Moderator</a></li>
+                    <li><a href="moderator.jsp">Manage Clubs</a></li>
                     <% } %>
                     <li><a href="logout.jsp">Logout</a></li>
                 <% } %>

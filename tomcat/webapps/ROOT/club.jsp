@@ -43,7 +43,7 @@
                     <li><a href="club_create.jsp">Create Club</a></li>
                     <li><a href="messages.jsp">Messages</a></li>
                     <% if(boolMod1.next()) {%>
-                    <li><a href="moderator.jsp">Moderator</a></li>
+                    <li><a href="moderator.jsp">Manage Clubs</a></li>
                     <% } %>
                     <li><a href="logout.jsp">Logout</a></li>
                 <% } %>
@@ -220,7 +220,7 @@
                             <div class="card-action">
                                 <% if(session.getAttribute("user_id") != null){ %>
                                 <a onclick=<%= "likeReview(" + rs_review.getInt(1) + ")" %> class="waves-effect waves-teal btn-flat"><i class="material-icons left Small">thumb_up</i><%= rs_review.getInt(5) %> Likes</a>
-                                <a class="waves-effect waves-teal btn-flat modal-trigger" href="#modalComment" review_id=<%= rs_review.getInt(1) %>><i class="material-icons left Small">comment</i>Comment</a>
+                                <a class="waves-effect waves-teal btn-flat modal-trigger" href="#modal\" review_id=<%= rs_review.getInt(1) %>><i class="material-icons left Small">comment</i>Comment</a>
                                 <!-- Modal Comment -->
                                 <div id="modalComment" class="modal">
                                     <div class="modal-content">

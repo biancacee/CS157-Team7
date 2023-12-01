@@ -45,7 +45,7 @@
                     <li><a href="club_create.jsp">Create Club</a></li>
                     <li><a href="messages.jsp">Messages</a></li>
                     <% if(boolMod1.next()) {%>
-                    <li><a href="moderator.jsp">Moderator</a></li>
+                    <li><a href="moderator.jsp">Manage Clubs</a></li>
                     <% } %>
                     <li><a href="logout.jsp">Logout</a></li>
                 <% } %>
@@ -113,7 +113,7 @@
                     <div class="mr4 fw8 info"><a class="profileTabs" onclick="showContent('settings')">Account Settings</a></div>
                     <div class="mr4 fw8 info"><a class="profileTabs" onclick="showContent('ratings')">Ratings</a></div>
                     <% if(boolMod.next()){ %>
-                    <div class="mr4 fw8 info"><a class="profileTabs" onclick="showContent('Moderator')">Moderator</a></div>
+                    <div class="mr4 fw8 info"><a class="profileTabs" onclick="showContent('Moderator')">Moderate</a></div>
                     <% } %>
                 </div>
                 <div class="flex justify-center">
@@ -219,6 +219,7 @@
                     <div id="Moderator" class="container mw6 content">
             
                         <!-- List of clubs -->
+                        <p class="">Remove yourself as a moderator</p>
                         <ul class="collection with-header">
                         <%
                             try 
@@ -239,7 +240,7 @@
                             <li class="collection-item avatar">
                                 <img src=<%= sr.getString(3) %> alt="" class="circle">
                                 <a href=<%= "club.jsp?id=" + sr.getInt(1) %> class="title"><%= sr.getString(2) %></a>
-                                <a class="delete_user secondary-content" data-club-id="<%= sr.getInt(1) %>"><i class="material-icons " >remove_circle</i></a>
+                                <a class="delete_mod secondary-content" data-club-id="<%= sr.getInt(1) %>"><i class="material-icons " >remove_circle</i></a>
                             </li>
                         <%
                             }
@@ -611,7 +612,7 @@
             </script>
             <script>
                 $(document).ready(function(){
-                    $('.delete_user').click(function(){
+                    $('.delete_mod').click(function(){
 
                         var club_id = $(this).data('club-id');
                         const user_id = '${user_id}';

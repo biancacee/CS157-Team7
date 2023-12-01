@@ -1,3 +1,4 @@
 /tomcat/logs/*
 !/tomcat/logs/.keep
 /tomcat/work
+/tomcat/webapps/ROOT/images

@@ -27,6 +27,7 @@
             }
             Class.forName("com.mysql.jdbc.Driver");
             con1 = DriverManager.getConnection("jdbc:mysql://localhost:3306/clubspartan?autoReconnect=true&useSSL=false", "root", "root");
+            
             String stmtQueryMod1 = "SELECT club_id FROM moderates WHERE user_id = ?;";
             PreparedStatement isModerator1 = con1.prepareStatement(stmtQueryMod1);
             isModerator1.setInt(1, user_id);
@@ -46,7 +47,7 @@
                     <li><a href="club_create.jsp">Create Club</a></li>
                     <li><a href="messages.jsp">Messages</a></li>
                     <% if(boolMod1.next()) {%>
-                    <li><a href="moderator.jsp">Moderator</a></li>
+                    <li><a href="moderator.jsp">Manage Clubs</a></li>
                     <% } %>
                     <li><a href="logout.jsp">Logout</a></li>
                 <% } %>
@@ -71,60 +72,177 @@
                 }
             }
         %>
-        <%
-        Connection con = null;
-        try 
-        {
-            int user_id = -1;
-            if(session.getAttribute("user_id") != null)
-            {
-                user_id = (int)session.getAttribute("user_id");
-            }
-                
-            Class.forName("com.mysql.jdbc.Driver");
-            con = DriverManager.getConnection("jdbc:mysql://localhost:3306/clubspartan?autoReconnect=true&useSSL=false", "root", "root");
-
-            PreparedStatement stmt = con.prepareStatement("SELECT * FROM user WHERE user_id = ?");
-            stmt.setInt(1, user_id);
-            ResultSet rs = stmt.executeQuery();
-            rs.next(); // Move the cursor to the first row
-
-            String userName = rs.getString("name");
-            String email = rs.getString("sjsu_email");
-            String id = rs.getString("user_id");
-            
-            String stmtQuery = "SELECT r.review_id, r.user_id, r.title, r.description, COUNT(l.user_id) AS like_count FROM review r LEFT JOIN `like` l ON r.review_id = l.review_id WHERE r.user_id = ? GROUP BY r.review_id ORDER BY like_count DESC";
-            PreparedStatement stmt_review = con.prepareStatement(stmtQuery);
-            stmt_review.setString(1, id);
-            ResultSet rs_review = stmt_review.executeQuery();
-        %>
         <div class="container">
-            <h2>ClubSpartan</h2>
-            
+            <h2 class="flex justify-center">Edit Clubs and Add Moderator </h2>
+            <div id="Moderator" class="container pt3">
+                <!-- List of clubs -->
+                <ul class="collection with-header">
+                <%
+                    try 
+                    {
+                        int user_id = -1;
+                        if(session.getAttribute("user_id") != null)
+                        {
+                            user_id = (int)session.getAttribute("user_id");
+                        }
+                        String club_name = request.getParameter("club-name");
+    
+                        java.sql.Connection connect;
+                        Class.forName("com.mysql.jdbc.Driver");
+                        connect = DriverManager.getConnection("jdbc:mysql://localhost:3306/clubspartan?autoReconnect=true&useSSL=false", "root", "root");
+    
+                        PreparedStatement list = connect.prepareStatement("SELECT club_id, name, logo FROM moderates NATURAL JOIN club WHERE club.club_id = moderates.club_id AND user_id = ?;");
+                        list.setInt(1, user_id);
+                        ResultSet sr = list.executeQuery();
+                        
+                        while(sr.next()) {
+                        int clubId = sr.getInt(1);
+
+                        PreparedStatement list1 = connect.prepareStatement("SELECT name, description, contact_email, discord_link, instagram_link, membership_fee FROM club WHERE club_id = ?;");
+                        list1.setInt(1, clubId);
+                        ResultSet sr1 = list1.executeQuery();
+                        if (sr1.next()) { // Check if there are results
+                            String name = sr1.getString(1);
+                            String description = sr1.getString(2);
+                            String contact_email = sr1.getString(3);
+                            String discord_link = sr1.getString(4);
+                            String instagram_link = sr1.getString(5);
+                            int membership_fee = sr1.getInt(6);
+                        
+                    {
+                %>
+                    <li class="collection-item avatar">
+                        <img src=<%= sr.getString(3) %> alt="" class="circle">
+                        <a href=<%= "club.jsp?id=" + sr.getInt(1) %> class="title"><%= sr.getString(2) %></a>
+                        <div class="add_Mod">
+                            <a class="waves-effect waves-light modal-trigger secondary-content pr4 mr3" href="#modal_<%= clubId %>">
+                                <i class="material-icons">add_circle_outline</i>
+                            </a>
+                            <div id="modal_<%= clubId %>" class="modal">
+                                <div class="modal-content">
+                                    <h5>Enter Students Email to add as Moderator</h5>
+                                    <form id="updateForm" class="col s12" method="post" action="mod_email_update.jsp">
+                                        <div class="row">
+                                            <input id="srValue" type="hidden" name="srValue" value="<%= clubId %>" >
+                                            <div class="input-field col s12">
+                                                <input id="sjsu_email"  name="sjsu_email" type="email" class="validate">
+                                                <label for="sjsu_email">SJSU Email</label>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <button class="btn btn-primary btn-sm" type="submit">Submit
+                                                <i class="material-icons right">send</i>
+                                            </button>
+                                        </div>
+                                    </form>
+                                </div>
+                                <div class="modal-footer">
+                                    <a href="#!" class="modal-close waves-effect waves-green btn-flat">Close</a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                          
+                        <div class="edit_club">
+                            <a class="waves-effect waves-light modal-trigger secondary-content" href="#modal1_<%= clubId %>">
+                                <i class="material-icons">edit</i>
+                            </a>
+                            <div id="modal1_<%= clubId %>" class="modal">
+                                <div class="modal-content flex flex-column justify-center">
+                                    <div><h5>Edit Club Information</h5></div>
+                                    <div class="">
+                                        <form class="col s12" id="updateForm1"  method="post" action="updateClub.jsp">
+                                            <div class="row">
+                                                <input type="hidden" id="srValue1" name="srValue1" value="<%= clubId %>">
+                                                <div class="input-field col s6">
+                                                    <input id="clubName" onclick="clearInputValue(this);" value="<%= name %>" name="clubName" type="text" class="validate">
+                                                    
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="input-field col s12">
+                                                    <input id="clubDescription" onclick="clearInputValue(this);" value="<%= description %>" name="clubDescription" type="text" class="validate">
+                                                    <label for="clubDescription">Club Description</label>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="input-field col s12">
+                                                    <input id="clubEmail" onclick="clearInputValue(this);" value="<%= contact_email %>" name="clubEmail" type="text" class="validate">
+                                                    <label for="clubEmail">Club Email</label>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="input-field col s12">
+                                                    <input id="discordLink" onclick="clearInputValue(this);" value="<%= discord_link %>" name="discordLink" type="text" class="validate">
+                                                    <label for="discordLink">discord Link</label>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="input-field col s12">
+                                                    <input id="instagramLink" onclick="clearInputValue(this);" value="<%= instagram_link %>" name="instagramLink" type="text" class="validate">
+                                                    <label for="instagramLink">Instagram Link</label>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="input-field col s12">
+                                                    <input id="memberFee" onclick="clearInputValue(this);" value="<%= membership_fee %>" name="memberFee" type="text" class="validate">
+                                                    <label for="memberFee">Member Fee</label>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <button class="btn btn-primary btn-sm" type="submit">Submit
+                                                    <i class="material-icons right">send</i>
+                                                </button>
+                                            </div> 
+                                        </form>
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <a href="#!" class="modal-close waves-effect waves-green btn-flat">close</a>
+                                </div>
+                            </div>
+                        </div>
+                        <%
+                        }
+                        }%>  
+                    </li>
+                <%
+                    }
+                        
+                        sr.close();
+                        list.close();
+                        connect.close();
+                    }
+                    catch(SQLException e) 
+                    {
+                        out.println("SQLException caught: " + e.getMessage());
+                        e.printStackTrace();
+                    }
+                %>
+                </ul>
+            </div>
             
         </div>
-
-        <% 
-        rs.close();
-        rs_review.close();
-        
-        stmt.close();
-        stmt_review.close();
-
-        con.close();
-            } catch (SQLException | ClassNotFoundException e) {
-                e.printStackTrace();
-            } finally {
-                try {
-                    if (con != null) {
-                        con.close();
-                    }
-                } catch (SQLException e) {
-                    e.printStackTrace();
-                }
-            }
-        %>
-                
+        <script>
+            $(document).ready(function(){
+                $('.modal').modal();
+            });
             
+            function clearInputValue(input) {
+                input.value = "";
+            }
+        
+            function submitForm() {
+                document.getElementById("updateForm").submit();
+                form.submit();
+                location.reload();
+            }
+
+            function submitForm1() {
+                document.getElementById("updateForm1").submit();
+                form.submit();
+                location.reload();
+            }
+        </script>
     </body>
 </html>
