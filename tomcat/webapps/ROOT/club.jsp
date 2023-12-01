@@ -200,8 +200,8 @@
                                     <div class="modal-content">
                                         <h1>Add New Event</h1>
                                         <form id="eventForm">
-                                            <label for="title">Title:</label>
-                                            <input type="text" id="title" name="title" required><br>
+                                            <label for="event_title">Title:</label>
+                                            <input type="text" id="event_title" name="event_title" required><br>
                                             <label for="location">Location:</label>
                                             <input type="text" id="location" name="location" required><br>
                                             <label for="start_date">Start Date:</label>
@@ -488,7 +488,7 @@
                 $('#eventForm').submit(function(e) {
                     e.preventDefault();
 
-                    var title = $('#title').val();
+                    var title = $('#event_title').val();
                     var description = $('#description').val();
                     var llocation = $('#location').val();
                     var start_date = $('#start_date').val();
