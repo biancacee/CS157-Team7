@@ -231,22 +231,22 @@
                                     <% if(!isClubMod) { %>
                                         <a class="waves-effect waves-light btn modal-trigger" style="background-color: #687494" href="#modalEvent"><i class="material-icons left">access_time</i>Add Event</a>
                                     <% } %>
-                                    <div class="collection">
+                                    <ul class="collection with-header">
                                         <% while(rs_events.next()) { 
-                                            if(!isClubMod)
+                                            if(isClubMod)
                                             {
                                                 %>
-                                                <a href=<%= "/event.jsp?event_id=" + rs_events.getInt(1) %> class="collection-item"><%= rs_events.getString(6) %> : <%= rs_events.getString(4) %> - <%= rs_events.getString(5) %> </a>
+                                                <li class="collection-item"><a href=<%= "/event.jsp?event_id=" + rs_events.getInt(1) %> class="collection-item"><%= rs_events.getString(6) %> : <%= rs_events.getString(4) %> - <%= rs_events.getString(5) %> </a></li>
                                                 <%
                                             }
                                             else
                                             {
                                                 %>
-                                                <a href=<%= "/event.jsp?event_id=" + rs_events.getInt(1) %> class="collection-item"><%= rs_events.getString(6) %> : <%= rs_events.getString(4) %> - <%= rs_events.getString(5) %> </a>
+                                                <li class="collection-item"><div><a href=<%= "/event.jsp?event_id=" + rs_events.getInt(1) %>><%= rs_events.getString(6) %> : <%= rs_events.getString(4) %> - <%= rs_events.getString(5) %></a><a onclick=<%= "removeEvent(" + rs_events.getInt(1) + ")" %> class="secondary-content"><i class="material-icons">delete</i></a></div></li>
                                                 <%
                                             }
                                         } %>
-                                    </div>
+                                    </ul>
                                 </div>
                             </div>
                         </div>
@@ -515,7 +515,7 @@
                             $('#response').html(response);
                         },
                         error: function() {
-                            $('#response').html('An error occurred while submitting the review.');
+                            $('#response').html('An error occurred while submitting the event.');
                         }
                     });
                 });
@@ -525,6 +525,28 @@
                     location.reload(); // Reload the page
                 });
             });
+            </script>
+
+            <script>
+                function removeEvent(id)
+                {
+                    var urlParams = new URLSearchParams(window.location.search);
+
+                    $.ajax({
+                        type: 'POST',
+                        url: 'removeEvent.jsp',
+                        data: {
+                            event_id: id,
+                        },
+                        success: function(response) {
+                            location.reload()
+                            $('#response').html(response);
+                        },
+                        error: function() {
+                            $('#response').html('An error occurred while submitting the review.');
+                        }
+                    });
+                }
             </script>
 
             <!-- Needed for comments -->
