@@ -15,19 +15,28 @@
     <body>
         <% 
         int user_id = -1;
+        String id = request.getParameter("id");
+        boolean isClubMod = false;
         if(session.getAttribute("user_id") != null)
             user_id = (int)session.getAttribute("user_id");
         %>
         <!-- Navbar -->
         <% Connection con1 = null;
         try{
-            
             Class.forName("com.mysql.jdbc.Driver");
             con1 = DriverManager.getConnection("jdbc:mysql://localhost:3306/clubspartan?autoReconnect=true&useSSL=false", "root", "root");
             String stmtQueryMod1 = "SELECT club_id FROM moderates WHERE user_id = ?;";
             PreparedStatement isModerator1 = con1.prepareStatement(stmtQueryMod1);
             isModerator1.setInt(1, user_id);
             ResultSet boolMod1 = isModerator1.executeQuery();
+            boolean mod = boolMod1.next();
+
+            stmtQueryMod1 = "SELECT * FROM moderates WHERE user_id = ? AND club_id = ?";
+            PreparedStatement isModeratorOfClub = con1.prepareStatement(stmtQueryMod1);
+            isModeratorOfClub.setInt(1, user_id);
+            isModeratorOfClub.setString(2, id);
+            ResultSet isClubModResult = isModeratorOfClub.executeQuery();
+            isClubMod = isClubModResult.next();
         %>
         <nav style="background-color:#687494">
             <div class="nav-wrapper container">
@@ -42,7 +51,7 @@
                     <li><a href="userProfile.jsp">Profile</a></li>
                     <li><a href="club_create.jsp">Create Club</a></li>
                     <li><a href="messages.jsp">Messages</a></li>
-                    <% if(boolMod1.next()) {%>
+                    <% if(mod) {%>
                     <li><a href="moderator.jsp">Moderator</a></li>
                     <% } %>
                     <li><a href="logout.jsp">Logout</a></li>
@@ -52,6 +61,8 @@
             </div>
         </nav>
         <% 
+        isClubModResult.close();
+        isModeratorOfClub.close();
         boolMod1.close();
         isModerator1.close();
 
@@ -73,8 +84,6 @@
         <%
         try 
         {
-            String id = request.getParameter("id");
-
             java.sql.Connection con;
             Class.forName("com.mysql.jdbc.Driver");
             con = DriverManager.getConnection("jdbc:mysql://localhost:"+"3306"+"/clubspartan?autoReconnect=true&useSSL=false", "root", "root");
@@ -184,6 +193,34 @@
                                     <a href="#!" id="close-button" class="modal-action modal-close waves-effect waves-green btn-flat">Close</a>
                                 </div>
                             </div>
+
+                            <!-- Modal Trigger -->
+                                <!-- Modal Structure -->
+                                <div id="modalEvent" class="modal">
+                                    <div class="modal-content">
+                                        <h1>Add New Event</h1>
+                                        <form id="eventForm">
+                                            <label for="title">Title:</label>
+                                            <input type="text" id="title" name="title" required><br>
+                                            <label for="location">Location:</label>
+                                            <input type="text" id="location" name="location" required><br>
+                                            <label for="start_date">Start Date:</label>
+                                            <input type="date" id="start_date" name="start_date" required><br>
+                                            <label for="start_time">Start Time:</label>
+                                            <input type="time" id="start_time" name="start_time" required><br>
+                                            <label for="end_time">End Time:</label>
+                                            <input type="time" id="end_time" name="end_time" required><br>
+                                            <label for="description">Description:</label>
+                                            <textarea id="description" name="description" required></textarea><br>
+                                            <br>
+                                            <button type="submit" class="waves-effect waves-light btn">Submit</button>
+                                        </form>
+                                        <div id="response"></div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <a href="#!" id="close-button" class="modal-action modal-close waves-effect waves-green btn-flat">Close</a>
+                                    </div>
+                                </div>
                             
                             <!-- Modal Trigger -->
                             <a class="waves-effect waves-light btn modal-trigger" style="background-color:#687494" href="#events"><i class="material-icons left">event</i>Events</a>
@@ -191,10 +228,24 @@
                             <div id="events" class="modal bottom-sheet">
                                 <div class="modal-content">
                                     <h3 class="header">Events</h3>
+                                    <% if(!isClubMod) { %>
+                                        <a class="waves-effect waves-light btn modal-trigger" style="background-color: #687494" href="#modalEvent"><i class="material-icons left">access_time</i>Add Event</a>
+                                    <% } %>
                                     <div class="collection">
-                                        <% while(rs_events.next()) { %>
-                                            <a href=<%= "/event.jsp?event_id=" + rs_events.getInt(1) %> class="collection-item"><%= rs_events.getString(6) %> : <%= rs_events.getString(4) %> - <%= rs_events.getString(5) %> </a>
-                                        <% } %>
+                                        <% while(rs_events.next()) { 
+                                            if(!isClubMod)
+                                            {
+                                                %>
+                                                <a href=<%= "/event.jsp?event_id=" + rs_events.getInt(1) %> class="collection-item"><%= rs_events.getString(6) %> : <%= rs_events.getString(4) %> - <%= rs_events.getString(5) %> </a>
+                                                <%
+                                            }
+                                            else
+                                            {
+                                                %>
+                                                <a href=<%= "/event.jsp?event_id=" + rs_events.getInt(1) %> class="collection-item"><%= rs_events.getString(6) %> : <%= rs_events.getString(4) %> - <%= rs_events.getString(5) %> </a>
+                                                <%
+                                            }
+                                        } %>
                                     </div>
                                 </div>
                             </div>
@@ -411,6 +462,53 @@
                             review: review,
                             club_id: club_id, // Include club_id in the data
                             user_id: user_id
+                        },
+                        success: function(response) {
+                            location.reload()
+                            $('#response').html(response);
+                        },
+                        error: function() {
+                            $('#response').html('An error occurred while submitting the review.');
+                        }
+                    });
+                });
+
+                // Add an event listener to the "Close" button
+                $('#close-button').click(function() {
+                    location.reload(); // Reload the page
+                });
+            });
+            </script>
+
+            <!-- Need for Events -->
+            <script>
+                $(document).ready(function() {
+                $('#modalEvent').modal();
+
+                $('#eventForm').submit(function(e) {
+                    e.preventDefault();
+
+                    var title = $('#title').val();
+                    var description = $('#description').val();
+                    var llocation = $('#location').val();
+                    var start_date = $('#start_date').val();
+                    var start_time = $('#start_time').val();
+                    var end_time = $('#end_time').val();
+
+                    var urlParams = new URLSearchParams(window.location.search);
+                    var club_id = urlParams.get('id');
+
+                    $.ajax({
+                        type: 'POST',
+                        url: 'addEvent.jsp',
+                        data: {
+                            title: title,
+                            description: description,
+                            location: llocation,
+                            start_date: start_date,
+                            start_time: start_time,
+                            end_time: end_time,
+                            club_id: club_id,
                         },
                         success: function(response) {
                             location.reload()

@@ -79,19 +79,19 @@
                 <form class="col s12" id="clubForm" action="insert_Club.jsp" method="post" enctype="multipart/form-data">
                     <div class="row">
                         <div class="input-field col s6">
-                            <input id="clubName" name="clubName" type="text" class="validate">
+                            <input id="clubName" name="clubName" type="text" class="validate" required>
                             <label for="clubName">Club Name</label>
                         </div>
                     </div>
                     <div class="row">
                         <div class="input-field col s12">
-                            <input id="clubDescription" name="clubDescription" type="text" class="validate">
+                            <input id="clubDescription" name="clubDescription" type="text" class="validate" required>
                             <label for="clubDescription">Club Description</label>
                         </div>
                     </div>
                     <div class="row">
                         <div class="input-field col s12">
-                            <input id="clubEmail" name="clubEmail" type="text" class="validate">
+                            <input id="clubEmail" name="clubEmail" type="email" class="validate">
                             <label for="clubEmail">Club Email</label>
                         </div>
                     </div>
@@ -109,7 +109,7 @@
                     </div>
                     <div class="row">
                         <div class="input-field col s12">
-                            <input id="memberFee" name="memberFee" type="text" class="validate">
+                            <input id="memberFee" name="memberFee" type="text" class="validate" value="0" required>
                             <label for="memberFee">Member Fee</label>
                         </div>
                     </div>
@@ -117,7 +117,7 @@
                         <div class="file-field input-field">
                             <div class="btn">
                                 <span>Upload Picture</span>
-                                <input type="file" name="clubPicture">
+                                <input type="file" name="clubPicture" required>
                             </div>
                             <div class="file-path-wrapper">
                                 <input class="file-path validate" type="text">
