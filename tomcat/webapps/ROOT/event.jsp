@@ -49,6 +49,10 @@ PreparedStatement stmtAmentities = con.prepareStatement(stmtQuery);
 stmtAmentities.setString(1, event_id);
 ResultSet resultAmentities = stmtAmentities.executeQuery();
 
+stmtQuery = "SELECT amentity_id, image, name FROM amentities";
+PreparedStatement stmtAmentitiesAll = con.prepareStatement(stmtQuery);
+ResultSet listAmentities = stmtAmentitiesAll.executeQuery();
+
 while(result.next())
 {
 %>
@@ -63,7 +67,6 @@ while(result.next())
                 <div><b>End Time: </b><%=result.getString(8)%></div>
                 <hr />
                 <p><%=result.getString(5)%></p>
-
             </div>
         </div>
     </div>
@@ -77,9 +80,27 @@ while(result.next())
             <h1>Add Amentity</h1>
             <form id="addForm">
                 <label for="amentity_id">Type:</label>
-                <textarea id="amentity_id" name="amentity_id" required></textarea><br>
+                <div class="input-field col s12 m6">
+                    <select id="select" class="icons">
+                      <% while(listAmentities.next()) { %>
+                      <option value=<%= listAmentities.getString(1) %> data-icon=<%= listAmentities.getString(2) %>><%= listAmentities.getString(3) %></option>
+                      <% } %>
+                    </select>
+                </div>
                 <br>
-                <button type="submit" class="waves-effect waves-light btn">Submit</button>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <button type="submit" class="waves-effect waves-light btn">Add</button>
             </form>
             <div id="response"></div>
         </div>
@@ -116,7 +137,7 @@ while(result.next())
             <img src=<%= resultAmentities.getString(3) %> alt="" class="circle">
             <p><%=resultAmentities.getString(4)%></p>
             <p><%=resultAmentities.getString(5)%></p>
-            <a onclick=<%= "removeAmentity(" + resultAmentities.getString(1) + "," + club_id + ")" %> class="secondary-content"><i class="material-icons">delete</i></a>
+            <a onclick=<%= "removeAmentity(" + resultAmentities.getString(1) + "," + event_id + ")" %> class="secondary-content"><i class="material-icons">delete</i></a>
         </li>
     </ul>
     <% } %>
@@ -127,15 +148,31 @@ stmtAmentities.close();
 resultAmentities.close();
 stmt.close();
 result.close();
+listAmentities.close();
+stmtAmentitiesAll.close();
 %>
 </div>
 
 <script type="text/javascript" src="js/materialize.min.js"></script>
 
 <script>
-    function removeAmentity(amentity_id, club_id)
+    function removeAmentity(amentity_id, event_id)
     {
-        console.log(amentity_id, club_id);
+        $.ajax({
+            type: 'POST',
+            url: 'removeAmentity.jsp',
+            data: {
+                amentity_id: amentity_id,
+                event_id: event_id,
+            },
+            success: function(response) {
+                location.reload()
+                $('#response').html(response);
+            },
+            error: function() {
+                $('#response').html('An error occurred.');
+            }
+        });
     }
 </script>
 
@@ -153,16 +190,17 @@ result.close();
 
     $('#addForm').submit(function(e) {
         e.preventDefault();
+        var urlParams = new URLSearchParams(window.location.search);
 
-        var amentity_id = $('#amentity_id').val();
-        var club_id = urlParams.get('club_id');
+        var amentity_id = $('#select').val();
+        var event_id = urlParams.get('event_id');
 
         $.ajax({
             type: 'POST',
             url: 'addAmentity.jsp',
             data: {
-                name: type,
-                club_id: club_id,
+                amentity_id: amentity_id,
+                event_id: event_id,
             },
             success: function(response) {
                 location.reload()
@@ -178,6 +216,10 @@ result.close();
 $(document).ready(function(){
     $('.modal').modal();
 });
+
+$(document).ready(function(){
+    $('select').formSelect();
+  });
 </script>
 </body>
 </html>
