@@ -1,4 +1,6 @@
 <%@ page import="java.sql.*"%>
+<%@ page import="java.util.List" %>
+<%@ page import="java.util.ArrayList" %>
 <html>
     <head>
         <title>ClubSpartan</title>
@@ -7,8 +9,10 @@
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
         <link rel="stylesheet" type="text/css" href="style.css">
+        <link rel="stylesheet" href="https://unpkg.com/tachyons@4.12.0/css/tachyons.min.css"/>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+        
 
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     </head>
@@ -117,6 +121,17 @@
             PreparedStatement stmt_events = con.prepareStatement("SELECT * FROM event WHERE club_id = ? AND start_date > CURDATE() ORDER BY start_date");
             stmt_events.setString(1, id);
             ResultSet rs_events = stmt_events.executeQuery();
+
+            PreparedStatement stmt_moderators = con.prepareStatement("SELECT u.name AS user_name FROM user u JOIN moderates m ON u.user_id = m.user_id WHERE m.club_id = ?;");
+            stmt_moderators.setString(1, id);
+                
+            PreparedStatement stmt_price = con.prepareStatement("SELECT membership_fee FROM club where club_id = ?;");
+            stmt_price.setString(1, id);
+            ResultSet rs_price = stmt_price.executeQuery();
+            int price = 0;
+            while(rs_price.next()){
+            price = rs_price.getInt(1);
+            }
         %>
 
         <!-- Club -->
@@ -127,7 +142,14 @@
                 <div class="row">
                     <div class="col s7 push-s5 left-align" style="padding: 15px; padding-left: 20px;">
                         <% if(avg_rating != 0) { %>
-                            <div><b>Rating: </b><%= avg_rating %></div>
+                            <div>
+                                <span><b>Rating: </b><%= avg_rating %></span>
+                                <%if(price != 0){ %>
+                                <span class="ml2"><b>Price: </b>$<%= price %></span>
+                                <%} else {%>
+                                    <span class="ml2"><b>Price: </b>Free</span>
+                                    <%}%>
+                            </div>
                         <% } else { %> 
                             <div><b>Rating: </b>No Rating</div>
                         <% } %>
@@ -141,8 +163,34 @@
                         <% 
                             if(rs.getString(5) != null) {
                         %>
-                            <b>Discord Link: </b><a href=<%= rs.getString(5) %>><%= rs.getString(5) %></a><br/>
+                            <b>Discord Link: </b><a href=<%= rs.getString(5) %>><%= rs.getString(5) %></a><br/> 
+                            
+                                
+                            
                         <% } %>
+                        <hr />
+                        <b>Moderators: </b>
+                        <% 
+                            ResultSet rs_moderators = stmt_moderators.executeQuery();
+                            List<String> userNames = new ArrayList<>();
+                            
+                            while (rs_moderators.next()) {
+                                // Retrieve the "user_name" column from the result set
+                                String userName = rs_moderators.getString("user_name");
+                                
+                                // Add the user name to the list
+                                userNames.add(userName);
+                            }
+                        
+                            for (int i = 0; i < userNames.size(); i++) {
+                                String user = userNames.get(i);
+                        %>
+                        <span>
+                            <%= user %><%= (i < userNames.size() - 1) ? " |" : "" %>
+                        </span>
+                        <%
+                            }
+                        %>
                         <hr />
                         <p><%= rs.getString(7) %></p>
                         <hr />
