@@ -14,31 +14,30 @@
 </head>
 <body>
 <!-- Navbar -->
-<!-- Navbar -->
 <% Connection con1 = null;
-try{
-    int user_id = -1;
-    if(session.getAttribute("user_id") != null)
-    {
-        user_id = (int)session.getAttribute("user_id");
-    }
-    Class.forName("com.mysql.jdbc.Driver");
-    con1 = DriverManager.getConnection("jdbc:mysql://localhost:3306/clubspartan?autoReconnect=true&useSSL=false", "root", "root");
-    String stmtQueryMod1 = "SELECT club_id FROM moderates WHERE user_id = ?;";
-    PreparedStatement isModerator1 = con1.prepareStatement(stmtQueryMod1);
-    isModerator1.setInt(1, user_id);
-    ResultSet boolMod1 = isModerator1.executeQuery();
+    try{
+        int user_id = -1;
+        if(session.getAttribute("user_id") != null)
+        {
+            user_id = (int)session.getAttribute("user_id");
+        }
+        Class.forName("com.mysql.jdbc.Driver");
+        con1 = DriverManager.getConnection("jdbc:mysql://localhost:3306/clubspartan?autoReconnect=true&useSSL=false", "root", "root");
+        String stmtQueryMod1 = "SELECT club_id FROM moderates WHERE user_id = ?;";
+        PreparedStatement isModerator1 = con1.prepareStatement(stmtQueryMod1);
+        isModerator1.setInt(1, user_id);
+        ResultSet boolMod1 = isModerator1.executeQuery();
 %>
 <nav style="background-color:#687494">
     <div class="nav-wrapper container">
-      <ul id="nav-mobile" class="left hide-on-med-and-down">
-        <li><a href="index.jsp">Home</a></li>
-        <% if(session.getAttribute("user_id") == null){ %>
-        <li><a href="login.jsp">Log In</a></li>
-        <li><a href="signup.jsp">Sign Up</a></li>
-        <% } %>
+        <ul id="nav-mobile" class="left hide-on-med-and-down">
+            <li><a href="index.jsp">Home</a></li>
+            <% if(session.getAttribute("user_id") == null){ %>
+            <li><a href="login.jsp">Log In</a></li>
+            <li><a href="signup.jsp">Sign Up</a></li>
+            <% } %>
 
-        <% if(session.getAttribute("user_id") != null){ %>
+            <% if(session.getAttribute("user_id") != null){ %>
             <li><a href="userProfile.jsp">Profile</a></li>
             <li><a href="club_create.jsp">Create Club</a></li>
             <li><a href="messages.jsp">Messages</a></li>
@@ -46,16 +45,16 @@ try{
             <li><a href="moderator.jsp">Manage Clubs</a></li>
             <% } %>
             <li><a href="logout.jsp">Logout</a></li>
-        <% } %>
-        
-      </ul>
+            <% } %>
+
+        </ul>
     </div>
 </nav>
-<% 
-boolMod1.close();
-isModerator1.close();
+<%
+        boolMod1.close();
+        isModerator1.close();
 
-con1.close();
+        con1.close();
     } catch (SQLException | ClassNotFoundException e) {
         e.printStackTrace();
     } finally {
@@ -70,68 +69,71 @@ con1.close();
 %>
 <div class="divider"></div>
 <div class="section">
-<div class="container">
-<a class="dropdown-trigger btn" href="#" data-target="dropdown1">Sort Messages</a>
-<ul id="dropdown1" class="dropdown-content">
-    <li><a href="#!">Inbox</a></li>
-    <li><a href="#!">Outbox</a></li>
-</ul>
+
+    <div class="container">
+        <a class="dropdown-trigger btn" href="#" data-target="dropdown1">Sort Messages</a>
+        <ul id="dropdown1" class="dropdown-content">
+            <li><a href="messages.jsp">Inbox</a></li>
+            <li><a href="outbox.jsp">Sent Mail</a></li>
+        </ul>
+    </div>
 </div>
-</div>
 <div class="container">
+    <%
+        try
 
-<%
-    try
-    {
-        String currentUserId = request.getParameter("user_id");
-        int itemsPerPage = 5;
-        int currentPage = 1;
-
-        String currentPageParam = request.getParameter("page");
-        if (currentPageParam != null) {
-            currentPage = Integer.parseInt(currentPageParam);
-        }
-
-        int startItem = (currentPage - 1) * itemsPerPage;
-
-        java.sql.Connection con;
-        Class.forName("com.mysql.jdbc.Driver");
-        con = DriverManager.getConnection("jdbc:mysql://localhost:3306/clubspartan?autoReconnect=true&useSSL=false", "root", "root");
-
-        PreparedStatement stmt = con.prepareStatement("SELECT message_id, sender_id, receiver_id, message, time_stamp FROM private_message ORDER BY time_stamp DESC LIMIT ?, ?");
-
-        stmt.setString(1, currentUserId);
-        stmt.setInt(1, startItem);
-        stmt.setInt(2, itemsPerPage);
-
-        ResultSet rs = stmt.executeQuery();
-
-        while(rs.next())
         {
-%>
-<ul class="collection">
-    <li class="collection-item avatar">
-        <img src="images/yuna.jpg" alt="" class="circle">
-        <span class="title"><%= rs.getString("sender_id") %></span>
-        <p><%= rs.getString("message") %></p>
-        <p class="secondary-content"><%= rs.getString("time_stamp") %></p>
-    </li>
-</ul>
-<%
+            int user_id = -1;
+            if(session.getAttribute("user_id") != null)
+            {
+                user_id = (int)session.getAttribute("user_id");
+            }
+
+            int itemsPerPage = 5;
+            int currentPage = 1;
+
+            String currentPageParam = request.getParameter("page");
+            if (currentPageParam != null) {
+                currentPage = Integer.parseInt(currentPageParam);
+            }
+
+            int startItem = (currentPage - 1) * itemsPerPage;
+
+            java.sql.Connection con;
+            Class.forName("com.mysql.jdbc.Driver");
+            con = DriverManager.getConnection("jdbc:mysql://localhost:3306/clubspartan?autoReconnect=true&useSSL=false", "root", "root");
+
+            PreparedStatement stmt = con.prepareStatement("SELECT pm.message_id, pm.sender_id, pm.receiver_id, pm.message, pm.time_stamp, u.sjsu_email FROM private_message pm JOIN user u ON pm.sender_id = u.user_id WHERE pm.receiver_id = ? ORDER BY pm.time_stamp DESC LIMIT ?, ?");
+            stmt.setInt(1, user_id);
+            stmt.setInt(2, startItem);
+            stmt.setInt(3, itemsPerPage);
+
+            ResultSet rs = stmt.executeQuery();
+            while(rs.next())
+            {
+    %>
+    <ul class="collection">
+        <li class="collection-item avatar">
+            <img src="images/yuna.jpg" alt="" class="circle">
+            <span class="title"><%= rs.getString("sjsu_email") %></span>
+            <p><%= rs.getString("message") %></p>
+            <p class="secondary-content"><%= rs.getString("time_stamp") %></p>
+        </li>
+    </ul>
+    <%
         }
-            rs.close();
-            stmt.close();
+        rs.close();
+        stmt.close();
 
-            PreparedStatement countStmt = con.prepareStatement("SELECT COUNT(*) as total FROM private_message");
-            ResultSet countRs = countStmt.executeQuery();
-            countRs.next();
-            int totalItems = countRs.getInt("total");
-            int totalPages = (int) Math.ceil((double) totalItems / itemsPerPage);
-            countRs.close();
-            countStmt.close();
-            con.close();
-%>
-
+        PreparedStatement countStmt = con.prepareStatement("SELECT COUNT(*) as total FROM private_message");
+        ResultSet countRs = countStmt.executeQuery();
+        countRs.next();
+        int totalItems = countRs.getInt("total");
+        int totalPages = (int) Math.ceil((double) totalItems / itemsPerPage);
+        countRs.close();
+        countStmt.close();
+        con.close();
+    %>
 </div>
 <div class="container">
     <ul class="pagination">
@@ -156,28 +158,37 @@ con1.close();
     }
     catch (SQLException | ClassNotFoundException e)
     {
-    out.println("Exception caught: " + e.getMessage());
+        out.println("Exception caught: " + e.getMessage());
     }
 %>
-<div class="fixed-action-btn">
-    <a class="btn-floating btn-large red" id="main-btn">
-        <i class="large material-icons">mode_edit</i>
-    </a>
-</div>
 
+<div class="row">
+    <div class="col s10 offset-s10">
+        <a class="btn-floating btn-large waves-effect waves-light teal lighten-1" id="main-btn"><i class="material-icons">create</i></a></div>
+</div>
 <div id="message-modal" class="modal">
     <div class="modal-content">
         <h4>Compose Message</h4>
+        <form id="message-form" action="send_msgs.jsp" method="post">
         <div class="row">
-            <form class="col s12">
-                <div class="row">
-                    <div class="input-field col s12">
-                        <textarea id="textarea2" class="materialize-textarea" data-length="120"></textarea>
-                        <label for="textarea2">Textarea</label>
-                    </div>
+
+            <div class="col s12">
+                <div class="input-field inline">
+                    <input id="email_inline" name = "email_inline" type="email" class="validate">
+                    <label for="email_inline">Email</label>
+
                 </div>
             </form>
         </div>
+
+            <div class="row">
+                <div class="input-field col s12">
+                    <textarea name="message" id="textarea2" class="materialize-textarea" data-length="120" required></textarea>
+                    <label for="textarea2">Textarea</label>
+                </div>
+            </div>
+        </form>
+
     </div>
     <div class="modal-footer">
         <div class="modal-footer">
