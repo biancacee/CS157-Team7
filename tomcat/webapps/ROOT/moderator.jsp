@@ -98,9 +98,10 @@
                         while(sr.next()) {
                         int clubId = sr.getInt(1);
 
-                        PreparedStatement list1 = connect.prepareStatement("SELECT name, description, contact_email, discord_link, instagram_link, membership_fee FROM club WHERE club_id = ?;");
+                        PreparedStatement list1 = connect.prepareStatement("SELECT name, description, contact_email, discord_link, instagram_link, membership_fee, is_active FROM club WHERE club_id = ?;");
                         list1.setInt(1, clubId);
                         ResultSet sr1 = list1.executeQuery();
+                        
                         if (sr1.next()) { // Check if there are results
                             String name = sr1.getString(1);
                             String description = sr1.getString(2);
@@ -108,6 +109,7 @@
                             String discord_link = sr1.getString(4);
                             String instagram_link = sr1.getString(5);
                             int membership_fee = sr1.getInt(6);
+                            int isActive = sr1.getInt(7);
                         
                     {
                 %>
@@ -187,6 +189,23 @@
                                                 <div class="input-field col s12">
                                                     <input id="memberFee" onclick="clearInputValue(this);" value="<%= membership_fee %>" name="memberFee" type="text" class="validate">
                                                     <label for="memberFee">Member Fee</label>
+                                                </div>
+                                                <div class="input-field col s12">
+                                                    <% if(isActive == 1) { %>
+                                                    <p>
+                                                        <label>
+                                                            <input type="checkbox" value="0" name="isActive"/>
+                                                            <span>Deactivate Account</span>
+                                                        </label>
+                                                    </p>
+                                                    <% } else{ %>
+                                                    <p>
+                                                        <label>
+                                                            <input type="checkbox" value="1" name="isActive"/>
+                                                            <span>Activate Account</span>
+                                                        </label>
+                                                    </p>
+                                                    <% } %>
                                                 </div>
                                             </div>
                                             <div class="row">
