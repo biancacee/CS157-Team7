@@ -88,9 +88,6 @@
             // Execute the moderates insertion query
             userStatement.execute();
 
-            // Optionally, redirect the user to a success page
-            response.sendRedirect("index.jsp");
-
         } else {
             // Handle the case when filePart is null
             // You may want to display an error message or take appropriate action

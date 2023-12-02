@@ -9,6 +9,7 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 </head>
@@ -69,9 +70,46 @@ while(result.next())
 </div>
 <div class="container" style="padding: 15px;">
     <h5>Amentities</h5>
-    <a class="waves-effect waves-light btn modal-trigger" style="background-color: #687494" href="#modalAdd"><i class="material-icons left">note_add</i>Add Amentity</a>
-    <a class="waves-effect waves-light btn modal-trigger" style="background-color: #687494" href="#modalCreate"><i class="material-icons left">build</i>Create Amentity</a>
-
+    <!-- Modal Add -->
+    <div><a class="waves-effect waves-light btn modal-trigger" style="background-color: #687494" href="#modalAdd"><i class="material-icons left">note_add</i>Add Amentity</a>
+    <div id="modalAdd" class="modal">
+        <div class="modal-content">
+            <h1>Add Amentity</h1>
+            <form id="addForm">
+                <label for="amentity_id">Type:</label>
+                <textarea id="amentity_id" name="amentity_id" required></textarea><br>
+                <br>
+                <button type="submit" class="waves-effect waves-light btn">Submit</button>
+            </form>
+            <div id="response"></div>
+        </div>
+    </div>
+    <!-- Modal Create -->
+    <div><a class="waves-effect waves-light btn modal-trigger" style="background-color: #687494" href="#modalCreate"><i class="material-icons left">build</i>Create Amentity</a>
+    <div id="modalCreate" class="modal">
+        <div class="modal-content">
+            <h1>Create Amentity</h1>
+            <form id="createForm" enctype="multipart/form-data" action="createAmentity.jsp" method="post">
+                <label for="name">Name:</label>
+                <textarea id="name" name="name" required></textarea><br>
+                <label for="description">Description:</label>
+                <textarea id="description" name="description" required></textarea><br>
+                <input id="redirectPth" name="redirectPth" value=<%= request.getServletPath() + "?" + request.getQueryString() %> type="hidden"></input><br>
+                <div class="file-field input-field">
+                    <div class="btn">
+                        <span>Upload Picture</span>
+                        <input type="file" name="picture" required>
+                    </div>
+                    <div class="file-path-wrapper">
+                        <input class="file-path validate" type="text">
+                    </div>
+                </div>
+                <br>
+                <button type="submit" class="waves-effect waves-light btn">Submit</button>
+            </form>
+        <div id="response"></div>
+    </div>
+    </div>
     <% while(resultAmentities.next()) {%>
     <ul class="collection with-header">
         <li class="collection-item avatar">
@@ -90,6 +128,8 @@ resultAmentities.close();
 stmt.close();
 result.close();
 %>
+</div>
+
 <script type="text/javascript" src="js/materialize.min.js"></script>
 
 <script>
@@ -97,6 +137,47 @@ result.close();
     {
         console.log(amentity_id, club_id);
     }
+</script>
+
+<!-- create -->
+<script>
+    $(document).ready(function() {
+    $('#modalCreate').modal();
+});
+</script>
+
+<!-- Add -->
+<script>
+    $(document).ready(function() {
+    $('#modalAdd').modal();
+
+    $('#addForm').submit(function(e) {
+        e.preventDefault();
+
+        var amentity_id = $('#amentity_id').val();
+        var club_id = urlParams.get('club_id');
+
+        $.ajax({
+            type: 'POST',
+            url: 'addAmentity.jsp',
+            data: {
+                name: type,
+                club_id: club_id,
+            },
+            success: function(response) {
+                location.reload()
+                $('#response').html(response);
+            },
+            error: function() {
+                $('#response').html('An error occurred.');
+            }
+        });
+    });
+});
+
+$(document).ready(function(){
+    $('.modal').modal();
+});
 </script>
 </body>
 </html>

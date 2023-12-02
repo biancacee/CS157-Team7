@@ -229,12 +229,12 @@
                             <div id="events" class="modal bottom-sheet">
                                 <div class="modal-content">
                                     <h3 class="header">Events</h3>
-                                    <% if(!isClubMod) { %>
+                                    <% if(isClubMod) { %>
                                         <a class="waves-effect waves-light btn modal-trigger" style="background-color: #687494" href="#modalEvent"><i class="material-icons left">access_time</i>Add Event</a>
                                     <% } %>
                                     <ul class="collection with-header">
                                         <% while(rs_events.next()) { 
-                                            if(isClubMod)
+                                            if(!isClubMod)
                                             {
                                                 %>
                                                 <li class="collection-item"><a href=<%= "/event.jsp?event_id=" + rs_events.getInt(1) + "&user_id=" + user_id + "&club_id=" + id %> class="collection-item"><%= rs_events.getString(6) %> : <%= rs_events.getString(4) %> - <%= rs_events.getString(5) %> </a></li>
