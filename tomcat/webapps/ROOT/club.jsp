@@ -151,7 +151,14 @@
                                     <%}%>
                             </div>
                         <% } else { %> 
-                            <div><b>Rating: </b>No Rating</div>
+                            <div>
+                                <span><b>Rating: </b>No Rating</span>
+                                <%if(price != 0){ %>
+                                <span class="ml2"><b>Price: </b>$<%= price %></span>
+                                <%} else {%>
+                                    <span class="ml2"><b>Price: </b>Free</span>
+                                    <%}%>
+                            </div>
                         <% } %>
                         <hr />
                         <b>Contact Email: </b><a href=<%= "mailto: " + rs.getString(4) %>><%= rs.getString(4) %></a><br/>
