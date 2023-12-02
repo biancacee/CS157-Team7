@@ -10,9 +10,15 @@
 <body>
     <%
     Connection conn = null;
-    PreparedStatement preparedStatement = null;
+    PreparedStatement clubStatement = null;
+    PreparedStatement userStatement = null;
 
     try {
+        int user_id = -1;
+            if(session.getAttribute("user_id") != null)
+            {
+                user_id = (int)session.getAttribute("user_id");
+            }
         // Register the JDBC driver
         Class.forName("com.mysql.cj.jdbc.Driver");
 
@@ -40,38 +46,69 @@
             
             conn = DriverManager.getConnection(dbUrl, dbUser, dbPassword);
 
-            String sql = "INSERT INTO club (name, logo, contact_email, discord_link, instagram_link, description, membership_fee) VALUES (?, ?, ?, ?, ?, ?, ?)";
+            // Insert into the club table
+            String clubSql = "INSERT INTO club (name, logo, contact_email, discord_link, instagram_link, description, membership_fee) VALUES (?, ?, ?, ?, ?, ?, ?)";
 
-            preparedStatement = conn.prepareStatement(sql);
-            preparedStatement.setString(1, clubName);
-            preparedStatement.setString(2, "http://localhost:8080/images/" + newFileName); // Use setBinaryStream for handling file uploads
-            preparedStatement.setString(3, clubEmail);
-            preparedStatement.setString(4, discordLink);
-            preparedStatement.setString(5, instagramLink);
-            preparedStatement.setString(6, clubDescription);
-            preparedStatement.setString(7, memberFee);
+            // Specify that you want to retrieve generated keys
+            clubStatement = conn.prepareStatement(clubSql, Statement.RETURN_GENERATED_KEYS);
+            clubStatement.setString(1, clubName);
+            clubStatement.setString(2, "http://localhost:8080/images/" + newFileName);
+            clubStatement.setString(3, clubEmail);
+            clubStatement.setString(4, discordLink);
+            clubStatement.setString(5, instagramLink);
+            clubStatement.setString(6, clubDescription);
+            clubStatement.setString(7, memberFee);
 
-            // Execute the query
-            preparedStatement.execute();
-            
+            // Execute the club insertion query
+            clubStatement.execute();
+
+            // Retrieve the generated keys (including club_id)
+            ResultSet generatedKeys = clubStatement.getGeneratedKeys();
+
+            int lastInsertedClubId;
+
+            // Check if a key was generated
+            if (generatedKeys.next()) {
+                lastInsertedClubId = generatedKeys.getInt(1);
+                // Now, you have the last inserted club_id
+                out.println("Last Inserted Club ID: " + lastInsertedClubId);
+            } else {
+                // Handle the case when no key was generated
+                out.println("No Club ID generated");
+                response.sendRedirect("error.jsp");
+                return;
+            }
+
+            // Insert into the moderates table
+            String moderatesSql = "INSERT INTO moderates (user_id, club_id) VALUES (?, ?)";
+            userStatement = conn.prepareStatement(moderatesSql);
+            userStatement.setInt(1, user_id); // Assuming you have user_id available
+            userStatement.setInt(2, lastInsertedClubId);
+
+            // Execute the moderates insertion query
+            userStatement.execute();
+
             // Optionally, redirect the user to a success page
             response.sendRedirect("index.jsp");
+
         } else {
             // Handle the case when filePart is null
             // You may want to display an error message or take appropriate action
             response.sendRedirect("error.jsp");
         }
 
-    }
-     finally {
+    } finally {
         // Close resources in a finally block
         try {
-            if (preparedStatement != null) preparedStatement.close();
+            if (clubStatement != null) clubStatement.close();
+            if (userStatement != null) userStatement.close();
             if (conn != null) conn.close();
         } catch (SQLException se) {
             se.printStackTrace();
         }
     }
-    %>
+%>
+
+
 </body>
 </html>

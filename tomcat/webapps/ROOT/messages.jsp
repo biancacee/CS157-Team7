@@ -42,7 +42,7 @@
             <li><a href="club_create.jsp">Create Club</a></li>
             <li><a href="messages.jsp">Messages</a></li>
             <% if(boolMod1.next()) {%>
-            <li><a href="moderator.jsp">Moderator</a></li>
+            <li><a href="moderator.jsp">Manage Clubs</a></li>
             <% } %>
             <li><a href="logout.jsp">Logout</a></li>
             <% } %>
@@ -69,6 +69,7 @@
 %>
 <div class="divider"></div>
 <div class="section">
+
     <div class="container">
         <a class="dropdown-trigger btn" href="#" data-target="dropdown1">Sort Messages</a>
         <ul id="dropdown1" class="dropdown-content">
@@ -170,13 +171,16 @@
         <h4>Compose Message</h4>
         <form id="message-form" action="send_msgs.jsp" method="post">
         <div class="row">
+
             <div class="col s12">
                 <div class="input-field inline">
                     <input id="email_inline" name = "email_inline" type="email" class="validate">
                     <label for="email_inline">Email</label>
+
                 </div>
-            </div>
+            </form>
         </div>
+
             <div class="row">
                 <div class="input-field col s12">
                     <textarea name="message" id="textarea2" class="materialize-textarea" data-length="120" required></textarea>
@@ -184,14 +188,16 @@
                 </div>
             </div>
         </form>
+
     </div>
     <div class="modal-footer">
         <div class="modal-footer">
-            <button class="modal-close waves-effect waves-green btn-flat" type="submit" form="message-form">Send</button>
+            <a href="#!" class="modal-close waves-effect waves-green btn-flat">Send</a>
             <a href="#!" class="modal-close waves-effect waves-green btn-flat">Close</a>
         </div>
     </div>
 </div>
+
 <script>
     //messages
     document.addEventListener('DOMContentLoaded', function()

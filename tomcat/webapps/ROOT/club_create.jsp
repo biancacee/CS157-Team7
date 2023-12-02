@@ -46,7 +46,7 @@
                     <li><a href="club_create.jsp">Create Club</a></li>
                     <li><a href="messages.jsp">Messages</a></li>
                     <% if(boolMod1.next()) {%>
-                    <li><a href="moderator.jsp">Moderator</a></li>
+                    <li><a href="moderator.jsp">Manage Clubs</a></li>
                     <% } %>
                     <li><a href="logout.jsp">Logout</a></li>
                 <% } %>
@@ -72,7 +72,7 @@
             }
         %>
         <div class="container">
-            <h2>Create a New Club</h2>
+            <h2 class="flex justify-center">Create a New Club</h2>
         </div>
         <div class="flex pt3 justify-center">
             <div class="w-50">

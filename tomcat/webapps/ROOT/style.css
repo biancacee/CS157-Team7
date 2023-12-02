@@ -38,11 +38,41 @@
 
 .content {
   display: none; /* initially hide the content */
-  padding: 20px;
+  
   text-align: center;
   transition: opacity 0.5s ease-in-out;
 }
 
 .grower{
   font-size: 23px;
+}
+
+.delete_mod i {
+  color: #26a69a;
+  transition: color 0.2s; /* Added color transition */
+}
+
+.delete_mod:hover i {
+  color:  red;/* Change this to the desired highlight color */
+  cursor: pointer;
+}
+
+.add_Mod i,
+.edit_club i {
+  color: #26a69a;
+  transition: color 0.2s; /* Added color transition */
+}
+
+.add_Mod:hover i {
+  color: #ffab40; /* Change this to the desired color for delete_user */
+  cursor: pointer;
+}
+
+.edit_club:hover i {
+  color: #ffab40; /* Change this to the desired color for edit_user */
+  cursor: pointer;
+}
+
+.clear{
+  background-color: aliceblue;
 }
