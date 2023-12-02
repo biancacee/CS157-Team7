@@ -70,8 +70,7 @@
             // Check if a key was generated
             if (generatedKeys.next()) {
                 lastInsertedClubId = generatedKeys.getInt(1);
-                // Now, you have the last inserted club_id
-                out.println("Last Inserted Club ID: " + lastInsertedClubId);
+                response.sendRedirect("index.jsp");
             } else {
                 // Handle the case when no key was generated
                 out.println("No Club ID generated");
