@@ -114,7 +114,7 @@
             stmt_review.setString(1, id);
             ResultSet rs_review = stmt_review.executeQuery();
 
-            PreparedStatement stmt_events = con.prepareStatement("SELECT * FROM event WHERE club_id = ? ORDER BY start_date");
+            PreparedStatement stmt_events = con.prepareStatement("SELECT * FROM event WHERE club_id = ? AND start_date > CURDATE() ORDER BY start_date");
             stmt_events.setString(1, id);
             ResultSet rs_events = stmt_events.executeQuery();
         %>
