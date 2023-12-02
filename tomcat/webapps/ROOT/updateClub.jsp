@@ -21,9 +21,10 @@
         String discordLink = request.getParameter("discordLink");
         String instagramLink = request.getParameter("instagramLink");
         String memberFee = request.getParameter("memberFee");
+        String isActive = request.getParameter("isActive");
 
         // Query to update club information
-        String sql = "UPDATE club SET name = ?, contact_email = ?, discord_link = ?, instagram_link = ?, description = ?, membership_fee = ? WHERE club_id = ?;";
+        String sql = "UPDATE club SET name = ?, contact_email = ?, discord_link = ?, instagram_link = ?, description = ?, membership_fee = ?, is_active = ? WHERE club_id = ?;";
         pstmt1 = conn.prepareStatement(sql);
         pstmt1.setString(1, clubName);
         pstmt1.setString(2, clubEmail);
@@ -31,7 +32,8 @@
         pstmt1.setString(4, instagramLink);
         pstmt1.setString(5, clubDescription);
         pstmt1.setString(6, memberFee);
-        pstmt1.setString(7, clubId);
+        pstmt1.setString(7, isActive);
+        pstmt1.setString(8, clubId);
 
         int rowsAffected = pstmt1.executeUpdate(); // Use executeUpdate for update operations
 
