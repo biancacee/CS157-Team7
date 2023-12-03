@@ -111,7 +111,7 @@
                 <div class="flex justify-center" >
                     <div class="mr4 fw8 info"><a class="profileTabs" onclick="showContent('profile')">Profile</a></div>
                     <div class="mr4 fw8 info"><a class="profileTabs" onclick="showContent('settings')">Account Settings</a></div>
-                    <div class="mr4 fw8 info"><a class="profileTabs" onclick="showContent('ratings')">Ratings</a></div>
+                    <div class="mr4 fw8 info"><a class="profileTabs" onclick="showContent('ratings')">Reviews</a></div>
                     <% if(boolMod.next()){ %>
                     <div class="mr4 fw8 info"><a class="profileTabs" onclick="showContent('Moderator')">Moderate</a></div>
                     <% } %>
