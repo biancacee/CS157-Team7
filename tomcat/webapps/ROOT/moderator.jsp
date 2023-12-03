@@ -123,12 +123,13 @@
                             <div id="modal_<%= clubId %>" class="modal">
                                 <div class="modal-content">
                                     <h5>Enter Students Email to add as Moderator</h5>
-                                    <form id="updateForm" class="col s12" method="post" action="mod_email_update.jsp">
+                                    <form id="updateForm" class="col s12" method="post" action="mod_email_update.jsp" onsubmit="return validateForm()">
                                         <div class="row">
                                             <input id="srValue" type="hidden" name="srValue" value="<%= clubId %>" >
                                             <div class="input-field col s12">
-                                                <input id="sjsu_email"  name="sjsu_email" type="email" class="validate">
+                                                <input id="sjsu_email"  name="sjsu_email" type="email" class="validate" required>
                                                 <label for="sjsu_email">SJSU Email</label>
+                                                <div id="emailError" class="red-text"></div>
                                             </div>
                                         </div>
                                         <div class="row">
@@ -153,58 +154,69 @@
                                 <div class="modal-content flex flex-column justify-center">
                                     <div><h5>Edit Club Information</h5></div>
                                     <div class="">
-                                        <form class="col s12" id="updateForm1"  method="post" action="updateClub.jsp">
+                                        <form class="col s12" id="updateFormOne" method="post" action="updateClub.jsp">
                                             <div class="row">
                                                 <input type="hidden" id="srValue1" name="srValue1" value="<%= clubId %>">
                                                 <div class="input-field col s6">
-                                                    <input id="clubName" onclick="clearInputValue(this);" value="<%= name %>" name="clubName" type="text" class="validate">
+                                                    <input id="clubName" onclick="clearInputValue(this);" value="<%= name %>" name="clubName" type="text" class="validate" required>
+                                                    <div id="nameError" class="red-text"></div>
                                                     
                                                 </div>
                                             </div>
                                             <div class="row">
                                                 <div class="input-field col s12">
-                                                    <input id="clubDescription" onclick="clearInputValue(this);" value="<%= description %>" name="clubDescription" type="text" class="validate">
+                                                    <input id="clubDescription" onclick="clearInputValue(this);" value="<%= description %>" name="clubDescription" type="text" class="validate" required>
                                                     <label for="clubDescription">Club Description</label>
+                                                    <div id="descError" class="red-text"></div>
                                                 </div>
                                             </div>
                                             <div class="row">
                                                 <div class="input-field col s12">
-                                                    <input id="clubEmail" onclick="clearInputValue(this);" value="<%= contact_email %>" name="clubEmail" type="text" class="validate">
+                                                    <input id="clubEmail" onclick="clearInputValue(this);" value="<%= contact_email %>" name="clubEmail" type="text" class="validate" required>
                                                     <label for="clubEmail">Club Email</label>
+                                                    <div id="emailError1" class="red-text"></div>
                                                 </div>
                                             </div>
                                             <div class="row">
                                                 <div class="input-field col s12">
-                                                    <input id="discordLink" onclick="clearInputValue(this);" value="<%= discord_link %>" name="discordLink" type="text" class="validate">
+                                                    <input id="discordLink" onclick="clearInputValue(this);" value="<%= discord_link %>" name="discordLink" type="text" class="validate" required>
                                                     <label for="discordLink">discord Link</label>
+                                                    <div id="linkError" class="red-text"></div>
                                                 </div>
                                             </div>
                                             <div class="row">
                                                 <div class="input-field col s12">
-                                                    <input id="instagramLink" onclick="clearInputValue(this);" value="<%= instagram_link %>" name="instagramLink" type="text" class="validate">
+                                                    <input id="instagramLink" onclick="clearInputValue(this);" value="<%= instagram_link %>" name="instagramLink" type="text" class="validate" required>
                                                     <label for="instagramLink">Instagram Link</label>
+                                                    <div id="linkError1" class="red-text"></div>
                                                 </div>
                                             </div>
                                             <div class="row">
                                                 <div class="input-field col s12">
-                                                    <input id="memberFee" onclick="clearInputValue(this);" value="<%= membership_fee %>" name="memberFee" type="text" class="validate">
+                                                    <input id="memberFee" onclick="clearInputValue(this);" value="<%= membership_fee %>" name="memberFee" type="text" class="validate" required>
                                                     <label for="memberFee">Member Fee</label>
+                                                    <div id="feeError" class="red-text"></div>
                                                 </div>
+                                            </div>
+                                            <div class="row">
                                                 <div class="input-field col s12">
                                                     <% if(isActive == 1) { %>
                                                     <p>
                                                         <label>
-                                                            <input type="checkbox" value="0" name="isActive"/>
+                                                            <input id="checkbox" type="checkbox" value="0" name="isActive"/>
                                                             <span>Deactivate Account</span>
+                                                            <input type="hidden" name="isActive" value="<%= isActive %>">
                                                         </label>
                                                     </p>
                                                     <% } else{ %>
                                                     <p>
                                                         <label>
-                                                            <input type="checkbox" value="1" name="isActive"/>
+                                                            <input id="checkbox"  type="checkbox" value="1" name="isActive" />
                                                             <span>Activate Account</span>
+                                                            <input type="hidden" name="isActive" value="<%= isActive %>">
                                                         </label>
                                                     </p>
+                                                    
                                                     <% } %>
                                                 </div>
                                             </div>
@@ -212,7 +224,7 @@
                                                 <button class="btn btn-primary btn-sm" type="submit">Submit
                                                     <i class="material-icons right">send</i>
                                                 </button>
-                                            </div> 
+                                            </div>
                                         </form>
                                     </div>
                                 </div>
@@ -246,22 +258,24 @@
             $(document).ready(function(){
                 $('.modal').modal();
             });
-            
+
             function clearInputValue(input) {
                 input.value = "";
             }
-        
-            function submitForm() {
-                document.getElementById("updateForm").submit();
-                form.submit();
-                location.reload();
-            }
 
-            function submitForm1() {
-                document.getElementById("updateForm1").submit();
-                form.submit();
-                location.reload();
+            function submitForm() {
+                var isForm1Valid = validateForm();
+                var isForm2Valid = validateForm1();
+
+                if (isForm1Valid) {
+                    document.getElementById("updateForm").submit();
+                }
+
+                if (isForm2Valid) {
+                    document.getElementById("updateFormOne").submit();
+                }
             }
+            
         </script>
     </body>
 </html>

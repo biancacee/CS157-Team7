@@ -91,7 +91,7 @@
                     </div>
                     <div class="row">
                         <div class="input-field col s12">
-                            <input id="clubEmail" name="clubEmail" type="email" class="validate">
+                            <input id="clubEmail" name="clubEmail" type="email" class="validate" required>
                             <label for="clubEmail">Club Email</label>
                         </div>
                     </div>
@@ -109,7 +109,7 @@
                     </div>
                     <div class="row">
                         <div class="input-field col s12">
-                            <input id="memberFee" name="memberFee" type="text" class="validate" value="0" required>
+                            <input id="memberFee" name="memberFee" type="text" class="validate" value="0" required oninput="validateNumber(this)">
                             <label for="memberFee">Member Fee</label>
                         </div>
                     </div>
@@ -129,6 +129,15 @@
                     </div>  
                 </form>
             </div>
-        </div>                
+        </div> 
+        <script>
+            function validateNumber(input) {
+                // Remove any non-numeric characters
+                let value = input.value.replace(/[^0-9]/g, '');
+        
+                // Update the input value
+                input.value = value;
+            }
+        </script>               
     </body>
 </html>
