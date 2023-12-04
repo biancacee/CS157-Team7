@@ -103,7 +103,7 @@
             ResultSet boolMod = isModerator.executeQuery();
 
         %>
-            <div class="container grower">
+            <div class="container grower" style="margin-top: -120px;">
                 <!-- Home -->
                 <div class="container center-align mb4 mt5 pt6 fw4" style="font-size: 2rem;">
                     Hello, <%= userName %>
@@ -116,24 +116,25 @@
                     <div class="mr4 fw8 info"><a class="profileTabs" onclick="showContent('Moderator')">Moderate</a></div>
                     <% } %>
                 </div>
+                <br>
                 <div class="flex justify-center">
                     <div class="underline"></div>
                 </div>
                 <div class="flex justify-center">
                     <!-- Profile tab to change name  -->
                     <div id="profile" class="content">
-                        <div class="info" style="font-size: 1.3rem;" id="userInfo">
+                        <div class="info" id="userInfo">
                             <p><strong>Name:</strong> <span id="userName"> <%= userName %> </span></p>
                             <p><strong>Email:</strong> <span id="userEmail"> <%= email %>  </span></p>
-                            <button onclick="showEditForm()">Edit</button>
+                            <button onclick="showEditForm()" class="btn">Edit</button>
                         </div>
                         <!-- used to bring up the form to edit name -->
                         <div class="info" id="editForm">
                         <form onsubmit="saveUserInfo();">
                             <label for="editName">Name:</label>
                             <input type="text" id="editName" required>
-                            <button type="submit">Save</button>
-                            <button type="button" onclick="cancelEdit()">Cancel</button>
+                            <button type="submit" class="btn">Save</button>
+                            <button type="button" class="btn" onclick="cancelEdit()">Cancel</button>
                         </form>
                         </div>
                     </div>
@@ -143,15 +144,15 @@
                         <div id="passChange">
                         <p><strong>Email:</strong> <span id="userName"><%= email %> </span></p>
                         <p><strong>Password:</strong> <span id="pass">*******</span></p>
-                        <button onclick="showEditSettings()">Edit</button>
+                        <button onclick="showEditSettings()" class="btn">Edit</button>
                         </div>
                         <!-- used to edit to change the password -->
                         <div id="editForm1">
                         <form onsubmit="saveUserInfo1(); return false;">
                             <label for="editPass">Password:</label>
                             <input type="password" id="editPass" required>
-                            <button type="submit">Save</button>
-                            <button type="button" onclick="cancelEdit1()">Cancel</button>
+                            <button type="submit" class="btn">Save</button>
+                            <button type="button" class="btn" onclick="cancelEdit1()">Cancel</button>
                         </form>
                         </div>
                     </div>
@@ -211,7 +212,7 @@
                 
                                 <% review_count++; } %>
                                 <% if(review_count == 0) {%>
-                                    <h3 class="center-align">No Reviews...</h3>
+                                    <h3 style="margin-right: 30%;">No Reviews...</h3>
                                 <% } %>
                             </div>
                         </div>

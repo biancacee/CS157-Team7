@@ -72,7 +72,7 @@
         <a class="dropdown-trigger btn" href="#" data-target="dropdown1">Sort Messages</a>
         <ul id="dropdown1" class="dropdown-content">
             <li><a href="messages.jsp">Inbox</a></li>
-            <li><a href="outbox.jsp">Sent Mail</a></li>
+            <li><a href="outbox.jsp">Outbox</a></li>
         </ul>
     </div>
 </div>
@@ -98,8 +98,7 @@
             java.sql.Connection con;
             Class.forName("com.mysql.jdbc.Driver");
             con = DriverManager.getConnection("jdbc:mysql://localhost:3306/clubspartan?autoReconnect=true&useSSL=false", "root", "root");
-
-            PreparedStatement stmt = con.prepareStatement("SELECT message_id, sender_id, receiver_id, message, time_stamp FROM private_message WHERE sender_id =? ORDER BY time_stamp DESC LIMIT ?, ?");
+            PreparedStatement stmt = con.prepareStatement("SELECT pm.message_id, pm.sender_id, pm.receiver_id, pm.message, pm.time_stamp, u.sjsu_email, u.name, u.major FROM private_message pm JOIN user u ON pm.sender_id = u.user_id WHERE pm.sender_id = ? ORDER BY pm.time_stamp DESC LIMIT ?, ?");
             stmt.setInt(1, user_id);
             stmt.setInt(2, startItem);
             stmt.setInt(3, itemsPerPage);
@@ -115,9 +114,8 @@
             {
     %>
     <ul class="collection">
-        <li class="collection-item avatar">
-            <img src="images/yuna.jpg" alt="" class="circle">
-            <span class="title"><%= rs2.getString("sjsu_email") %></span>
+        <li class="collection-item">
+            <span class="title"><b><%= rs.getString("name") %> (<%= rs.getString("major") %>):</b> <%= rs.getString("sjsu_email") %></span>
             <p><%= rs.getString("message") %></p>
             <p class="secondary-content"><%= rs.getString("time_stamp") %></p>
         </li>

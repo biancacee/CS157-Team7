@@ -45,10 +45,12 @@
             int userId = resultSet.getInt("user_id");
 
             // Perform the database insert
-            String sql = "INSERT INTO moderates (club_id, user_id) VALUES (?, ?)";
+            String sql = "INSERT INTO moderates (club_id, user_id) VALUES (?, ?) ON DUPLICATE KEY UPDATE club_id=?, user_id=?";
             pstmt = conn.prepareStatement(sql);
             pstmt.setInt(1, clubId);
             pstmt.setInt(2, userId);
+            pstmt.setInt(3, clubId);
+            pstmt.setInt(4, userId);
             pstmt.executeUpdate();
             response.sendRedirect("index.jsp");
         } else {

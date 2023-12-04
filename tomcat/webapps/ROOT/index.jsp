@@ -67,11 +67,17 @@
         %>
 
         <!-- Home -->
-        <div class="container">
+        <div class="container center-align">
             <h2>ClubSpartan</h2>
-
+            <h5>
+                Introducing the ultimate hub for student engagement at San Jose State University
+                <br> 
+                Redefining the way you discover, explore, and connect with student clubs on campus!
+                <br>
+            </h5>
             <!-- Seach Form -->
-            <div class="row">
+            <div class="row left-align" style="margin-left: 30%;">
+                <br>
                 <form class="col s12" action="index.jsp" method="get">
                     <div class="row">
                         <div class="input-field col s6">
@@ -86,7 +92,7 @@
             </div>
 
             <!-- List of clubs -->
-            <ul class="collection with-header">
+            <ul class="collection with-header left-align">
             <%
                 try 
                 {

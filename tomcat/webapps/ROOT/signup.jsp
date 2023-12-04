@@ -31,6 +31,7 @@
 </nav>
 <!-- Home -->
 <div class="container" style="margin-top: 40px;">
+    <h1 class="center-align">Sign Up</h1>
     <form class="col s12" action = "signup.jsp" method="post">
         <div class="row">
             <div class="input-field col s6">

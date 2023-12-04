@@ -128,6 +128,7 @@
             PreparedStatement stmt_price = con.prepareStatement("SELECT membership_fee FROM club where club_id = ?;");
             stmt_price.setString(1, id);
             ResultSet rs_price = stmt_price.executeQuery();
+            
             int price = 0;
             while(rs_price.next()){
             price = rs_price.getInt(1);
@@ -298,7 +299,7 @@
                                             else
                                             {
                                                 %>
-                                                <li class="collection-item"><div><a href=<%= "/event.jsp?event_id=" + rs_events.getInt(1) + "&user_id=" + user_id + "&club_id=" + id %>><%= rs_events.getString(6) %> : <%= rs_events.getString(4) %> - <%= rs_events.getString(5) %></a><a onclick=<%= "removeEvent(" + rs_events.getInt(1) + ")" %> class="secondary-content"><i class="material-icons">delete</i></a></div></li>
+                                                <li class="collection-item"><div><a href=<%= "/event.jsp?event_id=" + rs_events.getInt(1) + "&user_id=" + user_id + "&club_id=" + id %>><%= rs_events.getString(6) %> : <%= rs_events.getString(4) %> - <%= rs_events.getString(5) %></a><a onclick=<%= "removeEvent(" + rs_events.getInt(1) + ")" %> class="secondary-content delete_mod"><i class="material-icons">delete</i></a></div></li>
                                                 <%
                                             }
                                         } %>
@@ -318,7 +319,7 @@
         <div class="container" style="margin-top: 20px;">
             <div class="row">
                 <% int review_count = 0; while(rs_review.next()) {%>
-                    <div class="col s6">
+                    <div class="row mw7">
                     <div class="card">
                         <div class="card-content">
                             <span class="card-title"><%= rs_review.getString(3) %></span>
@@ -350,12 +351,17 @@
 
                             </div>
                             <ul class="collection with-header" style="border:none">
-                                <li class="collection-header center-align">COMMENTS</li>
                                 <%
                                     PreparedStatement stmt_comment = con.prepareStatement("SELECT name, message FROM comment INNER JOIN user ON comment.user_id = user.user_id WHERE review_id = ?");
                                     stmt_comment.setInt(1, rs_review.getInt(1));
                                     ResultSet rsComment = stmt_comment.executeQuery();
 
+                                    if(rsComment.isBeforeFirst())
+                                    {
+                                %>
+                                    <li class="collection-header"><div style="margin-left: 10px;">COMMENTS</div></li>
+                                <% } %>
+                                <%
                                     while (rsComment.next()) {
                                 %>
                                     <li class="collection-item"><a class="blue-text"><%= rsComment.getString("name") %></a> - <%= rsComment.getString("message") %></li>

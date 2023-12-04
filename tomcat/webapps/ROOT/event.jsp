@@ -8,6 +8,7 @@
     <!-- Includes -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 
@@ -53,6 +54,13 @@ stmtQuery = "SELECT amentity_id, image, name FROM amentities";
 PreparedStatement stmtAmentitiesAll = con.prepareStatement(stmtQuery);
 ResultSet listAmentities = stmtAmentitiesAll.executeQuery();
 
+stmtQuery = "SELECT * FROM moderates WHERE user_id = ? AND club_id = ?";
+PreparedStatement stmtIsMod = con.prepareStatement(stmtQuery);
+stmtIsMod.setString(1, user_id);
+stmtIsMod.setString(2, club_id);
+ResultSet rsIsMod = stmtIsMod.executeQuery();
+boolean isModerator = rsIsMod.next();
+
 while(result.next())
 {
 %>
@@ -73,8 +81,12 @@ while(result.next())
 </div>
 <div class="container" style="padding: 15px;">
     <h5>Amentities</h5>
+    <% if(isModerator) { %>
+        <a class="waves-effect waves-light btn modal-trigger" style="background-color: #687494" href="#modalAdd"><i class="material-icons left">note_add</i>Add Amentity</a>
+        <a class="waves-effect waves-light btn modal-trigger" style="background-color: #687494" href="#modalCreate"><i class="material-icons left">build</i>Create Amentity</a>
+    <% } %>
     <!-- Modal Add -->
-    <div><a class="waves-effect waves-light btn modal-trigger" style="background-color: #687494" href="#modalAdd"><i class="material-icons left">note_add</i>Add Amentity</a>
+    <div>
     <div id="modalAdd" class="modal">
         <div class="modal-content">
             <h1>Add Amentity</h1>
@@ -106,7 +118,7 @@ while(result.next())
         </div>
     </div>
     <!-- Modal Create -->
-    <div><a class="waves-effect waves-light btn modal-trigger" style="background-color: #687494" href="#modalCreate"><i class="material-icons left">build</i>Create Amentity</a>
+    <div>
     <div id="modalCreate" class="modal">
         <div class="modal-content">
             <h1>Create Amentity</h1>
@@ -137,7 +149,7 @@ while(result.next())
             <img src=<%= resultAmentities.getString(3) %> alt="" class="circle">
             <p><%=resultAmentities.getString(4)%></p>
             <p><%=resultAmentities.getString(5)%></p>
-            <a onclick=<%= "removeAmentity(" + resultAmentities.getString(1) + "," + event_id + ")" %> class="secondary-content"><i class="material-icons">delete</i></a>
+            <a onclick=<%= "removeAmentity(" + resultAmentities.getString(1) + "," + event_id + ")" %> class="secondary-content delete_mod"><i class="material-icons">delete</i></a>
         </li>
     </ul>
     <% } %>
@@ -150,6 +162,8 @@ stmt.close();
 result.close();
 listAmentities.close();
 stmtAmentitiesAll.close();
+stmtIsMod.close();
+rsIsMod.close();
 %>
 </div>
 
