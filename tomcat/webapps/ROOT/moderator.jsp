@@ -204,7 +204,7 @@
                                                     <p>
                                                         <label>
                                                             <input id="checkbox" type="checkbox" value="0" name="isActive"/>
-                                                            <span>Deactivate Account</span>
+                                                            <span>Deactivate Club</span>
                                                             <input type="hidden" name="isActive" value="<%= isActive %>">
                                                         </label>
                                                     </p>
@@ -212,7 +212,7 @@
                                                     <p>
                                                         <label>
                                                             <input id="checkbox"  type="checkbox" value="1" name="isActive" />
-                                                            <span>Activate Account</span>
+                                                            <span>Activate Club</span>
                                                             <input type="hidden" name="isActive" value="<%= isActive %>">
                                                         </label>
                                                     </p>
