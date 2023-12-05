@@ -80,16 +80,16 @@ while(result.next())
     </div>
 </div>
 <div class="container" style="padding: 15px;">
-    <h5>Amentities</h5>
+    <h5>Amenities</h5>
     <% if(isModerator) { %>
-        <a class="waves-effect waves-light btn modal-trigger" style="background-color: #687494" href="#modalAdd"><i class="material-icons left">note_add</i>Add Amentity</a>
-        <a class="waves-effect waves-light btn modal-trigger" style="background-color: #687494" href="#modalCreate"><i class="material-icons left">build</i>Create Amentity</a>
+        <a class="waves-effect waves-light btn modal-trigger" style="background-color: #687494" href="#modalAdd"><i class="material-icons left">note_add</i>Add Amenity</a>
+        <a class="waves-effect waves-light btn modal-trigger" style="background-color: #687494" href="#modalCreate"><i class="material-icons left">build</i>Create Amenity</a>
     <% } %>
     <!-- Modal Add -->
     <div>
     <div id="modalAdd" class="modal">
         <div class="modal-content">
-            <h1>Add Amentity</h1>
+            <h1>Add Amenity</h1>
             <form id="addForm">
                 <label for="amentity_id">Type:</label>
                 <div class="input-field col s12 m6">
@@ -121,7 +121,7 @@ while(result.next())
     <div>
     <div id="modalCreate" class="modal">
         <div class="modal-content">
-            <h1>Create Amentity</h1>
+            <h1>Create Amenity</h1>
             <form id="createForm" enctype="multipart/form-data" action="createAmentity.jsp" method="post">
                 <label for="name">Name:</label>
                 <textarea id="name" name="name" required></textarea><br>
