@@ -4,15 +4,15 @@ The project aims to create a website for San Jose State University students, imp
 
 ## Setup
 ### Requirements
-MySQL version:  8.1.0 or later
-Server version: Apache Tomcat/8.5.93
-Server built:   Aug 23 2023 22:43:14 UTC
-Server number:  8.5.93.0
-OS Name:        Mac OS X
-OS Version:     14.1.2
-Architecture:   x86_64
-JVM Version:    20.0.2+9-78
-JVM Vendor:     Oracle Corporation
+- MySQL version:  8.1.0 or later
+- Server version: Apache Tomcat/8.5.93
+- Server built:   Aug 23 2023 22:43:14 UTC
+- Server number:  8.5.93.0
+- OS Name:        Mac OS X
+- OS Version:     14.1.2
+- Architecture:   x86_64
+- JVM Version:    20.0.2+9-78
+- JVM Vendor:     Oracle Corporation
 ### Development
 
 ### Deployment
