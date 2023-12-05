@@ -179,14 +179,14 @@
                                             </div>
                                             <div class="row">
                                                 <div class="input-field col s12">
-                                                    <input id="discordLink" onclick="clearInputValue(this);" value="<%= discord_link %>" name="discordLink" type="text" class="validate" required>
+                                                    <input id="discordLink" onclick="clearInputValue(this);" value="<%= discord_link %>" name="discordLink" type="text" class="validate">
                                                     <label for="discordLink">discord Link</label>
                                                     <div id="linkError" class="red-text"></div>
                                                 </div>
                                             </div>
                                             <div class="row">
                                                 <div class="input-field col s12">
-                                                    <input id="instagramLink" onclick="clearInputValue(this);" value="<%= instagram_link %>" name="instagramLink" type="text" class="validate" required>
+                                                    <input id="instagramLink" onclick="clearInputValue(this);" value="<%= instagram_link %>" name="instagramLink" type="text" class="validate">
                                                     <label for="instagramLink">Instagram Link</label>
                                                     <div id="linkError1" class="red-text"></div>
                                                 </div>
