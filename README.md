@@ -6,8 +6,6 @@ The project aims to create a website for San Jose State University students, imp
 ### Requirements
 - MySQL version:  8.1.0 or later
 - Server version: Apache Tomcat/8.5.93
-- Server built:   Aug 23 2023 22:43:14 UTC
-- Server number:  8.5.93.0
 - JVM Version:    20.0.2+9-78
 - JVM Vendor:     Oracle Corporation
 ### Development
