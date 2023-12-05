@@ -98,7 +98,7 @@
             java.sql.Connection con;
             Class.forName("com.mysql.jdbc.Driver");
             con = DriverManager.getConnection("jdbc:mysql://localhost:3306/clubspartan?autoReconnect=true&useSSL=false", "root", "root");
-            PreparedStatement stmt = con.prepareStatement("SELECT pm.message_id, pm.sender_id, pm.receiver_id, pm.message, pm.time_stamp, u.sjsu_email, u.name, u.major FROM private_message pm JOIN user u ON pm.sender_id = u.user_id WHERE pm.sender_id = ? ORDER BY pm.time_stamp DESC LIMIT ?, ?");
+            PreparedStatement stmt = con.prepareStatement("SELECT pm.message_id, pm.sender_id, pm.receiver_id, pm.message, pm.time_stamp, u.sjsu_email, u.name, u.major FROM private_message pm JOIN user u ON pm.receiver_id = u.user_id WHERE pm.sender_id = ? ORDER BY pm.time_stamp DESC LIMIT ?, ?");
             stmt.setInt(1, user_id);
             stmt.setInt(2, startItem);
             stmt.setInt(3, itemsPerPage);

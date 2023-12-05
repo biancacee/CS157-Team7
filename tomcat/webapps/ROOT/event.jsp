@@ -149,7 +149,9 @@ while(result.next())
             <img src=<%= resultAmentities.getString(3) %> alt="" class="circle">
             <p><%=resultAmentities.getString(4)%></p>
             <p><%=resultAmentities.getString(5)%></p>
+            <% if(isModerator) { %>
             <a onclick=<%= "removeAmentity(" + resultAmentities.getString(1) + "," + event_id + ")" %> class="secondary-content delete_mod"><i class="material-icons">delete</i></a>
+            <% } %>
         </li>
     </ul>
     <% } %>
