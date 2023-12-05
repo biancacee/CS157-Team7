@@ -1,3 +1,10 @@
 # CS157-Team7
 
-For this project the team has decided to implement a relational database management system that provides students with a website of the student clubs offered at San Jose State University. Currently there is not a single platform to review and rate clubs at the University. The goal of this website is to allow students to search for a specific club at the university, and review the comments left by other students in order to decide if the club meets their expectations. Students will also be able to interact with their peers by commenting on each other’s reviews. The platform will contain student clubs from different majors and make it easy for students to browse the options provided on campus. In addition students will be able to rate the clubs using a 5 star rating system. The website will give students a single platform to find contact information, location, and other details that are needed to make a final decision on which student club suits their educational goals. Clubs are able to monitor their webpage and add information that will encourage students to join. Student feedback can be used to make improvements or changes that can attract new members. The stakeholders would include students, and most importantly the university club leads as they will be the ones willing to operate and use the platform.
+The project aims to create a website for San Jose State University students, implementing a relational database management system. The website will serve as a centralized platform for students to explore and review various student clubs on campus. The goal is to enable students to search for specific clubs, read reviews from other students, and interact by leaving comments. The platform will encompass clubs from different majors, allowing easy browsing for students. A 5-star rating system will be in place for students to evaluate clubs. The website will provide essential details such as contact information and location, helping students make informed decisions about joining a club. Clubs can manage their webpages, utilizing student feedback to make improvements and attract new members. The primary stakeholders are students and university club leads who will operate and benefit from the platform.
+
+## Setup
+### Requirements
+
+### Development
+
+### Deployment
