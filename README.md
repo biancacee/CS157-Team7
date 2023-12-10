@@ -9,6 +9,9 @@ The project aims to create a website for San Jose State University students, imp
 - JVM Version:    20.0.2+9-78
 - IntelliJ IDEA
 - MySQL Workbench
+
+- To be able to leave review, rate, comment, like, message, and etc. You need to register and login using your sjsu email.
+- To be able to edit clubs or add events and amenities you need to be the moderator of a club. To become a moderator you can register using your sjsu email and create a new club.
     
 ### Deployment
 0. Install Java SDK https://www.java.com/en/
